@@ -1,0 +1,31 @@
+material Material_lens
+{
+    receive_shadows on
+    technique
+    {
+        pass
+        {
+            cull_hardware none
+            ambient 0.826573908329 0.919993102551 0.883873164654 1.0
+            diffuse 0.661259136517 0.735994493008 0.70709854226 1.0
+            specular 0.5 0.5 0.5 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+            scene_blend one zero
+            texture_unit
+            {
+                texture http://www.realxtend.org/world/lvm/blue_window.jpg
+                tex_address_mode wrap
+                scale 1.0 1.0
+                env_map planar
+                colour_op_ex blend_manual src_current src_texture 0.0
+            }
+            texture_unit
+            {
+                texture http://www.realxtend.org/world/lvm/lamp_ao.png
+                tex_address_mode wrap
+                scale 1.0 1.0
+                colour_op_ex blend_manual src_current src_texture 0.807894736528
+            }
+        }
+    }
+}

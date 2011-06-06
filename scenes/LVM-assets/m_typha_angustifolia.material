@@ -1,0 +1,24 @@
+material m_typha_angustifolia
+{
+    receive_shadows on
+    technique
+    {
+        pass
+        {
+            iteration once
+            alpha_rejection greater_equal 32
+            vertex_program_ref rex/DiffAlphamaskVP
+            {
+            }
+            fragment_program_ref rex/DiffAlphamaskFP
+            {
+            }
+            texture_unit baseMap
+            {
+                texture http://www.realxtend.org/world/lvm/typha_angustifolia.png
+                tex_address_mode wrap
+                filtering trilinear
+            }
+        }
+    }
+}

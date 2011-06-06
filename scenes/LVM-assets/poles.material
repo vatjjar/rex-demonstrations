@@ -1,0 +1,30 @@
+material poles
+{
+    receive_shadows on
+    technique
+    {
+        pass
+        {
+            cull_hardware none
+            ambient 0.21764858067 0.19902330637 0.161173716187 1.0
+            diffuse 0.174118867131 0.159218647468 0.128938974871 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+            scene_blend one zero
+            texture_unit
+            {
+                texture http://www.realxtend.org/world/lvm/impregnated_wood.jpg
+                tex_address_mode wrap
+                scale 0.1 0.1
+              //  colour_op_ex blend_manual src_current src_texture 0.0
+            }
+           // texture_unit
+            {
+                texture http://www.realxtend.org/world/lvm/dock_AO.png
+                tex_address_mode wrap
+                scale 1.0 1.0
+                colour_op_ex blend_manual src_current src_texture 0.294642865658
+            }
+        }
+    }
+}

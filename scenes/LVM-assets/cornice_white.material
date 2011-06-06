@@ -1,0 +1,30 @@
+material cornice_white
+{
+    receive_shadows on
+    technique
+    {
+        pass
+        {
+            cull_hardware none
+            ambient 0.971892595291 0.970185756683 1.0 1.0
+            diffuse 0.777514087819 0.776148616912 0.800000011921 1.0
+            specular 0.5 0.5 0.5 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+            scene_blend one zero
+            texture_unit
+            {
+                texture http://www.realxtend.org/world/lvm/white_wood.jpg
+                tex_address_mode wrap
+                scale 1.0 1.0
+             //   colour_op_ex blend_manual src_current src_texture 0.0
+            }
+           // texture_unit
+            {
+                texture http://www.realxtend.org/world/lvm/interior_walls_ao.png
+                tex_address_mode wrap
+                scale 1.0 1.0
+                colour_op_ex blend_manual src_current src_texture 0.464285731316
+            }
+        }
+    }
+}

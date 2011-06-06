@@ -1,0 +1,30 @@
+material top_deck.001
+{
+    receive_shadows on
+    technique
+    {
+        pass
+        {
+            cull_hardware none
+            ambient 0.886659801006 0.86301535368 0.86301535368 1.0
+            diffuse 0.709327851375 0.690412293232 0.690412293232 1.0
+            specular 0.5 0.5 0.5 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+            scene_blend one zero
+            texture_unit
+            {
+                texture http://www.realxtend.org/world/lvm/white_deck.jpg
+                tex_address_mode wrap
+                scale 0.166666666667 0.166666666667
+              //  colour_op_ex blend_manual src_current src_texture 0.0
+            }
+          //  texture_unit
+            {
+                texture http://www.realxtend.org/world/lvm/upper_part_ao.png
+                tex_address_mode wrap
+                scale 1.0 1.0
+                colour_op_ex blend_manual src_current src_texture 0.699999988079
+            }
+        }
+    }
+}

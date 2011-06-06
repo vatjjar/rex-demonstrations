@@ -1,0 +1,16 @@
+material roof
+{
+    receive_shadows on
+    technique
+    {
+        pass
+        {
+            cull_hardware none
+            ambient 0.152935430408 0.152935430408 0.152935430408 1.0
+            diffuse 0.122348346149 0.122348346149 0.122348346149 1.0
+            specular 0.262711852789 0.262711852789 0.262711852789 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+          //  scene_blend one zero
+        }
+    }
+}

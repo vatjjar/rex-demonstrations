@@ -1,0 +1,30 @@
+material walls_small_storage
+{
+    receive_shadows on
+    technique
+    {
+        pass
+        {
+            cull_hardware none
+            ambient 0.893326461315 0.893326461315 0.893326461315 1.0
+            diffuse 0.714661179701 0.714661179701 0.714661179701 1.0
+            specular 0.5 0.5 0.5 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+            scene_blend one zero
+            texture_unit
+            {
+                texture http://www.realxtend.org/world/lvm/walls_l_storage.jpg
+                tex_address_mode wrap
+                scale 0.1 1.0
+           //    colour_op_ex blend_manual src_current src_texture 0.0
+            }
+           // texture_unit
+            {
+                texture http://www.realxtend.org/world/lvm/ext_walls_AO.png
+                tex_address_mode wrap
+                scale 1.0 1.0
+                colour_op_ex blend_manual src_current src_texture 0.5
+            }
+        }
+    }
+}

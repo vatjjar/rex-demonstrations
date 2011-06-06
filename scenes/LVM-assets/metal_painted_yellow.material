@@ -1,0 +1,30 @@
+material metal_painted_yellow
+{
+    receive_shadows on
+    technique
+    {
+        pass
+        {
+            cull_hardware none
+            ambient 0.626659929752 0.465607583523 0.208886623383 1.0
+            diffuse 0.501327951272 0.372486072369 0.167109301196 1.0
+            specular 0.140000000596 0.140000000596 0.140000000596 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+            scene_blend one zero
+            texture_unit
+            {
+                texture http://www.realxtend.org/world/lvm/yellow_metal.jpg
+                tex_address_mode wrap
+                scale 0.2 0.2
+          //     colour_op_ex blend_manual src_current src_texture 0.276785731316
+            }
+        //    texture_unit
+            {
+                texture http://www.realxtend.org/world/lvm/design_ao.png
+                tex_address_mode wrap
+                scale 1.0 1.0
+                colour_op_ex blend_manual src_current src_texture 0.5
+            }
+        }
+    }
+}

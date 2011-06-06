@@ -1,0 +1,28 @@
+material m_osprey_pillar
+{
+    receive_shadows on
+    technique
+    {
+        pass
+        {
+            ambient 1.000000 1.000000 1.000000 1.000000
+            diffuse 0.800000 0.800000 0.800000 1.000000
+            specular 0.991102 0.958550 0.177244 1.000000 25.500000
+            emissive 0.000000 0.000000 0.000000 1.000000
+            iteration once
+          alpha_rejection greater_equal 64
+           vertex_program_ref rex/DiffAlphamaskVP
+           {
+           }
+           fragment_program_ref rex/DiffAlphamaskFP
+          {
+         }
+          texture_unit baseMap
+         {
+              texture http://www.realxtend.org/world/lvm/gold_osprey.png
+            tex_address_mode wrap
+              filtering trilinear
+           }
+        }
+    }
+}

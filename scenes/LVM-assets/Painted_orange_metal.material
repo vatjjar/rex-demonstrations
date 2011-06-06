@@ -1,0 +1,30 @@
+material Painted_orange_metal
+{
+    receive_shadows on
+    technique
+    {
+        pass
+        {
+            cull_hardware none
+            ambient 0.443401098251 0.248511433601 0.0373824313283 1.0
+            diffuse 0.354720883887 0.198809149844 0.0299059455083 1.0
+            specular 0.444443672895 0.39540246129 0.38401094079 1.0 20.0
+            emissive 0.0 0.0 0.0 1.0
+            scene_blend one zero
+            texture_unit
+            {
+                texture http://www.realxtend.org/world/lvm/red_metal.jpg
+                tex_address_mode wrap
+                scale 0.2 0.2
+              //  colour_op_ex blend_manual src_current src_texture 0.15625
+            }
+           // texture_unit
+            {
+                texture http://www.realxtend.org/world/lvm/foundation_ao.png
+                tex_address_mode wrap
+                scale 1.0 1.0
+                colour_op_ex blend_manual src_current src_texture 0.5
+            }
+        }
+    }
+}

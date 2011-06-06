@@ -1,0 +1,31 @@
+material platform_floor
+{
+    receive_shadows on
+    technique
+    {
+        pass
+        {
+            cull_hardware none
+            ambient 0.164700016379 0.0900368764997 0.0900368764997 1.0
+            diffuse 0.131760015067 0.072029502273 0.072029502273 1.0
+            specular 0.0 0.0 0.0 1.0 16.0
+            emissive 0.0 0.0 0.0 1.0
+            scene_blend one zero
+            texture_unit
+            {
+                texture http://www.realxtend.org/world/lvm/bottom_floor_full_baked_tex.png
+                tex_address_mode wrap
+                scale 0.5 0.5
+                scroll 0.310000002384 1.21000003815
+          //      colour_op_ex blend_manual src_current src_texture 0.0
+            }
+           // texture_unit
+            {
+                texture http://www.realxtend.org/world/lvm/platform_AO.png
+                tex_address_mode wrap
+                scale 1.0 1.0
+                colour_op_ex blend_manual src_current src_texture 0.5
+            }
+        }
+    }
+}

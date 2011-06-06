@@ -1,0 +1,20 @@
+material m_ospreynest
+{
+    receive_shadows on
+    technique
+    {
+        pass
+        {
+            ambient 1.000000 1.000000 1.000000 1.000000
+            diffuse 0.800000 0.800000 0.800000 1.000000
+            specular 0.000000 0.000000 0.000000 1.000000 0.250000
+            emissive 0.000000 0.000000 0.000000 1.000000
+            texture_unit
+            {
+                texture http://www.realxtend.org/world/lvm/ospreynest_COLOR.jpg
+                tex_address_mode wrap
+                filtering trilinear
+            }
+        }
+    }
+}

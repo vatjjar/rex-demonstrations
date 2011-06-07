@@ -1,8 +1,8 @@
 engine.ImportExtension("qt.core");
 engine.ImportExtension("qt.gui");
 
-// !ref: http://www.realxtend.org/world/lvm/main_right_panel.ui
-// !ref: http://www.realxtend.org/world/lvm/game_choice.ui
+// !ref: main_right_panel.ui
+// !ref: game_choice.ui
 
 var hudRightPanel_ = null;
 var hudGamePanel_ = null;
@@ -10,7 +10,7 @@ var hudGamePanelProxy_ = null;
 
 function CreateMainRightPanel() {
       
-        var file = "http://www.realxtend.org/world/lvm/main_right_panel.ui";
+        var file = "main_right_panel.ui";
         hudRightPanel_ = ui.LoadFromFile(file, false);
         if (hudRightPanel_ == null) {
             print("MainHud.js: LoadFromFile ui-file:" + file + " failed.");
@@ -44,7 +44,7 @@ function ShowGamesPanel() {
     
     if (hudGamePanel_ == null) {
         
-        var location = "http://www.realxtend.org/world/lvm/game_choice.ui";
+        var location = "game_choice.ui";
         hudGamePanel_ = ui.LoadFromFile(location, false);
         if (hudGamePanel_ == null) {
             print("MainHud.js: LoadFromFile ui-file:" + file + " failed.");

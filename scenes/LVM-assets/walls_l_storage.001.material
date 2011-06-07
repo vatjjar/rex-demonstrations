@@ -13,7 +13,7 @@ material walls_l_storage.001
             scene_blend one zero
             texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/walls_l_storage.jpg
+                texture walls_l_storage.jpg
                 tex_address_mode wrap
                 scale 9.99999985099 0.0833333333333
                 rotate 90.0
@@ -22,7 +22,7 @@ material walls_l_storage.001
             }
            // texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/upper_part_ao.png
+                texture upper_part_ao.png
                 tex_address_mode wrap
                 scale 1.0 1.0
                 colour_op_ex blend_manual src_current src_texture 0.79999999702

@@ -18,19 +18,19 @@ material m_boat_large_serc
             //}
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/boat_large_serc.png
+                texture boat_large_serc.png
                 tex_address_mode wrap
                 filtering trilinear
             }
             //texture_unit specularMap
             //{
-            //    texture http://www.realxtend.org/world/lvm/boat_large_serc_SPEC.jpg
+            //    texture boat_large_serc_SPEC.jpg
             //    tex_address_mode wrap
             //    filtering trilinear
             //}
             //texture_unit normalMap
             //{
-            //    texture http://www.realxtend.org/world/lvm/boat_large_serc_NRM.jpg
+            //    texture boat_large_serc_NRM.jpg
             //    tex_address_mode wrap
             //    filtering trilinear
             }

@@ -15,7 +15,7 @@ material m_uw_plants_lib1
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/uw_plants_lib1.png
+                texture uw_plants_lib1.png
                 tex_address_mode wrap
                 filtering trilinear
             }

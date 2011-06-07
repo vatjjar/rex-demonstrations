@@ -15,7 +15,7 @@ material m_asimina_tribola__p
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/asimina_tribola_plane.png
+                texture asimina_tribola_plane.png
                 tex_address_mode wrap
                 filtering trilinear
             }

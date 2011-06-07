@@ -13,7 +13,7 @@ material m_mosstree_bark
             depth_write off
             texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/fallen_birch.png
+                texture fallen_birch.png
                 tex_address_mode wrap
                 filtering trilinear
             }

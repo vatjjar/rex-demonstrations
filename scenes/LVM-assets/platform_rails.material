@@ -13,14 +13,14 @@ material platform_rails
             scene_blend one zero
             texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/burgundy_metal.jpg
+                texture burgundy_metal.jpg
                 tex_address_mode wrap
                 scale 1.0 1.0
             //   colour_op_ex blend_manual src_current src_texture 0.0
             }
           //  texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/platform_AO.png
+                texture platform_AO.png
                 tex_address_mode wrap
                 scale 1.0 1.0
                 colour_op_ex blend_manual src_current src_texture 0.5

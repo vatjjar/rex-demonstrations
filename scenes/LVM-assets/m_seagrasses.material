@@ -14,7 +14,7 @@ material m_seagrasses
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/seagrasses.png
+                texture seagrasses.png
                 tex_address_mode wrap
                 filtering trilinear
             }

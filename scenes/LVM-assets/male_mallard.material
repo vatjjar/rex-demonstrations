@@ -22,7 +22,7 @@ material mallard
 			}
 			texture_unit baseMap
 			{
-				texture http://www.realxtend.org/world/lvm/mallard_male.png
+				texture mallard_male.png
 			}
 		}
 	}

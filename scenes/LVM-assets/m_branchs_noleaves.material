@@ -15,7 +15,7 @@ material m_branchs_noleaves
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/fallen_birch_oksat.png
+                texture fallen_birch_oksat.png
                 tex_address_mode wrap
                 filtering trilinear
             }

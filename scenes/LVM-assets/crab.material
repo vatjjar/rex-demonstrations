@@ -11,7 +11,7 @@ material crab
 			emissive 0.000000 0.000000 0.000000 1.000000
 			texture_unit
 			{
-				texture http://www.realxtend.org/world/lvm/blue_crab.png
+				texture blue_crab.png
 				tex_address_mode wrap
 				filtering trilinear
 			}

@@ -19,19 +19,19 @@ material m_woodplanks
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/dock_planks.jpg
+                texture dock_planks.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit specularMap
             {
-                texture http://www.realxtend.org/world/lvm/dock_planks_SPEC.jpg
+                texture dock_planks_SPEC.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit normalMap
             {
-                texture http://www.realxtend.org/world/lvm/dock_planks_NRM.jpg
+                texture dock_planks_NRM.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }

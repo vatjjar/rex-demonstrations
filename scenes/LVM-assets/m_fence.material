@@ -15,7 +15,7 @@ material m_fence
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/fence.png
+                texture fence.png
                 tex_address_mode wrap
                 filtering trilinear
             }

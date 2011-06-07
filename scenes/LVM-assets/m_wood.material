@@ -18,19 +18,19 @@ material m_wood
             }
             texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/wood_color.jpg
+                texture wood_color.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit specularMap
             {
-                texture http://www.realxtend.org/world/lvm/wood_SPEC.jpg
+                texture wood_SPEC.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit normalMap
             {
-                texture http://www.realxtend.org/world/lvm/wood_NRM.jpg
+                texture wood_NRM.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }

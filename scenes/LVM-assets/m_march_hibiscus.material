@@ -15,7 +15,7 @@ material m_march_hibiscus
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/marsh_hibiscus_teemuedit.png
+                texture marsh_hibiscus_teemuedit.png
                 tex_address_mode wrap
                 filtering trilinear
             }

@@ -19,19 +19,19 @@ material m_metalplate
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/metal_plate.jpg
+                texture metal_plate.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit specularMap
             {
-                texture http://www.realxtend.org/world/lvm/metal_plate_SPEC.jpg
+                texture metal_plate_SPEC.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit normalMap
             {
-                texture http://www.realxtend.org/world/lvm/metal_plate_NRM.jpg
+                texture metal_plate_NRM.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }

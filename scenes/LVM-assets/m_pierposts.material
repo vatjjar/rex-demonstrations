@@ -18,19 +18,19 @@ material m_pierposts
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/piers_uv.jpg
+                texture piers_uv.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit specularMap
             {
-                texture http://www.realxtend.org/world/lvm/piers_uv_SPEC.jpg
+                texture piers_uv_SPEC.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit normalMap
             {
-                texture http://www.realxtend.org/world/lvm/piers_uv_NRM.jpg
+                texture piers_uv_NRM.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }

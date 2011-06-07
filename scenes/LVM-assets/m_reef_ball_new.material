@@ -18,19 +18,19 @@ material m_reef_ball_new
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/reef_ball_new.jpg
+                texture reef_ball_new.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit specularMap
             {
-                texture http://www.realxtend.org/world/lvm/reef_ball_new_SPEC.jpg
+                texture reef_ball_new_SPEC.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit normalMap
             {
-                texture http://www.realxtend.org/world/lvm/reef_ball_new_NRM.jpg
+                texture reef_ball_new_NRM.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }

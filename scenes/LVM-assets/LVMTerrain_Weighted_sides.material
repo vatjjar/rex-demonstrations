@@ -71,30 +71,30 @@ material Rex/TerrainPCF_weighted
 			//Weights
 			texture_unit weights
 			{
-				texture http://www.realxtend.org/world/lvm/terrain_sides.png
+				texture terrain_sides.png
 			}
 			//Detail0
 			texture_unit detail0
 			{
-				texture http://www.realxtend.org/world/lvm/SoilMud_s.jpg
+				texture SoilMud_s.jpg
 			}
 
 			//Detail1
 			texture_unit detail1
 			{
-				texture http://www.realxtend.org/world/lvm/Grass_d.jpg
+				texture Grass_d.jpg
 			}
 
 			//Detail2
 			texture_unit detail2
 			{
-				texture  http://www.realxtend.org/world/lvm/sand_d.jpg
+				texture  sand_d.jpg
 			}
 
 			//Detail3
 			texture_unit detail3
 			{
-				texture http://www.realxtend.org/world/lvm/SoilMud_s.jpg
+				texture SoilMud_s.jpg
 			}
 
 			texture_unit shadowMap0
@@ -122,7 +122,7 @@ material Rex/TerrainPCF_weighted
 		{
 			texture_unit baseMap
 			{
-				texture http://www.realxtend.org/world/lvm/TextureMissing.png
+				texture TextureMissing.png
 			}
 		}
       }	

@@ -18,19 +18,19 @@ material m_ospreynest_stand
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/ospreynest_stand.jpg
+                texture ospreynest_stand.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit specularMap
             {
-                texture http://www.realxtend.org/world/lvm/ospreynest_stand_SPEC.jpg
+                texture ospreynest_stand_SPEC.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit normalMap
             {
-                texture http://www.realxtend.org/world/lvm/ospreynest_stand_NRM.jpg
+                texture ospreynest_stand_NRM.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }

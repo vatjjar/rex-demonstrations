@@ -15,7 +15,7 @@ material m_orontium_aquaticum
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/orontium_aquaticum.png
+                texture orontium_aquaticum.png
                 tex_address_mode wrap
                 filtering trilinear
             }

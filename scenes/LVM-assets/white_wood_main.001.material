@@ -13,14 +13,14 @@ material white_wood_main.001
             scene_blend one zero
             texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/white_wood.jpg
+                texture white_wood.jpg
                 tex_address_mode wrap
                 scale 0.1 0.1
               //  colour_op_ex blend_manual src_current src_texture 0.0
             }
          //  texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/upper_part_ao.png
+                texture upper_part_ao.png
                 tex_address_mode wrap
                 scale 1.0 1.0
                 colour_op_ex blend_manual src_current src_texture 0.885338298976

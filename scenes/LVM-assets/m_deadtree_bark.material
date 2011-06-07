@@ -18,19 +18,19 @@ material m_deadtree_bark
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/dead_barch.png
+                texture dead_barch.png
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit specularMap
             {
-                texture http://www.realxtend.org/world/lvm/dead_barch_SPEC.png
+                texture dead_barch_SPEC.png
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit normalMap
             {
-                texture http://www.realxtend.org/world/lvm/dead_barch_NRM.png
+                texture dead_barch_NRM.png
                 tex_address_mode wrap
                 filtering trilinear
             }

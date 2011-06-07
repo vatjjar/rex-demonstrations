@@ -13,7 +13,7 @@ material interior_floor
             scene_blend one zero
             texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/brown_floor.jpg
+                texture brown_floor.jpg
                 tex_address_mode wrap
                 scale 0.125 0.125
                // colour_op_ex blend_manual src_current src_texture 0.636125564575

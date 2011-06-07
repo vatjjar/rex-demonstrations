@@ -15,7 +15,7 @@ material m_osmunda_regalis
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/osmunda_regalis.png
+                texture osmunda_regalis.png
                 tex_address_mode wrap
                 filtering trilinear
             }

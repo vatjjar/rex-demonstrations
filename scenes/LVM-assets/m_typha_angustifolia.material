@@ -15,7 +15,7 @@ material m_typha_angustifolia
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/typha_angustifolia.png
+                texture typha_angustifolia.png
                 tex_address_mode wrap
                 filtering trilinear
             }

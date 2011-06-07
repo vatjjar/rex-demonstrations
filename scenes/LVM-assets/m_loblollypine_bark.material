@@ -18,19 +18,19 @@ material m_loblollypine_bark
             }
             texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/loblolly_pine_bark.png
+                texture loblolly_pine_bark.png
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit specularMap
             {
-                texture http://www.realxtend.org/world/lvm/loblolly_pine_bark_SPEC.png
+                texture loblolly_pine_bark_SPEC.png
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit normalMap
             {
-                texture http://www.realxtend.org/world/lvm/loblolly_pine_bark_NRM.png
+                texture loblolly_pine_bark_NRM.png
                 tex_address_mode wrap
                 filtering trilinear
             }

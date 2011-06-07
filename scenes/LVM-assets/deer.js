@@ -1,5 +1,5 @@
 // JScript source code
-engine.IncludeFile("http://www.realxtend.org/world/lvm/wandererAi.js");
+engine.IncludeFile("wandererAi.js");
 
 var Deer = AiWanderer.extend({
     init: function() {

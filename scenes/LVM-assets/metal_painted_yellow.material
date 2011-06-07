@@ -13,14 +13,14 @@ material metal_painted_yellow
             scene_blend one zero
             texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/yellow_metal.jpg
+                texture yellow_metal.jpg
                 tex_address_mode wrap
                 scale 0.2 0.2
           //     colour_op_ex blend_manual src_current src_texture 0.276785731316
             }
         //    texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/design_ao.png
+                texture design_ao.png
                 tex_address_mode wrap
                 scale 1.0 1.0
                 colour_op_ex blend_manual src_current src_texture 0.5

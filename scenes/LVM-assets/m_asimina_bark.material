@@ -18,19 +18,19 @@ material m_asimina_bark
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/asimina_triloba_bark.png
+                texture asimina_triloba_bark.png
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit specularMap
             {
-                texture http://www.realxtend.org/world/lvm/asimina_triloba_bark_SPEC.jpg
+                texture asimina_triloba_bark_SPEC.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit normalMap
             {
-                texture http://www.realxtend.org/world/lvm/asimina_triloba_bark_NRM.jpg
+                texture asimina_triloba_bark_NRM.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }

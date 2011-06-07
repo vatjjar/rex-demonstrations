@@ -19,19 +19,19 @@ material m_osprey_pillar
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/gold_osprey_pillar.png
+                texture gold_osprey_pillar.png
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit specularMap
             {
-                texture http://www.realxtend.org/world/lvm/gold_osprey_pillar_SPEC.png
+                texture gold_osprey_pillar_SPEC.png
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit normalMap
             {
-                texture http://www.realxtend.org/world/lvm/gold_osprey_pillar_NRM.png
+                texture gold_osprey_pillar_NRM.png
                 tex_address_mode wrap
                 filtering trilinear
             }

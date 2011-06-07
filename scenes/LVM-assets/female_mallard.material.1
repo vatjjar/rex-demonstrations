@@ -1,0 +1,29 @@
+material mallardF
+{
+	receive_shadows on
+	technique
+	{
+		pass
+		{
+			iteration once
+			alpha_rejection greater_equal 128
+
+//			shadow_caster_vertex_program_ref rex/ShadowCasterAlphaVP
+//			{
+//			}			
+//			shadow_caster_fragment_program_ref rex/ShadowCasterAlphaFP
+//			{
+//			}						
+			vertex_program_ref rex/DiffAlphamaskVP
+			{
+			}
+			fragment_program_ref rex/DiffAlphamaskFP
+			{
+			}
+			texture_unit baseMap
+			{
+				texture http://www.realxtend.org/world/lvm/mallard_female.png
+			}
+		}
+	}
+}

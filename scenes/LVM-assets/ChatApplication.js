@@ -1,5 +1,5 @@
-// !ref: http://www.realxtend.org/world/lvm/ChatWidget.ui
-// !ref: http://www.realxtend.org/world/lvm/JoinWidget.ui
+// !ref: ChatWidget.ui
+// !ref: JoinWidget.ui
 
 engine.ImportExtension("qt.core");
 engine.ImportExtension("qt.gui");
@@ -102,7 +102,7 @@ else
 	//print("Starting Chat Client");
 	
     // Ui only for client
-    var widget = ui.LoadFromFile("http://www.realxtend.org/world/lvm/ChatWidget.ui", false);
+    var widget = ui.LoadFromFile("ChatWidget.ui", false);
     var chatLog = findChild(widget, "chatLog");
     var lineEdit = findChild(widget, "lineEdit");
     var buttonToggleLog = findChild(widget, "buttonToggleLog");
@@ -124,7 +124,7 @@ else
     var username = client.GetLoginProperty("username");
     if (username.length == 0)
     {
-        var joinWidget = ui.LoadFromFile("http://www.realxtend.org/world/lvm/JoinWidget.ui", false);
+        var joinWidget = ui.LoadFromFile("JoinWidget.ui", false);
         var btn = findChild(joinWidget, "pushJoin");
         var lineUser = findChild(joinWidget, "lineUserName");
 

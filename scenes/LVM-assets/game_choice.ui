@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>520</width>
+    <height>594</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::RightToLeft</enum>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#Form {
+	background-color: transparent;
+    border-color: transparent;
+    border-style: none;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">   QWidget#widget
+    {
+	 border-bottom: 100px;
+      background-color: transparent;
+      border-color: transparent;
+      border-style: none;
+      border-image:
+      url(UI_osprey_half_BG.png);
+      }
+</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="topMargin">
+         <number>183</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>280</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="startOsprey">
+          <property name="minimumSize">
+           <size>
+            <width>86</width>
+            <height>83</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>86</width>
+            <height>83</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>86</width>
+            <height>83</height>
+           </size>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+      QPushButton#startOsprey{
+      background-color: transparent;
+      border-color: transparent;
+      border-style: none;
+      border-image:
+      url(playOFF.png);
+      }
+
+      QPushButton#startOsprey:pressed {
+      background-color: transparent;
+      border-color: transparent;
+      border-style: none;
+      border-image:
+      url(playON.png);
+      }
+    </string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget_2" native="true">
+     <property name="styleSheet">
+      <string notr="true">  QWidget#widget_2 {
+      background-color: transparent;
+      border-color: transparent;
+      border-style: none;
+      border-image:
+      url(UI_fish_half_BG.png);
+      }
+
+    
+    </string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="topMargin">
+         <number>183</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="startFish">
+          <property name="minimumSize">
+           <size>
+            <width>86</width>
+            <height>83</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>86</width>
+            <height>83</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton#startFish{
+      background-color: transparent;
+      border-color: transparent;
+      border-style: none;
+      border-image:
+      url(playOFF.png);
+      }
+
+      QPushButton#startFish:pressed {
+      background-color: transparent;
+      border-color: transparent;
+      border-style: none;
+      border-image:
+      url(playON.png);
+      }
+    </string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>280</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -11,7 +11,7 @@ material m_asterias_forbesi
             emissive 0.000000 0.000000 0.000000 1.000000
             texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/asterias_forbesi.jpg
+                texture asterias_forbesi.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }

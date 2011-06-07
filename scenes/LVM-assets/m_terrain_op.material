@@ -15,7 +15,7 @@ material terrain_op
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/terrain_op.png
+                texture terrain_op.png
                 tex_address_mode wrap
                 filtering trilinear
             }

@@ -13,14 +13,14 @@ material mint_wood
             scene_blend one zero
             texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/mint_wood.jpg
+                texture mint_wood.jpg
                 tex_address_mode wrap
                 scale 0.2 0.2
              //   colour_op_ex blend_manual src_current src_texture 0.0
             }
          //   texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/main_floor_ao.png
+                texture main_floor_ao.png
                 tex_address_mode wrap
                 scale 1.0 1.0
                 colour_op_ex blend_manual src_current src_texture 0.5

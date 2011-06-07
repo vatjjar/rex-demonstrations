@@ -13,7 +13,7 @@ material platform_floor
             scene_blend one zero
             texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/bottom_floor_full_baked_tex.png
+                texture bottom_floor_full_baked_tex.png
                 tex_address_mode wrap
                 scale 0.5 0.5
                 scroll 0.310000002384 1.21000003815
@@ -21,7 +21,7 @@ material platform_floor
             }
            // texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/platform_AO.png
+                texture platform_AO.png
                 tex_address_mode wrap
                 scale 1.0 1.0
                 colour_op_ex blend_manual src_current src_texture 0.5

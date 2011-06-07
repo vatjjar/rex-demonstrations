@@ -13,7 +13,7 @@ material Material_lens
             scene_blend one zero
             texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/blue_window.jpg
+                texture blue_window.jpg
                 tex_address_mode wrap
                 scale 1.0 1.0
                 env_map planar
@@ -21,7 +21,7 @@ material Material_lens
             }
             texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/lamp_ao.png
+                texture lamp_ao.png
                 tex_address_mode wrap
                 scale 1.0 1.0
                 colour_op_ex blend_manual src_current src_texture 0.807894736528

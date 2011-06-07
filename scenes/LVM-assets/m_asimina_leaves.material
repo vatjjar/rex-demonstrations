@@ -15,7 +15,7 @@ material m_asimina_leaves
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/asimina_triloba_leaves.png
+                texture asimina_triloba_leaves.png
                 tex_address_mode wrap
                 filtering trilinear
             }

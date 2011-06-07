@@ -18,19 +18,19 @@ material m_stonelib
             }
             texture_unit baseMap
             {
-                texture http://www.realxtend.org/world/lvm/stone_lib.jpg
+                texture stone_lib.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit specularMap
             {
-                texture http://www.realxtend.org/world/lvm/stone_lib_SPEC.jpg
+                texture stone_lib_SPEC.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit normalMap
             {
-                texture http://www.realxtend.org/world/lvm/stone_lib_NRM.jpg
+                texture stone_lib_NRM.jpg
                 tex_address_mode wrap
                 filtering trilinear
             }

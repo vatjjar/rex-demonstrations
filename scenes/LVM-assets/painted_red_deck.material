@@ -13,14 +13,14 @@ material painted_red_deck
             scene_blend one zero
             texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/brown_floor.jpg
+                texture brown_floor.jpg
                 tex_address_mode wrap
                 scale 0.333333333333 0.333333333333
                // colour_op_ex blend_manual src_current src_texture 0.385664105415
             }
             //texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/bridge_AO.png
+                texture bridge_AO.png
                 tex_address_mode wrap
                 scale 1.0 1.0
                 colour_op_ex blend_manual src_current src_texture 0.5

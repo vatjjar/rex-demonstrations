@@ -1,8 +1,8 @@
 /// This is a script which is set to some visible entity. If this is clicked by user it launch the anchovy game
 
-// !ref: http://www.realxtend.org/world/lvm/osprey_controls.ui
-// !ref: http://www.realxtend.org/world/lvm/quit_ON.png
-// !ref: http://www.realxtend.org/world/lvm/quit_OFF.png
+// !ref: osprey_controls.ui
+// !ref: quit_ON.png
+// !ref: quit_OFF.png
 
 engine.ImportExtension("qt.core");
 engine.ImportExtension("qt.gui");
@@ -14,7 +14,7 @@ var launchSizeX_;
 var launchSizeY_;
 
 /*function showui() {
-    var file = "http://www.realxtend.org/world/lvm/osprey_game_launch.ui";
+    var file = "osprey_game_launch.ui";
 
     if (widgetLaunch_ == null) {
         widgetLaunch_ = uiservice.LoadFromFile(file, false);

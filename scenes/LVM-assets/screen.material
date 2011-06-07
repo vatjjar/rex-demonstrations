@@ -11,7 +11,7 @@ material screen
             emissive 0.000000 0.000000 0.000000 1.000000
             texture_unit
             {
-                texture http://www.realxtend.org/world/lvm/screen.png
+                texture screen.png
                 tex_address_mode wrap
                 filtering trilinear
                 colour_op alpha_blend

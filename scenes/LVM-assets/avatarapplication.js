@@ -67,7 +67,7 @@ function ServerHandleUserConnected(connectionID, user)
     script.type = "js";
     script.runOnLoad = true;
     var r = script.scriptRef;
-    r.ref = "http://www.realxtend.org/world/lvm/simpleavatar.js";
+    r.ref = "simpleavatar.js";
     script.scriptRef = r;
 
     var placeable = avatarEntity.placeable;

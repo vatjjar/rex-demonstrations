@@ -156,7 +156,7 @@ function KnonDisp(){
 	this.proxy.x = 50;
 	this.proxy.y = 30;
 	this.proxy.windowFlags = 0;
-	this.proxy.visible = true;
+	this.proxy.visible = false;
 	
 	this.setScore = function(score){
 		this.score = score;
@@ -170,6 +170,7 @@ function KnonDisp(){
 		this.score = 0;
 		this.bullets = 3;
 		this.reload = false;
+   	    this.proxy.visible = true;
 		this.refresh();
 	};
 }

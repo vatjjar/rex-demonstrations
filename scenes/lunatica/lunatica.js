@@ -57,7 +57,7 @@ var cam_ec = cament.GetOrCreateComponentRaw("EC_OgreCamera");
 cam_ec.AutoSetPlaceable();
 cam_ec.SetActive();
 var starfield = scene.GetEntityByName("backgroundparticles");
-starfield.placeable.SetParent(cament.placeable);
+//starfield.placeable.SetParent(cament.placeable);
 
 //invisible control node - again not needed, as went back to stationary planet & orbiting cam
 /*var controlent = scene.CreateEntityRaw(scene.NextFreeIdLocal());

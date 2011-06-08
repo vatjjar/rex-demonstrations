@@ -17,13 +17,13 @@ function KnonCore(triggers,overtriggers){
 	this.addTrigger = function(name){
 	
 		print("addTrigger '"+name+"' ");
-		print("      => "+scene.GetEntityByNameRaw(name));
+		print("      => "+scene.GetEntityByNameRaw(name).name);
 		
 		eval("scene.GetEntityByNameRaw(\""+name+"\").Action(\"MousePress\").Triggered.connect(function(){"+this.varname+".reactor(\""+name+"\");});");
 	};
 	this.addOverTrigger = function(name){
 		print("addTrigger '"+name+"' ");
-		print("      => "+scene.GetEntityByNameRaw(name));
+		print("      => "+scene.GetEntityByNameRaw(name).name);
 		
 		eval("scene.GetEntityByNameRaw(\""+name+"\").Action(\"MouseHover\").Triggered.connect(function(){"+this.varname+".reactor(\""+name+"\");});");
 	};
@@ -133,6 +133,7 @@ function KnonCore(triggers,overtriggers){
 	this.boulet.r_pos[2]+=-0.5;
 }
 //------------------------------------------------ score display
+engine.ImportExtension("qt.core");
 engine.ImportExtension("qt.gui");
 function KnonDisp(){
 	this.text = "";

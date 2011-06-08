@@ -1,0 +1,45 @@
+material ground
+{
+	technique
+	{
+		pass
+		{
+			iteration once
+
+			vertex_program_ref rex/DiffShadowVP
+			{
+			}
+			fragment_program_ref rex/DiffShadowFP
+			{
+			}
+			
+			texture_unit baseMap
+			{
+				texture local://Rugby_field.jpg
+			}
+			texture_unit shadowMap0
+			{
+				content_type shadow
+				tex_address_mode clamp
+			}
+			texture_unit shadowMap1
+			{
+				content_type shadow
+				tex_address_mode clamp
+			}
+			texture_unit shadowMap2
+			{
+				content_type shadow
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+

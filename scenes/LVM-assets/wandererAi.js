@@ -1,4 +1,4 @@
-engine.IncludeFile("class.js");
+engine.IncludeFile("local://class.js");
 
 var AiWanderer = Class.extend({
 

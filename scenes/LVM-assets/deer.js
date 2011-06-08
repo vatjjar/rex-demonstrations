@@ -1,5 +1,5 @@
 // JScript source code
-engine.IncludeFile("wandererAi.js");
+engine.IncludeFile("local://wandererAi.js");
 
 var Deer = AiWanderer.extend({
     init: function() {

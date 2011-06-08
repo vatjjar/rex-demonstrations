@@ -6935,11 +6935,6 @@
    <attribute value="30" name="light inner angle"/>
    <attribute value="40" name="light outer angle"/>
   </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="js" name="Type"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="local://light_controller.js" name="Script ref"/>
-  </component>
  </entity>
  <entity id="276">
   <component type="EC_Mesh" sync="1">
@@ -6972,11 +6967,6 @@
    <attribute value="0.00999999978" name="quadratic atten"/>
    <attribute value="30" name="light inner angle"/>
    <attribute value="40" name="light outer angle"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="js" name="Type"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="local://light_controller.js" name="Script ref"/>
   </component>
  </entity>
  <entity id="277">
@@ -7181,46 +7171,6 @@
    <attribute value="true" name="Gravity"/>
   </component>
  </entity>
- <entity id="283">
-  <component type="EC_Name" sync="1">
-   <attribute value="OspreyLauncher" name="name"/>
-   <attribute value="" name="description"/>
-   <attribute value="false" name="user-defined"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="js" name="Type"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="local://osprey_launcher.js" name="Script ref"/>
-  </component>
-  <component type="EC_Placeable" sync="1">
-   <attribute value="-72.27,15.91,6.5,0,0,0,1,1,1" name="Transform"/>
-   <attribute value="false" name="Show bounding box"/>
-   <attribute value="true" name="Visible"/>
-  </component>
-  <component type="EC_Mesh" sync="1">
-   <attribute value="0,0,0,90,0,180,1,1,1" name="Transform"/>
-   <attribute value="local://gold_osprey_statue.mesh" name="Mesh ref"/>
-   <attribute value="local://gold_osprey_statue.skeleton" name="Skeleton ref"/>
-   <attribute value="local://m_gold_osprey.material" name="Mesh materials"/>
-   <attribute value="0" name="Draw distance"/>
-   <attribute value="false" name="Cast shadows"/>
-  </component>
- </entity>
- <entity id="284">
-  <component type="EC_Name" sync="1">
-   <attribute value="MainHud" name="name"/>
-   <attribute value="" name="description"/>
-   <attribute value="false" name="user-defined"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="js" name="Type"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="local://main_hud.js" name="Script ref"/>
-  </component>
- </entity>
  <entity id="285">
   <component type="EC_Script" sync="1">
    <attribute value="js" name="Type"/>
@@ -7242,31 +7192,6 @@
    <attribute value="1" name="Key modifiers enable"/>
    <attribute value="true" name="Enable actions"/>
    <attribute value="true" name="Trigger on keyrepeats"/>
-  </component>
- </entity>
- <entity id="286">
-  <component type="EC_Name" sync="1">
-   <attribute value="FishGameLauncher" name="name"/>
-   <attribute value="" name="description"/>
-   <attribute value="false" name="user-defined"/>
-  </component>
-  <component type="EC_Placeable" sync="1">
-   <attribute value="-74.2,14.22,8.5,0,0,0,1,1,1" name="Transform"/>
-   <attribute value="false" name="Show bounding box"/>
-   <attribute value="true" name="Visible"/>
-  </component>
-  <component type="EC_Mesh" sync="1">
-   <attribute value="0,0,0,90,0,90,1,1,1" name="Transform"/>
-   <attribute value="local://gold_stripedbass2.mesh" name="Mesh ref"/>
-   <attribute value="local://gold_stripedbass2.skeleton" name="Skeleton ref"/>
-   <attribute value="local://m_fishbody.material" name="Mesh materials"/>
-   <attribute value="0" name="Draw distance"/>
-   <attribute value="false" name="Cast shadows"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="js" name="Type"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="local://fish_launcher.js" name="Script ref"/>
   </component>
  </entity>
  <entity id="287">
@@ -7447,321 +7372,6 @@
    <attribute value="true" name="Gravity"/>
   </component>
  </entity>
- <entity id="294">
-  <component type="EC_Name" sync="1">
-   <attribute value="Crab" name="name"/>
-   <attribute value="" name="description"/>
-   <attribute value="false" name="user-defined"/>
-  </component>
-  <component type="EC_Placeable" sync="1">
-   <attribute value="-3.2569,9.92572,3.86397,2.79798,1.42119,-104.417,2.2,2.2,2.2" name="Transform"/>
-   <attribute value="false" name="Show bounding box"/>
-   <attribute value="true" name="Visible"/>
-  </component>
-  <component type="EC_Mesh" sync="1">
-   <attribute value="0,0,0,90,0,90,1,1,1" name="Transform"/>
-   <attribute value="local://blue_crab.mesh" name="Mesh ref"/>
-   <attribute value="local://blue_crab.skeleton" name="Skeleton ref"/>
-   <attribute value="local://crab.material" name="Mesh materials"/>
-   <attribute value="0" name="Draw distance"/>
-   <attribute value="false" name="Cast shadows"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="js" name="Type"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="local://crab.js" name="Script ref"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.0500000007 0.0500000007 0.00999999978" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1 1 1" name="Linear factor"/>
-   <attribute value="1 1 1" name="Angular factor"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="true" name="Draw Debug"/>
-   <attribute value="0 0 0" name="Linear velocity"/>
-   <attribute value="0 0 0" name="Angular velocity"/>
-   <attribute value="true" name="Gravity"/>
-  </component>
- </entity>
- <entity id="295">
-  <component type="EC_Name" sync="1">
-   <attribute value="Crab" name="name"/>
-   <attribute value="" name="description"/>
-   <attribute value="false" name="user-defined"/>
-  </component>
-  <component type="EC_Placeable" sync="1">
-   <attribute value="-7.03062,7.75793,3.92739,2.8387,-2.30888,133.848,2.2,2.2,2.2" name="Transform"/>
-   <attribute value="false" name="Show bounding box"/>
-   <attribute value="true" name="Visible"/>
-  </component>
-  <component type="EC_Mesh" sync="1">
-   <attribute value="0,0,0,90,0,90,1,1,1" name="Transform"/>
-   <attribute value="local://blue_crab.mesh" name="Mesh ref"/>
-   <attribute value="local://blue_crab.skeleton" name="Skeleton ref"/>
-   <attribute value="local://crab.material" name="Mesh materials"/>
-   <attribute value="0" name="Draw distance"/>
-   <attribute value="false" name="Cast shadows"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="js" name="Type"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="local://crab.js" name="Script ref"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.0500000007 0.0500000007 0.00999999978" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1 1 1" name="Linear factor"/>
-   <attribute value="1 1 1" name="Angular factor"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="true" name="Draw Debug"/>
-   <attribute value="0 0 0" name="Linear velocity"/>
-   <attribute value="0 0 0" name="Angular velocity"/>
-   <attribute value="true" name="Gravity"/>
-  </component>
- </entity>
- <entity id="296">
-  <component type="EC_Name" sync="1">
-   <attribute value="Crab" name="name"/>
-   <attribute value="" name="description"/>
-   <attribute value="false" name="user-defined"/>
-  </component>
-  <component type="EC_Placeable" sync="1">
-   <attribute value="6.64334,25.621,2.68922,-3.49902,0.138889,117.34,2.2,2.2,2.2" name="Transform"/>
-   <attribute value="false" name="Show bounding box"/>
-   <attribute value="true" name="Visible"/>
-  </component>
-  <component type="EC_Mesh" sync="1">
-   <attribute value="0,0,0,90,0,90,1,1,1" name="Transform"/>
-   <attribute value="local://blue_crab.mesh" name="Mesh ref"/>
-   <attribute value="local://blue_crab.skeleton" name="Skeleton ref"/>
-   <attribute value="local://crab.material" name="Mesh materials"/>
-   <attribute value="0" name="Draw distance"/>
-   <attribute value="false" name="Cast shadows"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="js" name="Type"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="local://crab.js" name="Script ref"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.0500000007 0.0500000007 0.00999999978" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1 1 1" name="Linear factor"/>
-   <attribute value="1 1 1" name="Angular factor"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="true" name="Draw Debug"/>
-   <attribute value="0 0 0" name="Linear velocity"/>
-   <attribute value="0 0 0" name="Angular velocity"/>
-   <attribute value="true" name="Gravity"/>
-  </component>
- </entity>
- <entity id="297">
-  <component type="EC_Name" sync="1">
-   <attribute value="Crab" name="name"/>
-   <attribute value="" name="description"/>
-   <attribute value="false" name="user-defined"/>
-  </component>
-  <component type="EC_Placeable" sync="1">
-   <attribute value="-10.7281,10.9762,3.87262,-3.57422,2.66642,5.92086,2.2,2.2,2.2" name="Transform"/>
-   <attribute value="false" name="Show bounding box"/>
-   <attribute value="true" name="Visible"/>
-  </component>
-  <component type="EC_Mesh" sync="1">
-   <attribute value="0,0,0,90,0,90,1,1,1" name="Transform"/>
-   <attribute value="local://blue_crab.mesh" name="Mesh ref"/>
-   <attribute value="local://blue_crab.skeleton" name="Skeleton ref"/>
-   <attribute value="local://crab.material" name="Mesh materials"/>
-   <attribute value="0" name="Draw distance"/>
-   <attribute value="false" name="Cast shadows"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="js" name="Type"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="local://crab.js" name="Script ref"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.0500000007 0.0500000007 0.00999999978" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1 1 1" name="Linear factor"/>
-   <attribute value="1 1 1" name="Angular factor"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="true" name="Draw Debug"/>
-   <attribute value="0 0 0" name="Linear velocity"/>
-   <attribute value="0 0 0" name="Angular velocity"/>
-   <attribute value="true" name="Gravity"/>
-  </component>
- </entity>
- <entity id="298">
-  <component type="EC_Name" sync="1">
-   <attribute value="Crab" name="name"/>
-   <attribute value="" name="description"/>
-   <attribute value="false" name="user-defined"/>
-  </component>
-  <component type="EC_Placeable" sync="1">
-   <attribute value="-9.39928,-0.94176,4.22957,2.9101,-5.51152,108.636,2.2,2.2,2.2" name="Transform"/>
-   <attribute value="false" name="Show bounding box"/>
-   <attribute value="true" name="Visible"/>
-  </component>
-  <component type="EC_Mesh" sync="1">
-   <attribute value="0,0,0,90,0,90,1,1,1" name="Transform"/>
-   <attribute value="local://blue_crab.mesh" name="Mesh ref"/>
-   <attribute value="local://blue_crab.skeleton" name="Skeleton ref"/>
-   <attribute value="local://crab.material" name="Mesh materials"/>
-   <attribute value="0" name="Draw distance"/>
-   <attribute value="false" name="Cast shadows"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="js" name="Type"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="local://crab.js" name="Script ref"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.0500000007 0.0500000007 0.00999999978" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1 1 1" name="Linear factor"/>
-   <attribute value="1 1 1" name="Angular factor"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="true" name="Draw Debug"/>
-   <attribute value="0 0 0" name="Linear velocity"/>
-   <attribute value="0 0 0" name="Angular velocity"/>
-   <attribute value="true" name="Gravity"/>
-  </component>
- </entity>
- <entity id="299">
-  <component type="EC_Name" sync="1">
-   <attribute value="Crab" name="name"/>
-   <attribute value="" name="description"/>
-   <attribute value="false" name="user-defined"/>
-  </component>
-  <component type="EC_Placeable" sync="1">
-   <attribute value="-14.6632,19.1468,3.70979,7.01784,0.673934,-17.4171,2.2,2.2,2.2" name="Transform"/>
-   <attribute value="false" name="Show bounding box"/>
-   <attribute value="true" name="Visible"/>
-  </component>
-  <component type="EC_Mesh" sync="1">
-   <attribute value="0,0,0,90,0,90,1,1,1" name="Transform"/>
-   <attribute value="local://blue_crab.mesh" name="Mesh ref"/>
-   <attribute value="local://blue_crab.skeleton" name="Skeleton ref"/>
-   <attribute value="local://crab.material" name="Mesh materials"/>
-   <attribute value="0" name="Draw distance"/>
-   <attribute value="false" name="Cast shadows"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="js" name="Type"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="local://crab.js" name="Script ref"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.0500000007 0.0500000007 0.00999999978" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1 1 1" name="Linear factor"/>
-   <attribute value="1 1 1" name="Angular factor"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="true" name="Draw Debug"/>
-   <attribute value="0 0 0" name="Linear velocity"/>
-   <attribute value="0 0 0" name="Angular velocity"/>
-   <attribute value="true" name="Gravity"/>
-  </component>
- </entity>
- <entity id="300">
-  <component type="EC_Name" sync="1">
-   <attribute value="Crab" name="name"/>
-   <attribute value="" name="description"/>
-   <attribute value="false" name="user-defined"/>
-  </component>
-  <component type="EC_Placeable" sync="1">
-   <attribute value="-4.85268,14.8795,3.4764,-4.72433,-3.11457,155.096,2.2,2.2,2.2" name="Transform"/>
-   <attribute value="false" name="Show bounding box"/>
-   <attribute value="true" name="Visible"/>
-  </component>
-  <component type="EC_Mesh" sync="1">
-   <attribute value="0,0,0,90,0,90,1,1,1" name="Transform"/>
-   <attribute value="local://blue_crab.mesh" name="Mesh ref"/>
-   <attribute value="local://blue_crab.skeleton" name="Skeleton ref"/>
-   <attribute value="local://crab.material" name="Mesh materials"/>
-   <attribute value="0" name="Draw distance"/>
-   <attribute value="false" name="Cast shadows"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="js" name="Type"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="local://crab.js" name="Script ref"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.0500000007 0.0500000007 0.00999999978" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1 1 1" name="Linear factor"/>
-   <attribute value="1 1 1" name="Angular factor"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="true" name="Draw Debug"/>
-   <attribute value="0 0 0" name="Linear velocity"/>
-   <attribute value="0 0 0" name="Angular velocity"/>
-   <attribute value="true" name="Gravity"/>
-  </component>
- </entity>
  <entity id="301">
   <component type="EC_Name" sync="1">
    <attribute value="Deer" name="name"/>
@@ -7928,51 +7538,6 @@
    <attribute value="0" name="Mass"/>
    <attribute value="0" name="Shape type"/>
    <attribute value="0.5 1.5 0.100000001" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1 1 1" name="Linear factor"/>
-   <attribute value="1 1 1" name="Angular factor"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="true" name="Draw Debug"/>
-   <attribute value="0 0 0" name="Linear velocity"/>
-   <attribute value="0 0 0" name="Angular velocity"/>
-   <attribute value="true" name="Gravity"/>
-  </component>
- </entity>
- <entity id="305">
-  <component type="EC_Name" sync="1">
-   <attribute value="Crab" name="name"/>
-   <attribute value="" name="description"/>
-   <attribute value="false" name="user-defined"/>
-  </component>
-  <component type="EC_Placeable" sync="1">
-   <attribute value="-8.70173,22.173,4.98661,-3.7125,-2.0924,-99.854,2.2,2.2,2.2" name="Transform"/>
-   <attribute value="false" name="Show bounding box"/>
-   <attribute value="true" name="Visible"/>
-  </component>
-  <component type="EC_Mesh" sync="1">
-   <attribute value="0,0,0,90,0,90,1,1,1" name="Transform"/>
-   <attribute value="local://blue_crab.mesh" name="Mesh ref"/>
-   <attribute value="local://blue_crab.skeleton" name="Skeleton ref"/>
-   <attribute value="local://crab.material" name="Mesh materials"/>
-   <attribute value="0" name="Draw distance"/>
-   <attribute value="false" name="Cast shadows"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="js" name="Type"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="local://crab.js" name="Script ref"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.0500000007 0.0500000007 0.00999999978" name="Size"/>
    <attribute value="" name="Collision mesh ref"/>
    <attribute value="0.5" name="Friction"/>
    <attribute value="0" name="Restitution"/>
@@ -8482,11 +8047,6 @@
    <attribute value="0.685263753" name="Current time"/>
    <attribute value="true" name="Sun cast shadows"/>
    <attribute value="true" name="Use Caelum"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="js" name="Type"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="local://daynight.js" name="Script ref"/>
   </component>
  </entity>
  <entity id="320">
@@ -11116,46 +10676,6 @@
    <attribute value="game_script" name="name"/>
    <attribute value="" name="description"/>
    <attribute value="false" name="user-defined"/>
-  </component>
- </entity>
- <entity id="402">
-  <component type="EC_EnvironmentLight" sync="1">
-   <attribute value="0.548735142 0.548735142 0.548735142 1" name="Sun color"/>
-   <attribute value="0.318752825 0.318752825 0.318752825 3" name="Ambient color"/>
-   <attribute value="0.930000007 0.930000007 0.930000007 1" name="Sun diffuse color"/>
-   <attribute value="-0.0124336891 -0.866106331 0.499705106" name="Sun direction vector"/>
-   <attribute value="true" name="Use fixed time"/>
-   <attribute value="0.5" name="Current time"/>
-   <attribute value="true" name="Sun cast shadows"/>
-   <attribute value="true" name="Use Caelum"/>
-  </component>
-  <component type="EC_Name" sync="1">
-   <attribute value="Sun" name="name"/>
-   <attribute value="" name="description"/>
-   <attribute value="false" name="user-defined"/>
-  </component>
- </entity>
- <entity id="403">
-  <component type="EC_Name" sync="1">
-   <attribute value="AvatarScript" name="name"/>
-   <attribute value="" name="description"/>
-   <attribute value="false" name="user-defined"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="js" name="Type"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="http://adminotech.data.s3.amazonaws.com/applications/avatar/avatarapplication.js" name="Script ref"/>
-  </component>
-  <component type="EC_InputMapper" sync="1">
-   <attribute value="EC_InputMapper" name="Input context name"/>
-   <attribute value="102" name="Input context priority"/>
-   <attribute value="false" name="Take keyboard events over Qt"/>
-   <attribute value="false" name="Take mouse events over Qt"/>
-   <attribute value="" name="Mappings"/>
-   <attribute value="1" name="Action execution type"/>
-   <attribute value="1" name="Key modifiers enable"/>
-   <attribute value="true" name="Enable actions"/>
-   <attribute value="true" name="Trigger on keyrepeats"/>
   </component>
  </entity>
 </scene>

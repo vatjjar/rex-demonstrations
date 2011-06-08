@@ -7323,8 +7323,8 @@
    <attribute value="false" name="user-defined"/>
   </component>
   <component type="EC_WebView" sync="1">
-   <attribute value="file:///home/vatjjar/projects/rex-demonstrations/scenes/LVM-assets/slide1.png" name="View URL"/>
-   <attribute value="800 600" name="View Size"/>
+   <attribute value="file:///home/vatjjar/projects/rex-demonstrations/scenes/LVM-assets/slide1.jpg" name="View URL"/>
+   <attribute value="1024 768" name="View Size"/>
    <attribute value="1" name="Render Submesh"/>
    <attribute value="0" name="Render FPS"/>
    <attribute value="false" name="Interactive"/>
@@ -8947,8 +8947,8 @@
    <attribute value="false" name="user-defined"/>
   </component>
   <component type="EC_WebView" sync="1">
-   <attribute value="file:///home/vatjjar/projects/rex-demonstrations/scenes/LVM-assets/slide2.png" name="View URL"/>
-   <attribute value="800 600" name="View Size"/>
+   <attribute value="file:///home/vatjjar/projects/rex-demonstrations/scenes/LVM-assets/slide2.jpg" name="View URL"/>
+   <attribute value="1024 768" name="View Size"/>
    <attribute value="1" name="Render Submesh"/>
    <attribute value="0" name="Render FPS"/>
    <attribute value="false" name="Interactive"/>
@@ -8975,8 +8975,8 @@
    <attribute value="false" name="user-defined"/>
   </component>
   <component type="EC_WebView" sync="1">
-   <attribute value="file:///home/vatjjar/projects/rex-demonstrations/scenes/LVM-assets/slide1.png" name="View URL"/>
-   <attribute value="800 600" name="View Size"/>
+   <attribute value="file:///home/vatjjar/projects/rex-demonstrations/scenes/LVM-assets/slide3.jpg" name="View URL"/>
+   <attribute value="1024 768" name="View Size"/>
    <attribute value="1" name="Render Submesh"/>
    <attribute value="0" name="Render FPS"/>
    <attribute value="false" name="Interactive"/>
@@ -9003,8 +9003,8 @@
    <attribute value="false" name="user-defined"/>
   </component>
   <component type="EC_WebView" sync="1">
-   <attribute value="file:///home/vatjjar/projects/rex-demonstrations/scenes/LVM-assets/slide4.png" name="View URL"/>
-   <attribute value="800 600" name="View Size"/>
+   <attribute value="file:///home/vatjjar/projects/rex-demonstrations/scenes/LVM-assets/slide4.jpg" name="View URL"/>
+   <attribute value="1024 768" name="View Size"/>
    <attribute value="1" name="Render Submesh"/>
    <attribute value="0" name="Render FPS"/>
    <attribute value="false" name="Interactive"/>

@@ -1,0 +1,41 @@
+material test_maakukka1/TWOSIDE
+{
+    receive_shadows on
+    technique
+    {
+        pass
+        {
+            ambient 0.500000 0.500000 0.500000 0.75
+            diffuse 0.640000 0.640000 0.640000 0.55
+            specular 0.500000 0.500000 0.500000 0.75 12.500000
+            emissive 0.000000 0.000000 0.000000 0.75
+            scene_blend alpha_blend
+            cull_hardware none
+            cull_software none
+            depth_check on
+            depth_write off
+            texture_unit
+            {
+                texture local://kukkeja1b.png
+                tex_address_mode wrap
+                filtering trilinear
+            }
+        }
+        pass
+        {
+            ambient 0.500000 0.500000 0.500000 0.5
+            diffuse 0.640000 0.640000 0.640000 0.5
+            specular 0.500000 0.500000 0.500000 0.5 12.500000
+            emissive 0.000000 0.000000 0.000000 0.5
+            scene_blend colour_blend
+            polygon_mode wireframe
+            depth_write on
+            texture_unit
+            {
+                texture local://kukkeja1.png
+                tex_address_mode wrap
+                filtering trilinear
+            }
+        }
+    }
+}

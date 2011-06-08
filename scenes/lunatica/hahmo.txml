@@ -1,0 +1,23 @@
+<!DOCTYPE Scene>
+<scene>
+ <entity id="8">
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,0,0,90,0,180,1,1,1" name="Transform"/>
+   <attribute value="local://hahmo.mesh" name="Mesh ref"/>
+   <attribute value="local://hahmo-hahmorig.skeleton" name="Skeleton ref"/>
+   <attribute value="hahmo.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="0,0,0,0,0,0,0.1,0.1,0.1" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="hahmo" name="name"/>
+   <attribute value="" name="description"/>
+   <attribute value="false" name="user-defined"/>
+  </component>
+ </entity>
+</scene>

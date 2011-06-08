@@ -1,0 +1,27 @@
+material sunboom1/SOLID/TEX/sunboom.png
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000 0.8
+			specular 0.500000 0.500000 0.500000 0.8 12.500000
+			scene_blend alpha_blend
+            texture_unit
+			{
+				texture local://sunboom.png
+			}
+		}
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			scene_blend colour_blend
+            polygon_mode wireframe
+            texture_unit
+			{
+				texture local://sunboom.png
+			}
+		}
+	}
+}

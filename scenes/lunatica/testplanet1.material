@@ -1,0 +1,37 @@
+material testplanet1
+{
+    receive_shadows on
+    technique
+    {
+        pass
+        {
+            ambient 0.900000 0.900000 0.900000 0.8
+            diffuse 0.840000 0.840000 0.840000 0.5
+            specular 0.500000 0.500000 0.500000 1.0 9.500000
+            emissive 0.000000 0.000000 0.000000 0.0
+            scene_blend colour_blend
+            depth_write on
+            texture_unit
+            {
+                texture local://planeetta1_trnsp1b.png
+                tex_address_mode wrap
+                filtering trilinear
+            }
+        }
+        pass
+        {
+            ambient 0.900000 0.900000 0.900000 0.9
+            diffuse 0.840000 0.840000 0.840000 0.2
+            specular 0.500000 0.500000 0.500000 0.5 15.500000
+            emissive 0.000000 0.000000 0.000000 0.0
+            scene_blend alpha_blend
+            depth_write on
+            texture_unit
+            {
+                texture local://planeetta1_trnsp1b.png
+                tex_address_mode wrap
+                filtering trilinear
+            }
+        }
+    }
+}

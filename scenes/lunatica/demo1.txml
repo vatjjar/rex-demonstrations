@@ -1,0 +1,126 @@
+<!DOCTYPE Scene>
+<scene>
+ <entity id="1">
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,0,0,90,0,180,1,1,1" name="Transform"/>
+   <attribute value="local://planeetta.001.mesh" name="Mesh ref"/>
+   <attribute value="" name="Skeleton ref"/>
+   <attribute value="local://test_maakukka1_TWOSIDE.material;local://test_kukka1.material;local://test_kukka1_TWOSIDE.material;local://torni1.material;local://torni1_TWOSIDE.material;local://testkristal1.material;local://testi1.material;local://kristal_silta.material;local://kristal_silta_TWOSIDE.material;local://testkristal1_TWOSIDE.material;local://testplanet1.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="planet" name="name"/>
+   <attribute value="" name="description"/>
+   <attribute value="false" name="user-defined"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="0,0,2.38419e-06,256,-25,-227,1,1,1" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+  </component>
+ </entity>
+ <entity id="2">
+  <component type="EC_Name" sync="1">
+   <attribute value="Environment" name="name"/>
+   <attribute value="" name="description"/>
+   <attribute value="false" name="user-defined"/>
+  </component>
+  <component type="EC_EnvironmentLight" sync="1">
+   <attribute value="0 0 0 1" name="Sun color"/>
+   <attribute value="0.699999988 0.600000024 0.699999988 1" name="Ambient color"/>
+   <attribute value="0 0 0 1" name="Sun diffuse color"/>
+   <attribute value="0.0121698435 0.502004623 -0.864779234" name="Sun direction vector"/>
+   <attribute value="true" name="Use fixed time"/>
+   <attribute value="1" name="Current time"/>
+   <attribute value="false" name="Sun cast shadows"/>
+   <attribute value="false" name="Use Caelum"/>
+  </component>
+ </entity>
+ <entity id="3">
+  <component type="EC_Light" sync="1">
+   <attribute value="0 0 1" name="direction"/>
+   <attribute value="0" name="light type"/>
+   <attribute value="0.800000012 0.600000024 0.800000012 1" name="diffuse color"/>
+   <attribute value="0.400000006 0.200000003 0.400000006 1" name="specular color"/>
+   <attribute value="false" name="cast shadows"/>
+   <attribute value="100" name="light range"/>
+   <attribute value="0.00100000005" name="constant atten"/>
+   <attribute value="0" name="linear atten"/>
+   <attribute value="0.000899999985" name="quadratic atten"/>
+   <attribute value="30" name="light inner angle"/>
+   <attribute value="40" name="light outer angle"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="0,60,0,0,0,0,1,1,1" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="frontlight" name="name"/>
+   <attribute value="" name="description"/>
+   <attribute value="false" name="user-defined"/>
+  </component>
+ </entity>
+ <entity id="4">
+  <component type="EC_Name" sync="1">
+   <attribute value="game" name="name"/>
+   <attribute value="" name="description"/>
+   <attribute value="false" name="user-defined"/>
+  </component>
+  <component type="EC_Script" sync="1">
+   <attribute value="" name="Type"/>
+   <attribute value="true" name="Run on load"/>
+   <attribute value="local://lunatica.js" name="Script ref"/>
+  </component>
+ </entity>
+ <entity id="5">
+  <component type="EC_Placeable" sync="1">
+   <attribute value="0,0,-10,0,0,0,1,1,1" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+  </component>
+  <component type="EC_ParticleSystem" sync="1">
+   <attribute value="local://starfield.particle" name="Particle ref"/>
+   <attribute value="false" name="Cast shadows"/>
+   <attribute value="0" name="Rendering distance"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="backgroundparticles" name="name"/>
+   <attribute value="" name="description"/>
+   <attribute value="false" name="user-defined"/>
+  </component>
+ </entity>
+ <entity id="6">
+  <component type="EC_Placeable" sync="1">
+   <attribute value="0,0,22,0,0,180,1,1,1" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="gamecamera" name="name"/>
+   <attribute value="" name="description"/>
+   <attribute value="false" name="user-defined"/>
+  </component>
+ </entity>
+ <entity id="7">
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,5,0,90,0,180,1,1,1" name="Transform"/>
+   <attribute value="local://sunboom.mesh" name="Mesh ref"/>
+   <attribute value="local://sunboom-sunboomrig.skeleton" name="Skeleton ref"/>
+   <attribute value="local://sunboom.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="0,0,2,0,0,0,1,1,1" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="sunboom" name="name"/>
+   <attribute value="" name="description"/>
+   <attribute value="false" name="user-defined"/>
+  </component>
+ </entity>
+</scene>

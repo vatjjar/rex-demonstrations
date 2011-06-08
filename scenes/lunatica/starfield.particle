@@ -1,0 +1,92 @@
+//field-whitestar2cross in original lunatic.particle
+starfield 
+{
+	quota	1000
+	material	local://particle-plus4_nonfog.material
+	particle_width	1
+	particle_height	1
+	cull_each	false
+	renderer	billboard
+	sorted	false
+	local_space	true
+	iteration_interval	0
+	nonvisible_update_timeout	0
+	billboard_type	point
+	billboard_origin	center
+	billboard_rotation_type	texcoord
+	common_up_vector	0 1 0
+	point_rendering	false
+	accurate_facing	false
+
+	emitter Ring
+	{
+		angle	0
+		colour	1 1 1 1
+		colour_range_start	1 1 1 1
+		colour_range_end	1 1 1 1
+		direction	0 0 1
+		emission_rate	800
+		position	0 0 0
+		velocity	0
+		velocity_min	0
+		velocity_max	0
+		time_to_live	5
+		time_to_live_min	8
+		time_to_live_max	16
+		duration	0
+		duration_min	0
+		duration_max	0
+		repeat_delay	0
+		repeat_delay_min	0
+		repeat_delay_max	0
+		width	40 //28.9
+		height	40 //28.9
+		depth	2
+		inner_width	0.3 //percentage now, used to be 3?
+		inner_height	0.3
+	}
+    
+    //	affector ColourFader
+	//{
+	//	red	-0.1
+	//	green	-0.2
+	//	blue	-0.3
+	//	alpha	-0.36
+	//}
+
+    //    affector LinearForce
+    //{
+    //    force_vector      0 4 0
+    //    force_application add
+    //}
+    
+        affector Rotator
+    {
+        rotation_range_start 0
+        rotation_range_end 360
+        rotation_speed_range_start 0
+        rotation_speed_range_end 70
+    }
+    
+    	affector ColourInterpolator
+	{
+		colour0	0.6 0 0.4 0.9
+		time0	0
+		colour2	0.6 0 0.9 1
+		time1	0.2
+		colour1	0.41 0 1 1
+		time2	0.4
+		colour3	0.5 0.1 0.8 0.9
+		time3	0.6
+		colour4	0.5 0.3 0.35 0.8
+		time4	0.75
+		colour5	0.6 0.5 0.2 0.7
+		time5	0.95
+	}
+
+	affector Scaler
+	{
+		rate	0.04
+	}
+    
+}

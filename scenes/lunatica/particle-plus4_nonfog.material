@@ -1,0 +1,19 @@
+material particle-plus4_nonfog
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+            fog_override true linear 0 0 0 0.1 23 40
+			depth_check off
+			scene_blend add
+
+			texture_unit
+			{
+				texture local://i_plus4.png
+			}
+		}
+	}
+}

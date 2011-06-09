@@ -141,6 +141,8 @@ frame.Updated.connect(update);
 
 // ----------- input & control things -----------
 
+var MOUSEDIV = 5;
+
 // Create a nonsynced inputmapper
 var inputmapper = me.GetOrCreateComponentRaw("EC_InputMapper", 2, false);
 inputmapper.contextPriority = 101;
@@ -223,8 +225,8 @@ function clientHandleMouseMove(ev) {
     dir.y = pos.y - pivot.y;
     dir.z = pos.z - pivot.z;
 
-    var quat = QQuaternion.fromAxisAndAngle(cament.placeable.LocalYAxis, ev.relativeX);
-    quat = multiply_quats(quat, QQuaternion.fromAxisAndAngle(cament.placeable.LocalXAxis, ev.relativeY));
+    var quat = QQuaternion.fromAxisAndAngle(cament.placeable.LocalYAxis, ev.relativeX / MOUSEDIV);
+    quat = multiply_quats(quat, QQuaternion.fromAxisAndAngle(cament.placeable.LocalXAxis, ev.relativeY / MOUSEDIV));
     var dirq = quat.rotatedVector(new QVector3D(dir.x, dir.y, dir.z));
     dir.x = dirq.x();
     dir.y = dirq.y();

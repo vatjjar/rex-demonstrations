@@ -5,8 +5,8 @@ engine.ImportExtension("qt.core");
 engine.ImportExtension("qt.gui");
 //engine.ImportExtension("qt.uitools"); //naali core ui wraps this and is in remote js sandbox
 
-// !ref: osprey_controls.ui
-// !ref: osprey_game_launch.ui
+// !ref: local://osprey_controls.ui
+// !ref: local://osprey_game_launch.ui
 
 var sizeX_ = 200;
 var sizeY_ = 200;
@@ -32,7 +32,7 @@ function LaunchGame() {
 
 function ShowGameDialog() {
     print("click!");
-    var file = "osprey_game_launch.ui";
+    var file = "local://osprey_game_launch.ui";
 
     if (widgetLaunch_ == null) {
 
@@ -82,7 +82,7 @@ function ShowControls() {
     if ( widgetLaunch_ != null)
         widgetLaunch_.hide();
     
-    var file = "osprey_controls.ui";
+    var file = "local://osprey_controls.ui";
 
     if (widget_ == null) 
     {

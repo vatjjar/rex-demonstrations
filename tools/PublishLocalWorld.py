@@ -4,6 +4,23 @@
 #
 # For conditions of distribution and use, see copyright notice in license.txt
 #
+######
+#
+# This script takes a locally created world and publishes it into format
+# which is directly deployable to web. Usage of the program is as follows:
+#
+# PublishLocalWorld.py -i inputTXML -o outputTXML -u URLprefix -f folderprefix
+#
+# The script traverses through input TXML and changes all asset references
+# to point into URLprefix+folderprefix destination. All textual assets found
+# from the TXML file are parsed recursively using the same parsing engine.
+# All binary asset references are copied as-is.
+#
+# After the process, outputTXML file contains all web references, and
+# folderprefix folder in the root directory contain all re-formatted
+# copies of the assets. Output TXML and folderprefix contents are directly
+# deployable with Tundra + Apache2 server combination.
+#
 
 import sys, os, io
 
@@ -63,13 +80,13 @@ class PublishTundraWorld():
         assetname = ""
         for i in range(offset, len(url)):
             if url[i] == "\"":
-                self.printmessage("INFO: Assetname '"+assetname+"' ending with \"")
+                #self.printmessage("INFO: Assetname '"+assetname+"' ending with \"")
                 return -1, assetname
             if url[i] == ";":
-                self.printmessage("INFO: Assetname '"+assetname+"' ending with ;")
+                #self.printmessage("INFO: Assetname '"+assetname+"' ending with ;")
                 return i+1, assetname
             if url[i] == "\n":
-                self.printmessage("INFO: Assetname '"+assetname+"' ending with \\n")
+                #self.printmessage("INFO: Assetname '"+assetname+"' ending with \\n")
                 return -1, assetname
             assetname = assetname + url[i]
         return -1, assetname
@@ -93,26 +110,30 @@ class PublishTundraWorld():
             if position == -1:
                 outfile.write(line)
             else:
-                self.printmessage("Entering reference parsing loop")
+                #self.printmessage("Entering reference parsing loop")
                 while position != -1:
                     position = position + len(search)
                     position, assetname = self.get_assetname(line, position)
                     self.parse_assetreference(assetname)
-                self.printmessage("Exiting reference parsing loop")
+                #self.printmessage("Exiting reference parsing loop")
                 outfile.write(line.replace(search, replacewith))
         infile.close()
         outfile.close()
         return True
 
     def parse_assetreference(self, assetname):
-        #self.printmessage(asset, "")
         if assetname.endswith(".material"):
             self.parse_core(assetname, self.folderprefix+assetname, "\ttexture ", "\ttexture "+self.urlprefix+self.folderprefix)
         elif assetname.endswith(".js"):
             self.oarse_core(assetname, self.folderprefix+assetname, "local://", self.urlprefix+self.folderprefix)
         else:
-            # we simply make a copy of source to target
-            self.printmessage("Copy: " +str(assetname), "\n")
+            import shutil
+            # All other types we simply copy to asset directory
+            self.printmessage("INFO: Making a binary copy of '"+assetname+"'", "\n")
+            try:
+                shutil.copy(assetname, self.folderprefix+assetname)
+            except IOError:
+                self.printmessage("WARNING: Copy of '"+assetname+"' failed. Skipping!")
 
 #############################################################################
 
@@ -126,10 +147,12 @@ if __name__ == "__main__": # if run standalone
         print "Usage: program <-i inputTXML> <-o outputTXML> <-u URLprefix> <-f FolderPrefix>"
         print "Example: program -i world.txml -o world_public.txml -u http://server.com -f assets"
         sys.exit(2)
+
     in_txml = ""
     out_txml = "default.txml"
     urlprefix = ""
     folderprefix = ""
+
     for o, a in opts:
         if o in ("-h", "--help"):
             print "help"
@@ -147,15 +170,16 @@ if __name__ == "__main__": # if run standalone
             sys.exit(2)
 
     if not os.path.exists(in_txml):
-        print "input file '" + str(in_txml) + "' does not exist. Aborting!"
+        print "Input file '" + str(in_txml) + "' does not exist. Aborting!"
         sys.exit(2)
     if os.path.exists(out_txml):
-        print "output file '" + str(out_txml) + "' already exists. Aborting!"
+        print "Output file '" + str(out_txml) + "' already exists. Aborting!"
         sys.exit(2)
+
     try:
         os.stat(folderprefix)
     except:
-        print "Output target dir '"+str(folderprefix)+"' does not exist. Creating."
+        print "Output target dir '"+str(folderprefix)+"' does not exist. Creating!"
         os.makedirs(folderprefix)
 
     print "Using settings:"
@@ -166,3 +190,5 @@ if __name__ == "__main__": # if run standalone
 
     parser = PublishTundraWorld(urlprefix, folderprefix)
     parser.parse_core(in_txml, out_txml, "local://", parser.urlprefix+parser.folderprefix)
+
+    print "Done!"

@@ -7318,7 +7318,7 @@
    <attribute value="true" name="Visible"/>
   </component>
   <component type="EC_Name" sync="1">
-   <attribute value="screen" name="name"/>
+   <attribute value="screen1" name="name"/>
    <attribute value="" name="description"/>
    <attribute value="false" name="user-defined"/>
   </component>

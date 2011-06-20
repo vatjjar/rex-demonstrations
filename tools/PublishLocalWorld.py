@@ -125,7 +125,7 @@ class PublishTundraWorld():
         if assetname.endswith(".material"):
             self.parse_core(assetname, self.folderprefix+assetname, "\ttexture ", "\ttexture "+self.urlprefix+self.folderprefix)
         elif assetname.endswith(".js"):
-            self.oarse_core(assetname, self.folderprefix+assetname, "local://", self.urlprefix+self.folderprefix)
+            self.parse_core(assetname, self.folderprefix+assetname, "local://", self.urlprefix+self.folderprefix)
         else:
             import shutil
             # All other types we simply copy to asset directory

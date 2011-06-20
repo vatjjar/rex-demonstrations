@@ -37,7 +37,7 @@ class PublishTundraWorld():
         self.set_folderprefix(folderprefix)
 
 ############################################################################
-# Terrain textual output methods
+#
 #
 
     def set_urlprefix(self, urlprefix):
@@ -57,7 +57,7 @@ class PublishTundraWorld():
         return self.folderprefix
 
 ############################################################################
-# Terrain textual output methods
+#
 #
 
     def printmessage(self, message, newline="\n"):

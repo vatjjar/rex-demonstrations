@@ -1,8 +1,8 @@
 engine.ImportExtension("qt.core");
 engine.ImportExtension("qt.gui");
 
-// !ref: main_right_panel.ui
-// !ref: game_choice.ui
+// !ref: local://main_right_panel.ui
+// !ref: local://game_choice.ui
 
 var hudRightPanel_ = null;
 var hudGamePanel_ = null;
@@ -10,7 +10,7 @@ var hudGamePanelProxy_ = null;
 
 function CreateMainRightPanel() {
       
-        var file = "main_right_panel.ui";
+        var file = "local://main_right_panel.ui";
         hudRightPanel_ = ui.LoadFromFile(file, false);
         if (hudRightPanel_ == null) {
             print("MainHud.js: LoadFromFile ui-file:" + file + " failed.");
@@ -44,7 +44,7 @@ function ShowGamesPanel() {
     
     if (hudGamePanel_ == null) {
         
-        var location = "game_choice.ui";
+        var location = "local://game_choice.ui";
         hudGamePanel_ = ui.LoadFromFile(location, false);
         if (hudGamePanel_ == null) {
             print("MainHud.js: LoadFromFile ui-file:" + file + " failed.");

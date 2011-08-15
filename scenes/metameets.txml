@@ -8590,65 +8590,6 @@
    <attribute value="false" name="user-defined"/>
   </component>
  </entity>
- <entity id="349">
-  <component type="EC_Script" sync="1">
-   <attribute value="js" name="Type"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="local://simpleavatar.js" name="Script ref"/>
-  </component>
-  <component type="EC_Placeable" sync="1">
-   <attribute value="-63.4366,30.6961,7.25813,0,0,-87.3234,1,1,1" name="Transform"/>
-   <attribute value="false" name="Show bounding box"/>
-   <attribute value="true" name="Visible"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="Stand" name="Animation state"/>
-  </component>
-  <component type="EC_Name" sync="1">
-   <attribute value="Avatar1" name="name"/>
-   <attribute value="ant" name="description"/>
-   <attribute value="false" name="user-defined"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="10" name="Mass"/>
-   <attribute value="3" name="Shape type"/>
-   <attribute value="0.699999988 0.699999988 2.20000005" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1 1 1" name="Linear factor"/>
-   <attribute value="0 0 0" name="Angular factor"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="true" name="Draw Debug"/>
-   <attribute value="-1.19668175e-05 -6.38473693e-06 1.34259462e-05" name="Linear velocity"/>
-   <attribute value="0 0 0" name="Angular velocity"/>
-   <attribute value="true" name="Gravity"/>
-  </component>
-  <component type="EC_Avatar" sync="1">
-   <attribute value="local://asian_boy.xml" name="Appearance ref"/>
-  </component>
-  <component type="EC_Mesh" sync="0">
-   <attribute value="0,0,-0.934737,90,1.70755e-06,-90,1,1,1" name="Transform"/>
-   <attribute value="" name="Mesh ref"/>
-   <attribute value="" name="Skeleton ref"/>
-   <attribute value="" name="Mesh materials"/>
-   <attribute value="0" name="Draw distance"/>
-   <attribute value="true" name="Cast shadows"/>
-  </component>
-  <component type="EC_InputMapper" sync="0">
-   <attribute value="EC_InputMapper" name="Input context name"/>
-   <attribute value="101" name="Input context priority"/>
-   <attribute value="false" name="Take keyboard events over Qt"/>
-   <attribute value="true" name="Take mouse events over Qt"/>
-   <attribute value="" name="Mappings"/>
-   <attribute value="2" name="Action execution type"/>
-   <attribute value="0" name="Key modifiers enable"/>
-   <attribute value="false" name="Enable actions"/>
-   <attribute value="true" name="Trigger on keyrepeats"/>
-  </component>
- </entity>
 
  <entity id="323">
   <component type="EC_Mesh" sync="1">

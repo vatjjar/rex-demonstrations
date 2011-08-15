@@ -1,0 +1,1688 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Template XML file for avatar parameters -->
+<avatar>
+    <!-- version string for this file -->
+    <version>0.2</version>
+    <base name="default_female" mesh="local://asian_boy.mesh" />
+    <skeleton name="Jack.skeleton" />
+    <material name="local://Male_CustomBody.material" />
+    <material name="local://Male_CustomFace.material" />
+    <appearance height="1.800000" weight="1" />
+    <transformation position="0 0 0" rotation="1 0 0 0" scale="1 1 1" />
+    <attachment>
+        <name value="local://Male_hiphop_jacket.xml" />
+        <mesh name="local://Male_hiphop_jacket.mesh" linkskeleton="1" />
+        <material name="local://Male_hiphop_jacket.material" />
+        <category name="Top">
+            <bone name="None" />
+        </category>
+        <avatar name="Jack.mesh">
+            <bone name="None" offset="0 0 0" rotation="1 0 0 0" scale="1 1 1" />
+            <avatar_polygon idx="0" />
+            <avatar_polygon idx="1" />
+            <avatar_polygon idx="2" />
+            <avatar_polygon idx="4" />
+            <avatar_polygon idx="5" />
+            <avatar_polygon idx="6" />
+            <avatar_polygon idx="7" />
+            <avatar_polygon idx="8" />
+            <avatar_polygon idx="9" />
+            <avatar_polygon idx="11" />
+            <avatar_polygon idx="12" />
+            <avatar_polygon idx="13" />
+            <avatar_polygon idx="14" />
+            <avatar_polygon idx="15" />
+            <avatar_polygon idx="16" />
+            <avatar_polygon idx="18" />
+            <avatar_polygon idx="20" />
+            <avatar_polygon idx="21" />
+            <avatar_polygon idx="22" />
+            <avatar_polygon idx="23" />
+            <avatar_polygon idx="24" />
+            <avatar_polygon idx="25" />
+            <avatar_polygon idx="26" />
+            <avatar_polygon idx="28" />
+            <avatar_polygon idx="29" />
+            <avatar_polygon idx="30" />
+            <avatar_polygon idx="31" />
+            <avatar_polygon idx="32" />
+            <avatar_polygon idx="33" />
+            <avatar_polygon idx="34" />
+            <avatar_polygon idx="36" />
+            <avatar_polygon idx="37" />
+            <avatar_polygon idx="38" />
+            <avatar_polygon idx="39" />
+            <avatar_polygon idx="40" />
+            <avatar_polygon idx="41" />
+            <avatar_polygon idx="42" />
+            <avatar_polygon idx="43" />
+            <avatar_polygon idx="44" />
+            <avatar_polygon idx="45" />
+            <avatar_polygon idx="46" />
+            <avatar_polygon idx="47" />
+            <avatar_polygon idx="48" />
+            <avatar_polygon idx="49" />
+            <avatar_polygon idx="50" />
+            <avatar_polygon idx="72" />
+            <avatar_polygon idx="73" />
+            <avatar_polygon idx="78" />
+            <avatar_polygon idx="79" />
+            <avatar_polygon idx="80" />
+            <avatar_polygon idx="81" />
+            <avatar_polygon idx="82" />
+            <avatar_polygon idx="83" />
+            <avatar_polygon idx="84" />
+            <avatar_polygon idx="90" />
+            <avatar_polygon idx="98" />
+            <avatar_polygon idx="99" />
+            <avatar_polygon idx="100" />
+            <avatar_polygon idx="101" />
+            <avatar_polygon idx="102" />
+            <avatar_polygon idx="106" />
+            <avatar_polygon idx="107" />
+            <avatar_polygon idx="108" />
+            <avatar_polygon idx="109" />
+            <avatar_polygon idx="110" />
+            <avatar_polygon idx="112" />
+            <avatar_polygon idx="113" />
+            <avatar_polygon idx="114" />
+            <avatar_polygon idx="115" />
+            <avatar_polygon idx="116" />
+            <avatar_polygon idx="117" />
+            <avatar_polygon idx="118" />
+            <avatar_polygon idx="119" />
+            <avatar_polygon idx="120" />
+            <avatar_polygon idx="121" />
+            <avatar_polygon idx="122" />
+            <avatar_polygon idx="123" />
+            <avatar_polygon idx="124" />
+            <avatar_polygon idx="125" />
+            <avatar_polygon idx="126" />
+            <avatar_polygon idx="127" />
+            <avatar_polygon idx="128" />
+            <avatar_polygon idx="129" />
+            <avatar_polygon idx="130" />
+            <avatar_polygon idx="131" />
+            <avatar_polygon idx="132" />
+            <avatar_polygon idx="133" />
+            <avatar_polygon idx="134" />
+            <avatar_polygon idx="135" />
+            <avatar_polygon idx="136" />
+            <avatar_polygon idx="137" />
+            <avatar_polygon idx="138" />
+            <avatar_polygon idx="139" />
+            <avatar_polygon idx="140" />
+            <avatar_polygon idx="141" />
+            <avatar_polygon idx="142" />
+            <avatar_polygon idx="143" />
+            <avatar_polygon idx="144" />
+            <avatar_polygon idx="145" />
+            <avatar_polygon idx="146" />
+            <avatar_polygon idx="148" />
+            <avatar_polygon idx="149" />
+            <avatar_polygon idx="150" />
+            <avatar_polygon idx="151" />
+            <avatar_polygon idx="152" />
+            <avatar_polygon idx="153" />
+            <avatar_polygon idx="154" />
+            <avatar_polygon idx="155" />
+            <avatar_polygon idx="156" />
+            <avatar_polygon idx="157" />
+            <avatar_polygon idx="158" />
+            <avatar_polygon idx="159" />
+            <avatar_polygon idx="160" />
+            <avatar_polygon idx="161" />
+            <avatar_polygon idx="162" />
+            <avatar_polygon idx="163" />
+            <avatar_polygon idx="164" />
+            <avatar_polygon idx="165" />
+            <avatar_polygon idx="166" />
+            <avatar_polygon idx="167" />
+            <avatar_polygon idx="168" />
+            <avatar_polygon idx="169" />
+            <avatar_polygon idx="170" />
+            <avatar_polygon idx="171" />
+            <avatar_polygon idx="172" />
+            <avatar_polygon idx="173" />
+            <avatar_polygon idx="174" />
+            <avatar_polygon idx="175" />
+            <avatar_polygon idx="176" />
+            <avatar_polygon idx="177" />
+            <avatar_polygon idx="178" />
+            <avatar_polygon idx="199" />
+            <avatar_polygon idx="200" />
+            <avatar_polygon idx="201" />
+            <avatar_polygon idx="202" />
+            <avatar_polygon idx="203" />
+            <avatar_polygon idx="204" />
+            <avatar_polygon idx="205" />
+            <avatar_polygon idx="208" />
+            <avatar_polygon idx="209" />
+            <avatar_polygon idx="210" />
+            <avatar_polygon idx="211" />
+            <avatar_polygon idx="212" />
+            <avatar_polygon idx="213" />
+            <avatar_polygon idx="214" />
+            <avatar_polygon idx="226" />
+            <avatar_polygon idx="227" />
+            <avatar_polygon idx="228" />
+            <avatar_polygon idx="229" />
+            <avatar_polygon idx="305" />
+            <avatar_polygon idx="306" />
+            <avatar_polygon idx="307" />
+            <avatar_polygon idx="308" />
+            <avatar_polygon idx="309" />
+            <avatar_polygon idx="310" />
+            <avatar_polygon idx="311" />
+            <avatar_polygon idx="312" />
+            <avatar_polygon idx="313" />
+            <avatar_polygon idx="314" />
+            <avatar_polygon idx="315" />
+            <avatar_polygon idx="316" />
+            <avatar_polygon idx="317" />
+            <avatar_polygon idx="318" />
+            <avatar_polygon idx="319" />
+            <avatar_polygon idx="320" />
+            <avatar_polygon idx="321" />
+            <avatar_polygon idx="322" />
+            <avatar_polygon idx="324" />
+            <avatar_polygon idx="325" />
+            <avatar_polygon idx="326" />
+            <avatar_polygon idx="327" />
+            <avatar_polygon idx="328" />
+            <avatar_polygon idx="329" />
+            <avatar_polygon idx="330" />
+            <avatar_polygon idx="331" />
+            <avatar_polygon idx="332" />
+            <avatar_polygon idx="333" />
+            <avatar_polygon idx="334" />
+            <avatar_polygon idx="335" />
+            <avatar_polygon idx="336" />
+            <avatar_polygon idx="337" />
+            <avatar_polygon idx="338" />
+            <avatar_polygon idx="339" />
+            <avatar_polygon idx="340" />
+            <avatar_polygon idx="341" />
+            <avatar_polygon idx="342" />
+            <avatar_polygon idx="343" />
+            <avatar_polygon idx="344" />
+            <avatar_polygon idx="345" />
+            <avatar_polygon idx="346" />
+            <avatar_polygon idx="347" />
+            <avatar_polygon idx="348" />
+            <avatar_polygon idx="349" />
+            <avatar_polygon idx="350" />
+            <avatar_polygon idx="351" />
+            <avatar_polygon idx="352" />
+            <avatar_polygon idx="353" />
+            <avatar_polygon idx="355" />
+            <avatar_polygon idx="356" />
+            <avatar_polygon idx="358" />
+            <avatar_polygon idx="359" />
+            <avatar_polygon idx="360" />
+            <avatar_polygon idx="361" />
+            <avatar_polygon idx="362" />
+            <avatar_polygon idx="363" />
+            <avatar_polygon idx="364" />
+            <avatar_polygon idx="365" />
+            <avatar_polygon idx="366" />
+            <avatar_polygon idx="367" />
+            <avatar_polygon idx="368" />
+            <avatar_polygon idx="369" />
+            <avatar_polygon idx="370" />
+            <avatar_polygon idx="371" />
+            <avatar_polygon idx="372" />
+            <avatar_polygon idx="373" />
+            <avatar_polygon idx="374" />
+            <avatar_polygon idx="375" />
+            <avatar_polygon idx="376" />
+            <avatar_polygon idx="377" />
+            <avatar_polygon idx="378" />
+            <avatar_polygon idx="386" />
+            <avatar_polygon idx="387" />
+            <avatar_polygon idx="388" />
+            <avatar_polygon idx="389" />
+            <avatar_polygon idx="390" />
+            <avatar_polygon idx="391" />
+            <avatar_polygon idx="392" />
+            <avatar_polygon idx="393" />
+            <avatar_polygon idx="394" />
+            <avatar_polygon idx="395" />
+            <avatar_polygon idx="396" />
+            <avatar_polygon idx="397" />
+            <avatar_polygon idx="398" />
+            <avatar_polygon idx="399" />
+            <avatar_polygon idx="400" />
+            <avatar_polygon idx="401" />
+            <avatar_polygon idx="403" />
+            <avatar_polygon idx="404" />
+            <avatar_polygon idx="405" />
+            <avatar_polygon idx="406" />
+            <avatar_polygon idx="407" />
+            <avatar_polygon idx="408" />
+            <avatar_polygon idx="409" />
+            <avatar_polygon idx="410" />
+            <avatar_polygon idx="411" />
+            <avatar_polygon idx="413" />
+            <avatar_polygon idx="414" />
+            <avatar_polygon idx="416" />
+            <avatar_polygon idx="419" />
+            <avatar_polygon idx="420" />
+            <avatar_polygon idx="421" />
+            <avatar_polygon idx="422" />
+            <avatar_polygon idx="423" />
+            <avatar_polygon idx="424" />
+            <avatar_polygon idx="425" />
+            <avatar_polygon idx="426" />
+            <avatar_polygon idx="427" />
+            <avatar_polygon idx="428" />
+            <avatar_polygon idx="429" />
+            <avatar_polygon idx="430" />
+            <avatar_polygon idx="432" />
+            <avatar_polygon idx="433" />
+            <avatar_polygon idx="434" />
+            <avatar_polygon idx="435" />
+            <avatar_polygon idx="436" />
+            <avatar_polygon idx="437" />
+            <avatar_polygon idx="438" />
+            <avatar_polygon idx="439" />
+            <avatar_polygon idx="440" />
+            <avatar_polygon idx="441" />
+            <avatar_polygon idx="442" />
+            <avatar_polygon idx="443" />
+            <avatar_polygon idx="444" />
+            <avatar_polygon idx="445" />
+            <avatar_polygon idx="446" />
+            <avatar_polygon idx="447" />
+            <avatar_polygon idx="448" />
+            <avatar_polygon idx="449" />
+            <avatar_polygon idx="450" />
+            <avatar_polygon idx="451" />
+            <avatar_polygon idx="452" />
+            <avatar_polygon idx="453" />
+            <avatar_polygon idx="454" />
+            <avatar_polygon idx="455" />
+            <avatar_polygon idx="456" />
+            <avatar_polygon idx="457" />
+            <avatar_polygon idx="458" />
+            <avatar_polygon idx="459" />
+            <avatar_polygon idx="460" />
+            <avatar_polygon idx="461" />
+            <avatar_polygon idx="462" />
+            <avatar_polygon idx="463" />
+            <avatar_polygon idx="464" />
+            <avatar_polygon idx="465" />
+            <avatar_polygon idx="466" />
+            <avatar_polygon idx="467" />
+            <avatar_polygon idx="468" />
+            <avatar_polygon idx="469" />
+            <avatar_polygon idx="470" />
+            <avatar_polygon idx="471" />
+            <avatar_polygon idx="472" />
+            <avatar_polygon idx="473" />
+            <avatar_polygon idx="474" />
+            <avatar_polygon idx="475" />
+            <avatar_polygon idx="476" />
+            <avatar_polygon idx="477" />
+            <avatar_polygon idx="478" />
+            <avatar_polygon idx="479" />
+            <avatar_polygon idx="481" />
+            <avatar_polygon idx="482" />
+            <avatar_polygon idx="483" />
+            <avatar_polygon idx="484" />
+            <avatar_polygon idx="485" />
+            <avatar_polygon idx="486" />
+            <avatar_polygon idx="487" />
+            <avatar_polygon idx="488" />
+            <avatar_polygon idx="489" />
+            <avatar_polygon idx="490" />
+            <avatar_polygon idx="491" />
+            <avatar_polygon idx="492" />
+            <avatar_polygon idx="493" />
+            <avatar_polygon idx="494" />
+            <avatar_polygon idx="495" />
+            <avatar_polygon idx="496" />
+            <avatar_polygon idx="497" />
+            <avatar_polygon idx="498" />
+            <avatar_polygon idx="499" />
+            <avatar_polygon idx="500" />
+            <avatar_polygon idx="501" />
+            <avatar_polygon idx="502" />
+            <avatar_polygon idx="503" />
+            <avatar_polygon idx="504" />
+            <avatar_polygon idx="505" />
+            <avatar_polygon idx="506" />
+            <avatar_polygon idx="507" />
+            <avatar_polygon idx="508" />
+            <avatar_polygon idx="509" />
+            <avatar_polygon idx="510" />
+            <avatar_polygon idx="511" />
+            <avatar_polygon idx="512" />
+            <avatar_polygon idx="513" />
+            <avatar_polygon idx="514" />
+            <avatar_polygon idx="515" />
+            <avatar_polygon idx="516" />
+            <avatar_polygon idx="518" />
+            <avatar_polygon idx="519" />
+            <avatar_polygon idx="521" />
+            <avatar_polygon idx="524" />
+            <avatar_polygon idx="525" />
+            <avatar_polygon idx="526" />
+            <avatar_polygon idx="527" />
+            <avatar_polygon idx="528" />
+            <avatar_polygon idx="529" />
+            <avatar_polygon idx="530" />
+            <avatar_polygon idx="531" />
+            <avatar_polygon idx="532" />
+            <avatar_polygon idx="533" />
+            <avatar_polygon idx="534" />
+            <avatar_polygon idx="535" />
+            <avatar_polygon idx="1182" />
+            <avatar_polygon idx="1183" />
+            <avatar_polygon idx="1184" />
+            <avatar_polygon idx="1185" />
+            <avatar_polygon idx="1187" />
+            <avatar_polygon idx="1188" />
+            <avatar_polygon idx="1189" />
+            <avatar_polygon idx="1190" />
+            <avatar_polygon idx="1191" />
+            <avatar_polygon idx="1192" />
+            <avatar_polygon idx="1193" />
+            <avatar_polygon idx="1194" />
+            <avatar_polygon idx="1195" />
+            <avatar_polygon idx="1197" />
+            <avatar_polygon idx="1198" />
+            <avatar_polygon idx="1199" />
+            <avatar_polygon idx="1200" />
+            <avatar_polygon idx="1201" />
+            <avatar_polygon idx="1202" />
+            <avatar_polygon idx="1203" />
+            <avatar_polygon idx="1204" />
+            <avatar_polygon idx="1205" />
+            <avatar_polygon idx="1206" />
+            <avatar_polygon idx="1207" />
+            <avatar_polygon idx="1209" />
+            <avatar_polygon idx="1210" />
+            <avatar_polygon idx="1212" />
+            <avatar_polygon idx="1214" />
+            <avatar_polygon idx="1215" />
+            <avatar_polygon idx="1216" />
+            <avatar_polygon idx="1217" />
+            <avatar_polygon idx="1218" />
+            <avatar_polygon idx="1219" />
+            <avatar_polygon idx="1220" />
+            <avatar_polygon idx="1221" />
+            <avatar_polygon idx="1222" />
+            <avatar_polygon idx="1223" />
+            <avatar_polygon idx="1224" />
+            <avatar_polygon idx="1232" />
+            <avatar_polygon idx="1235" />
+            <avatar_polygon idx="1236" />
+            <avatar_polygon idx="1237" />
+            <avatar_polygon idx="1238" />
+            <avatar_polygon idx="1255" />
+            <avatar_polygon idx="1256" />
+            <avatar_polygon idx="1257" />
+            <avatar_polygon idx="1258" />
+            <avatar_polygon idx="1259" />
+            <avatar_polygon idx="1267" />
+            <avatar_polygon idx="1268" />
+            <avatar_polygon idx="1269" />
+            <avatar_polygon idx="1270" />
+            <avatar_polygon idx="1271" />
+            <avatar_polygon idx="1272" />
+            <avatar_polygon idx="1273" />
+            <avatar_polygon idx="1274" />
+            <avatar_polygon idx="1275" />
+            <avatar_polygon idx="1276" />
+            <avatar_polygon idx="1279" />
+            <avatar_polygon idx="1280" />
+            <avatar_polygon idx="1285" />
+            <avatar_polygon idx="1286" />
+            <avatar_polygon idx="1289" />
+            <avatar_polygon idx="1290" />
+            <avatar_polygon idx="1295" />
+            <avatar_polygon idx="1298" />
+            <avatar_polygon idx="1300" />
+            <avatar_polygon idx="1303" />
+            <avatar_polygon idx="1304" />
+            <avatar_polygon idx="1305" />
+            <avatar_polygon idx="1316" />
+            <avatar_polygon idx="1317" />
+            <avatar_polygon idx="1321" />
+            <avatar_polygon idx="1322" />
+            <avatar_polygon idx="1324" />
+            <avatar_polygon idx="1325" />
+            <avatar_polygon idx="1326" />
+            <avatar_polygon idx="1328" />
+            <avatar_polygon idx="1329" />
+            <avatar_polygon idx="1330" />
+            <avatar_polygon idx="1331" />
+            <avatar_polygon idx="1332" />
+            <avatar_polygon idx="1333" />
+            <avatar_polygon idx="1334" />
+            <avatar_polygon idx="1335" />
+            <avatar_polygon idx="1336" />
+            <avatar_polygon idx="1337" />
+            <avatar_polygon idx="1338" />
+            <avatar_polygon idx="1339" />
+            <avatar_polygon idx="1340" />
+            <avatar_polygon idx="1341" />
+            <avatar_polygon idx="1342" />
+            <avatar_polygon idx="1343" />
+            <avatar_polygon idx="1344" />
+            <avatar_polygon idx="1345" />
+            <avatar_polygon idx="1347" />
+            <avatar_polygon idx="1348" />
+            <avatar_polygon idx="1349" />
+            <avatar_polygon idx="1350" />
+            <avatar_polygon idx="1351" />
+            <avatar_polygon idx="1352" />
+            <avatar_polygon idx="1353" />
+            <avatar_polygon idx="1354" />
+            <avatar_polygon idx="1356" />
+            <avatar_polygon idx="1367" />
+            <avatar_polygon idx="1368" />
+            <avatar_polygon idx="1369" />
+            <avatar_polygon idx="1370" />
+            <avatar_polygon idx="1371" />
+            <avatar_polygon idx="1372" />
+            <avatar_polygon idx="1373" />
+            <avatar_polygon idx="1374" />
+            <avatar_polygon idx="1375" />
+            <avatar_polygon idx="1376" />
+            <avatar_polygon idx="1416" />
+            <avatar_polygon idx="1417" />
+            <avatar_polygon idx="1418" />
+            <avatar_polygon idx="1420" />
+            <avatar_polygon idx="1421" />
+            <avatar_polygon idx="1426" />
+            <avatar_polygon idx="1428" />
+            <avatar_polygon idx="1429" />
+            <avatar_polygon idx="1430" />
+            <avatar_polygon idx="1431" />
+            <avatar_polygon idx="1432" />
+            <avatar_polygon idx="1434" />
+            <avatar_polygon idx="1435" />
+            <avatar_polygon idx="1436" />
+            <avatar_polygon idx="1437" />
+            <avatar_polygon idx="1438" />
+            <avatar_polygon idx="1440" />
+            <avatar_polygon idx="1441" />
+            <avatar_polygon idx="1442" />
+            <avatar_polygon idx="1443" />
+            <avatar_polygon idx="1444" />
+            <avatar_polygon idx="1446" />
+            <avatar_polygon idx="1448" />
+            <avatar_polygon idx="1449" />
+            <avatar_polygon idx="1450" />
+            <avatar_polygon idx="1451" />
+            <avatar_polygon idx="1452" />
+            <avatar_polygon idx="1454" />
+            <avatar_polygon idx="1455" />
+            <avatar_polygon idx="1456" />
+            <avatar_polygon idx="1457" />
+            <avatar_polygon idx="1458" />
+            <avatar_polygon idx="1459" />
+            <avatar_polygon idx="1460" />
+            <avatar_polygon idx="1461" />
+            <avatar_polygon idx="1462" />
+            <avatar_polygon idx="1464" />
+            <avatar_polygon idx="1465" />
+            <avatar_polygon idx="1466" />
+            <avatar_polygon idx="1467" />
+            <avatar_polygon idx="1468" />
+            <avatar_polygon idx="1469" />
+            <avatar_polygon idx="1470" />
+            <avatar_polygon idx="1471" />
+            <avatar_polygon idx="1472" />
+            <avatar_polygon idx="1473" />
+            <avatar_polygon idx="1474" />
+            <avatar_polygon idx="1475" />
+            <avatar_polygon idx="1476" />
+            <avatar_polygon idx="1477" />
+            <avatar_polygon idx="1478" />
+            <avatar_polygon idx="1491" />
+            <avatar_polygon idx="1500" />
+            <avatar_polygon idx="1501" />
+            <avatar_polygon idx="1506" />
+            <avatar_polygon idx="1507" />
+            <avatar_polygon idx="1508" />
+            <avatar_polygon idx="1509" />
+            <avatar_polygon idx="1510" />
+            <avatar_polygon idx="1511" />
+            <avatar_polygon idx="1528" />
+            <avatar_polygon idx="1529" />
+            <avatar_polygon idx="1530" />
+            <avatar_polygon idx="1531" />
+            <avatar_polygon idx="1532" />
+            <avatar_polygon idx="1536" />
+            <avatar_polygon idx="1537" />
+            <avatar_polygon idx="1538" />
+            <avatar_polygon idx="1539" />
+            <avatar_polygon idx="1540" />
+            <avatar_polygon idx="1541" />
+            <avatar_polygon idx="1542" />
+            <avatar_polygon idx="1544" />
+            <avatar_polygon idx="1545" />
+            <avatar_polygon idx="1546" />
+            <avatar_polygon idx="1547" />
+            <avatar_polygon idx="1548" />
+            <avatar_polygon idx="1549" />
+            <avatar_polygon idx="1550" />
+            <avatar_polygon idx="1551" />
+            <avatar_polygon idx="1552" />
+            <avatar_polygon idx="1553" />
+            <avatar_polygon idx="1554" />
+            <avatar_polygon idx="1555" />
+            <avatar_polygon idx="1556" />
+            <avatar_polygon idx="1557" />
+            <avatar_polygon idx="1558" />
+            <avatar_polygon idx="1559" />
+            <avatar_polygon idx="1560" />
+            <avatar_polygon idx="1561" />
+            <avatar_polygon idx="1562" />
+            <avatar_polygon idx="1563" />
+            <avatar_polygon idx="1564" />
+            <avatar_polygon idx="1565" />
+            <avatar_polygon idx="1566" />
+            <avatar_polygon idx="1567" />
+            <avatar_polygon idx="1568" />
+            <avatar_polygon idx="1569" />
+            <avatar_polygon idx="1570" />
+            <avatar_polygon idx="1571" />
+            <avatar_polygon idx="1572" />
+            <avatar_polygon idx="1573" />
+            <avatar_polygon idx="1574" />
+            <avatar_polygon idx="1575" />
+            <avatar_polygon idx="1576" />
+            <avatar_polygon idx="1577" />
+            <avatar_polygon idx="1579" />
+            <avatar_polygon idx="1580" />
+            <avatar_polygon idx="1581" />
+            <avatar_polygon idx="1582" />
+            <avatar_polygon idx="1583" />
+            <avatar_polygon idx="1584" />
+            <avatar_polygon idx="1585" />
+            <avatar_polygon idx="1586" />
+            <avatar_polygon idx="1587" />
+            <avatar_polygon idx="1588" />
+            <avatar_polygon idx="1589" />
+            <avatar_polygon idx="1590" />
+            <avatar_polygon idx="1591" />
+            <avatar_polygon idx="1592" />
+            <avatar_polygon idx="1593" />
+            <avatar_polygon idx="1594" />
+            <avatar_polygon idx="1595" />
+            <avatar_polygon idx="1596" />
+            <avatar_polygon idx="1597" />
+            <avatar_polygon idx="1598" />
+            <avatar_polygon idx="1599" />
+            <avatar_polygon idx="1600" />
+            <avatar_polygon idx="1601" />
+            <avatar_polygon idx="1602" />
+            <avatar_polygon idx="1603" />
+            <avatar_polygon idx="1604" />
+            <avatar_polygon idx="1605" />
+            <avatar_polygon idx="1606" />
+            <avatar_polygon idx="1607" />
+            <avatar_polygon idx="1608" />
+            <avatar_polygon idx="1629" />
+            <avatar_polygon idx="1630" />
+            <avatar_polygon idx="1631" />
+            <avatar_polygon idx="1632" />
+            <avatar_polygon idx="1635" />
+            <avatar_polygon idx="1636" />
+            <avatar_polygon idx="1637" />
+            <avatar_polygon idx="1638" />
+            <avatar_polygon idx="1648" />
+            <avatar_polygon idx="1649" />
+            <avatar_polygon idx="1650" />
+            <avatar_polygon idx="1726" />
+            <avatar_polygon idx="1727" />
+            <avatar_polygon idx="1728" />
+            <avatar_polygon idx="1729" />
+            <avatar_polygon idx="1730" />
+            <avatar_polygon idx="1731" />
+            <avatar_polygon idx="1732" />
+            <avatar_polygon idx="1733" />
+            <avatar_polygon idx="1734" />
+            <avatar_polygon idx="1735" />
+            <avatar_polygon idx="1736" />
+            <avatar_polygon idx="1737" />
+            <avatar_polygon idx="1738" />
+            <avatar_polygon idx="1739" />
+            <avatar_polygon idx="1740" />
+            <avatar_polygon idx="1741" />
+            <avatar_polygon idx="1742" />
+            <avatar_polygon idx="1743" />
+            <avatar_polygon idx="1745" />
+            <avatar_polygon idx="1746" />
+            <avatar_polygon idx="1747" />
+            <avatar_polygon idx="1748" />
+            <avatar_polygon idx="1749" />
+            <avatar_polygon idx="1750" />
+            <avatar_polygon idx="1751" />
+            <avatar_polygon idx="1752" />
+            <avatar_polygon idx="1753" />
+            <avatar_polygon idx="1754" />
+            <avatar_polygon idx="1755" />
+            <avatar_polygon idx="1756" />
+            <avatar_polygon idx="1757" />
+            <avatar_polygon idx="1758" />
+            <avatar_polygon idx="1759" />
+            <avatar_polygon idx="1760" />
+            <avatar_polygon idx="1761" />
+            <avatar_polygon idx="1762" />
+            <avatar_polygon idx="1763" />
+            <avatar_polygon idx="1764" />
+            <avatar_polygon idx="1765" />
+            <avatar_polygon idx="1766" />
+            <avatar_polygon idx="1767" />
+            <avatar_polygon idx="1768" />
+            <avatar_polygon idx="1769" />
+            <avatar_polygon idx="1770" />
+            <avatar_polygon idx="1771" />
+            <avatar_polygon idx="1773" />
+            <avatar_polygon idx="1775" />
+            <avatar_polygon idx="1776" />
+            <avatar_polygon idx="1777" />
+            <avatar_polygon idx="1778" />
+            <avatar_polygon idx="1779" />
+            <avatar_polygon idx="1780" />
+            <avatar_polygon idx="1781" />
+            <avatar_polygon idx="1782" />
+            <avatar_polygon idx="1783" />
+            <avatar_polygon idx="1784" />
+            <avatar_polygon idx="1785" />
+            <avatar_polygon idx="1786" />
+            <avatar_polygon idx="1787" />
+            <avatar_polygon idx="1788" />
+            <avatar_polygon idx="1789" />
+            <avatar_polygon idx="1790" />
+            <avatar_polygon idx="1791" />
+            <avatar_polygon idx="1792" />
+            <avatar_polygon idx="1793" />
+            <avatar_polygon idx="1794" />
+            <avatar_polygon idx="1795" />
+            <avatar_polygon idx="1802" />
+            <avatar_polygon idx="1803" />
+            <avatar_polygon idx="1804" />
+            <avatar_polygon idx="1805" />
+            <avatar_polygon idx="1806" />
+            <avatar_polygon idx="1807" />
+            <avatar_polygon idx="1808" />
+            <avatar_polygon idx="1809" />
+            <avatar_polygon idx="1810" />
+            <avatar_polygon idx="1811" />
+            <avatar_polygon idx="1812" />
+            <avatar_polygon idx="1813" />
+            <avatar_polygon idx="1814" />
+            <avatar_polygon idx="1815" />
+            <avatar_polygon idx="1816" />
+            <avatar_polygon idx="1817" />
+            <avatar_polygon idx="1818" />
+            <avatar_polygon idx="1820" />
+            <avatar_polygon idx="1822" />
+            <avatar_polygon idx="1823" />
+            <avatar_polygon idx="1824" />
+            <avatar_polygon idx="1825" />
+            <avatar_polygon idx="1826" />
+            <avatar_polygon idx="1827" />
+            <avatar_polygon idx="1828" />
+            <avatar_polygon idx="1829" />
+            <avatar_polygon idx="1831" />
+            <avatar_polygon idx="1834" />
+            <avatar_polygon idx="1836" />
+            <avatar_polygon idx="1837" />
+            <avatar_polygon idx="1838" />
+            <avatar_polygon idx="1840" />
+            <avatar_polygon idx="1841" />
+            <avatar_polygon idx="1842" />
+            <avatar_polygon idx="1843" />
+            <avatar_polygon idx="1844" />
+            <avatar_polygon idx="1845" />
+            <avatar_polygon idx="1846" />
+            <avatar_polygon idx="1847" />
+            <avatar_polygon idx="1848" />
+            <avatar_polygon idx="1849" />
+            <avatar_polygon idx="1850" />
+            <avatar_polygon idx="1851" />
+            <avatar_polygon idx="1852" />
+            <avatar_polygon idx="1854" />
+            <avatar_polygon idx="1855" />
+            <avatar_polygon idx="1856" />
+            <avatar_polygon idx="1857" />
+            <avatar_polygon idx="1858" />
+            <avatar_polygon idx="1859" />
+            <avatar_polygon idx="1860" />
+            <avatar_polygon idx="1861" />
+            <avatar_polygon idx="1862" />
+            <avatar_polygon idx="1863" />
+            <avatar_polygon idx="1864" />
+            <avatar_polygon idx="1865" />
+            <avatar_polygon idx="1866" />
+            <avatar_polygon idx="1867" />
+            <avatar_polygon idx="1868" />
+            <avatar_polygon idx="1869" />
+            <avatar_polygon idx="1870" />
+            <avatar_polygon idx="1871" />
+            <avatar_polygon idx="1872" />
+            <avatar_polygon idx="1873" />
+            <avatar_polygon idx="1874" />
+            <avatar_polygon idx="1875" />
+            <avatar_polygon idx="1876" />
+            <avatar_polygon idx="1877" />
+            <avatar_polygon idx="1878" />
+            <avatar_polygon idx="1879" />
+            <avatar_polygon idx="1880" />
+            <avatar_polygon idx="1881" />
+            <avatar_polygon idx="1882" />
+            <avatar_polygon idx="1883" />
+            <avatar_polygon idx="1884" />
+            <avatar_polygon idx="1885" />
+            <avatar_polygon idx="1886" />
+            <avatar_polygon idx="1887" />
+            <avatar_polygon idx="1888" />
+            <avatar_polygon idx="1889" />
+            <avatar_polygon idx="1890" />
+            <avatar_polygon idx="1891" />
+            <avatar_polygon idx="1892" />
+            <avatar_polygon idx="1893" />
+            <avatar_polygon idx="1894" />
+            <avatar_polygon idx="1895" />
+            <avatar_polygon idx="1896" />
+            <avatar_polygon idx="1897" />
+            <avatar_polygon idx="1898" />
+            <avatar_polygon idx="1899" />
+            <avatar_polygon idx="1900" />
+            <avatar_polygon idx="1902" />
+            <avatar_polygon idx="1903" />
+            <avatar_polygon idx="1904" />
+            <avatar_polygon idx="1905" />
+            <avatar_polygon idx="1906" />
+            <avatar_polygon idx="1907" />
+            <avatar_polygon idx="1908" />
+            <avatar_polygon idx="1909" />
+            <avatar_polygon idx="1910" />
+            <avatar_polygon idx="1911" />
+            <avatar_polygon idx="1912" />
+            <avatar_polygon idx="1913" />
+            <avatar_polygon idx="1914" />
+            <avatar_polygon idx="1915" />
+            <avatar_polygon idx="1916" />
+            <avatar_polygon idx="1917" />
+            <avatar_polygon idx="1918" />
+            <avatar_polygon idx="1919" />
+            <avatar_polygon idx="1920" />
+            <avatar_polygon idx="1921" />
+            <avatar_polygon idx="1922" />
+            <avatar_polygon idx="1923" />
+            <avatar_polygon idx="1924" />
+            <avatar_polygon idx="1925" />
+            <avatar_polygon idx="1926" />
+            <avatar_polygon idx="1927" />
+            <avatar_polygon idx="1928" />
+            <avatar_polygon idx="1929" />
+            <avatar_polygon idx="1930" />
+            <avatar_polygon idx="1931" />
+            <avatar_polygon idx="1932" />
+            <avatar_polygon idx="1933" />
+            <avatar_polygon idx="1934" />
+            <avatar_polygon idx="1935" />
+            <avatar_polygon idx="1936" />
+            <avatar_polygon idx="1937" />
+            <avatar_polygon idx="1939" />
+            <avatar_polygon idx="1940" />
+            <avatar_polygon idx="1941" />
+            <avatar_polygon idx="1944" />
+            <avatar_polygon idx="1945" />
+            <avatar_polygon idx="1946" />
+            <avatar_polygon idx="1947" />
+            <avatar_polygon idx="1948" />
+            <avatar_polygon idx="1949" />
+            <avatar_polygon idx="1950" />
+            <avatar_polygon idx="1951" />
+            <avatar_polygon idx="1952" />
+            <avatar_polygon idx="1953" />
+            <avatar_polygon idx="1954" />
+            <avatar_polygon idx="2602" />
+            <avatar_polygon idx="2603" />
+            <avatar_polygon idx="2604" />
+            <avatar_polygon idx="2605" />
+            <avatar_polygon idx="2606" />
+            <avatar_polygon idx="2607" />
+            <avatar_polygon idx="2609" />
+            <avatar_polygon idx="2610" />
+            <avatar_polygon idx="2611" />
+            <avatar_polygon idx="2612" />
+            <avatar_polygon idx="2613" />
+            <avatar_polygon idx="2615" />
+            <avatar_polygon idx="2616" />
+            <avatar_polygon idx="2617" />
+            <avatar_polygon idx="2618" />
+            <avatar_polygon idx="2619" />
+            <avatar_polygon idx="2620" />
+            <avatar_polygon idx="2621" />
+            <avatar_polygon idx="2622" />
+            <avatar_polygon idx="2623" />
+            <avatar_polygon idx="2624" />
+            <avatar_polygon idx="2625" />
+            <avatar_polygon idx="2626" />
+            <avatar_polygon idx="2627" />
+            <avatar_polygon idx="2628" />
+            <avatar_polygon idx="2629" />
+            <avatar_polygon idx="2630" />
+            <avatar_polygon idx="2632" />
+            <avatar_polygon idx="2633" />
+            <avatar_polygon idx="2634" />
+            <avatar_polygon idx="2636" />
+            <avatar_polygon idx="2637" />
+            <avatar_polygon idx="2638" />
+            <avatar_polygon idx="2639" />
+            <avatar_polygon idx="2640" />
+            <avatar_polygon idx="2641" />
+            <avatar_polygon idx="2642" />
+            <avatar_polygon idx="2643" />
+            <avatar_polygon idx="2644" />
+            <avatar_polygon idx="2645" />
+            <avatar_polygon idx="2653" />
+            <avatar_polygon idx="2654" />
+            <avatar_polygon idx="2671" />
+            <avatar_polygon idx="2672" />
+            <avatar_polygon idx="2673" />
+            <avatar_polygon idx="2674" />
+            <avatar_polygon idx="2682" />
+            <avatar_polygon idx="2683" />
+            <avatar_polygon idx="2684" />
+            <avatar_polygon idx="2685" />
+            <avatar_polygon idx="2686" />
+            <avatar_polygon idx="2687" />
+            <avatar_polygon idx="2688" />
+            <avatar_polygon idx="2689" />
+            <avatar_polygon idx="2690" />
+            <avatar_polygon idx="2691" />
+            <avatar_polygon idx="2694" />
+            <avatar_polygon idx="2695" />
+            <avatar_polygon idx="2700" />
+            <avatar_polygon idx="2702" />
+            <avatar_polygon idx="2715" />
+            <avatar_polygon idx="2716" />
+            <avatar_polygon idx="2719" />
+            <avatar_polygon idx="2721" />
+            <avatar_polygon idx="2722" />
+            <avatar_polygon idx="2723" />
+            <avatar_polygon idx="2724" />
+            <avatar_polygon idx="2726" />
+            <avatar_polygon idx="2728" />
+            <avatar_polygon idx="2729" />
+            <avatar_polygon idx="2730" />
+            <avatar_polygon idx="2731" />
+            <avatar_polygon idx="2732" />
+            <avatar_polygon idx="2733" />
+            <avatar_polygon idx="2734" />
+            <avatar_polygon idx="2735" />
+            <avatar_polygon idx="2736" />
+            <avatar_polygon idx="2737" />
+            <avatar_polygon idx="2738" />
+            <avatar_polygon idx="2739" />
+            <avatar_polygon idx="2740" />
+            <avatar_polygon idx="2741" />
+            <avatar_polygon idx="2742" />
+            <avatar_polygon idx="2743" />
+            <avatar_polygon idx="2744" />
+            <avatar_polygon idx="2745" />
+            <avatar_polygon idx="2746" />
+            <avatar_polygon idx="2748" />
+            <avatar_polygon idx="2749" />
+            <avatar_polygon idx="2750" />
+            <avatar_polygon idx="2751" />
+            <avatar_polygon idx="2752" />
+            <avatar_polygon idx="2753" />
+            <avatar_polygon idx="2754" />
+            <avatar_polygon idx="2766" />
+            <avatar_polygon idx="2767" />
+            <avatar_polygon idx="2768" />
+            <avatar_polygon idx="2769" />
+            <avatar_polygon idx="2770" />
+            <avatar_polygon idx="2771" />
+            <avatar_polygon idx="2772" />
+            <avatar_polygon idx="2773" />
+            <avatar_polygon idx="2774" />
+            <avatar_polygon idx="2775" />
+            <avatar_polygon idx="2811" />
+            <avatar_polygon idx="2812" />
+            <avatar_polygon idx="2813" />
+            <avatar_polygon idx="2815" />
+        </avatar>
+    </attachment>
+    <attachment>
+        <name value="Male_hiphop_trousers.xml" />
+        <mesh name="local://Male_hiphop_trousers.mesh" linkskeleton="1" />
+        <material name="local://Male_hiphop_trousers.material" />
+        <category name="Bottom">
+            <bone name="None" />
+        </category>
+        <avatar name="Jack.mesh">
+            <bone name="None" offset="0 0 0" rotation="1 0 0 0" scale="1 1 1" />
+            <avatar_polygon idx="51" />
+            <avatar_polygon idx="52" />
+            <avatar_polygon idx="53" />
+            <avatar_polygon idx="54" />
+            <avatar_polygon idx="55" />
+            <avatar_polygon idx="56" />
+            <avatar_polygon idx="57" />
+            <avatar_polygon idx="58" />
+            <avatar_polygon idx="67" />
+            <avatar_polygon idx="68" />
+            <avatar_polygon idx="69" />
+            <avatar_polygon idx="70" />
+            <avatar_polygon idx="71" />
+            <avatar_polygon idx="74" />
+            <avatar_polygon idx="75" />
+            <avatar_polygon idx="76" />
+            <avatar_polygon idx="77" />
+            <avatar_polygon idx="103" />
+            <avatar_polygon idx="104" />
+            <avatar_polygon idx="219" />
+            <avatar_polygon idx="220" />
+            <avatar_polygon idx="221" />
+            <avatar_polygon idx="222" />
+            <avatar_polygon idx="223" />
+            <avatar_polygon idx="224" />
+            <avatar_polygon idx="225" />
+            <avatar_polygon idx="230" />
+            <avatar_polygon idx="231" />
+            <avatar_polygon idx="232" />
+            <avatar_polygon idx="380" />
+            <avatar_polygon idx="381" />
+            <avatar_polygon idx="383" />
+            <avatar_polygon idx="580" />
+            <avatar_polygon idx="581" />
+            <avatar_polygon idx="582" />
+            <avatar_polygon idx="583" />
+            <avatar_polygon idx="584" />
+            <avatar_polygon idx="585" />
+            <avatar_polygon idx="586" />
+            <avatar_polygon idx="587" />
+            <avatar_polygon idx="588" />
+            <avatar_polygon idx="589" />
+            <avatar_polygon idx="590" />
+            <avatar_polygon idx="591" />
+            <avatar_polygon idx="592" />
+            <avatar_polygon idx="593" />
+            <avatar_polygon idx="594" />
+            <avatar_polygon idx="596" />
+            <avatar_polygon idx="597" />
+            <avatar_polygon idx="598" />
+            <avatar_polygon idx="599" />
+            <avatar_polygon idx="600" />
+            <avatar_polygon idx="601" />
+            <avatar_polygon idx="602" />
+            <avatar_polygon idx="604" />
+            <avatar_polygon idx="605" />
+            <avatar_polygon idx="606" />
+            <avatar_polygon idx="607" />
+            <avatar_polygon idx="608" />
+            <avatar_polygon idx="609" />
+            <avatar_polygon idx="610" />
+            <avatar_polygon idx="611" />
+            <avatar_polygon idx="612" />
+            <avatar_polygon idx="613" />
+            <avatar_polygon idx="614" />
+            <avatar_polygon idx="615" />
+            <avatar_polygon idx="616" />
+            <avatar_polygon idx="617" />
+            <avatar_polygon idx="618" />
+            <avatar_polygon idx="620" />
+            <avatar_polygon idx="621" />
+            <avatar_polygon idx="622" />
+            <avatar_polygon idx="623" />
+            <avatar_polygon idx="624" />
+            <avatar_polygon idx="625" />
+            <avatar_polygon idx="626" />
+            <avatar_polygon idx="627" />
+            <avatar_polygon idx="628" />
+            <avatar_polygon idx="629" />
+            <avatar_polygon idx="631" />
+            <avatar_polygon idx="632" />
+            <avatar_polygon idx="634" />
+            <avatar_polygon idx="635" />
+            <avatar_polygon idx="636" />
+            <avatar_polygon idx="637" />
+            <avatar_polygon idx="638" />
+            <avatar_polygon idx="639" />
+            <avatar_polygon idx="640" />
+            <avatar_polygon idx="641" />
+            <avatar_polygon idx="642" />
+            <avatar_polygon idx="643" />
+            <avatar_polygon idx="644" />
+            <avatar_polygon idx="645" />
+            <avatar_polygon idx="646" />
+            <avatar_polygon idx="648" />
+            <avatar_polygon idx="649" />
+            <avatar_polygon idx="650" />
+            <avatar_polygon idx="651" />
+            <avatar_polygon idx="652" />
+            <avatar_polygon idx="654" />
+            <avatar_polygon idx="655" />
+            <avatar_polygon idx="657" />
+            <avatar_polygon idx="661" />
+            <avatar_polygon idx="663" />
+            <avatar_polygon idx="673" />
+            <avatar_polygon idx="674" />
+            <avatar_polygon idx="679" />
+            <avatar_polygon idx="757" />
+            <avatar_polygon idx="1234" />
+            <avatar_polygon idx="1261" />
+            <avatar_polygon idx="1262" />
+            <avatar_polygon idx="1263" />
+            <avatar_polygon idx="1264" />
+            <avatar_polygon idx="1265" />
+            <avatar_polygon idx="1266" />
+            <avatar_polygon idx="1281" />
+            <avatar_polygon idx="1283" />
+            <avatar_polygon idx="1291" />
+            <avatar_polygon idx="1292" />
+            <avatar_polygon idx="1293" />
+            <avatar_polygon idx="1294" />
+            <avatar_polygon idx="1296" />
+            <avatar_polygon idx="1318" />
+            <avatar_polygon idx="1359" />
+            <avatar_polygon idx="1360" />
+            <avatar_polygon idx="1361" />
+            <avatar_polygon idx="1362" />
+            <avatar_polygon idx="1404" />
+            <avatar_polygon idx="1405" />
+            <avatar_polygon idx="1423" />
+            <avatar_polygon idx="1479" />
+            <avatar_polygon idx="1480" />
+            <avatar_polygon idx="1481" />
+            <avatar_polygon idx="1482" />
+            <avatar_polygon idx="1483" />
+            <avatar_polygon idx="1484" />
+            <avatar_polygon idx="1485" />
+            <avatar_polygon idx="1496" />
+            <avatar_polygon idx="1497" />
+            <avatar_polygon idx="1498" />
+            <avatar_polygon idx="1499" />
+            <avatar_polygon idx="1502" />
+            <avatar_polygon idx="1503" />
+            <avatar_polygon idx="1504" />
+            <avatar_polygon idx="1534" />
+            <avatar_polygon idx="1535" />
+            <avatar_polygon idx="1643" />
+            <avatar_polygon idx="1644" />
+            <avatar_polygon idx="1645" />
+            <avatar_polygon idx="1646" />
+            <avatar_polygon idx="1647" />
+            <avatar_polygon idx="1651" />
+            <avatar_polygon idx="1652" />
+            <avatar_polygon idx="1653" />
+            <avatar_polygon idx="1798" />
+            <avatar_polygon idx="1799" />
+            <avatar_polygon idx="1801" />
+            <avatar_polygon idx="2000" />
+            <avatar_polygon idx="2001" />
+            <avatar_polygon idx="2002" />
+            <avatar_polygon idx="2003" />
+            <avatar_polygon idx="2004" />
+            <avatar_polygon idx="2005" />
+            <avatar_polygon idx="2006" />
+            <avatar_polygon idx="2007" />
+            <avatar_polygon idx="2008" />
+            <avatar_polygon idx="2009" />
+            <avatar_polygon idx="2010" />
+            <avatar_polygon idx="2011" />
+            <avatar_polygon idx="2012" />
+            <avatar_polygon idx="2013" />
+            <avatar_polygon idx="2015" />
+            <avatar_polygon idx="2016" />
+            <avatar_polygon idx="2017" />
+            <avatar_polygon idx="2018" />
+            <avatar_polygon idx="2019" />
+            <avatar_polygon idx="2020" />
+            <avatar_polygon idx="2022" />
+            <avatar_polygon idx="2023" />
+            <avatar_polygon idx="2024" />
+            <avatar_polygon idx="2025" />
+            <avatar_polygon idx="2026" />
+            <avatar_polygon idx="2027" />
+            <avatar_polygon idx="2028" />
+            <avatar_polygon idx="2029" />
+            <avatar_polygon idx="2030" />
+            <avatar_polygon idx="2031" />
+            <avatar_polygon idx="2032" />
+            <avatar_polygon idx="2033" />
+            <avatar_polygon idx="2034" />
+            <avatar_polygon idx="2035" />
+            <avatar_polygon idx="2036" />
+            <avatar_polygon idx="2037" />
+            <avatar_polygon idx="2038" />
+            <avatar_polygon idx="2040" />
+            <avatar_polygon idx="2041" />
+            <avatar_polygon idx="2042" />
+            <avatar_polygon idx="2043" />
+            <avatar_polygon idx="2044" />
+            <avatar_polygon idx="2045" />
+            <avatar_polygon idx="2046" />
+            <avatar_polygon idx="2047" />
+            <avatar_polygon idx="2048" />
+            <avatar_polygon idx="2049" />
+            <avatar_polygon idx="2050" />
+            <avatar_polygon idx="2052" />
+            <avatar_polygon idx="2053" />
+            <avatar_polygon idx="2054" />
+            <avatar_polygon idx="2055" />
+            <avatar_polygon idx="2056" />
+            <avatar_polygon idx="2057" />
+            <avatar_polygon idx="2058" />
+            <avatar_polygon idx="2059" />
+            <avatar_polygon idx="2060" />
+            <avatar_polygon idx="2061" />
+            <avatar_polygon idx="2062" />
+            <avatar_polygon idx="2063" />
+            <avatar_polygon idx="2064" />
+            <avatar_polygon idx="2065" />
+            <avatar_polygon idx="2066" />
+            <avatar_polygon idx="2067" />
+            <avatar_polygon idx="2068" />
+            <avatar_polygon idx="2069" />
+            <avatar_polygon idx="2070" />
+            <avatar_polygon idx="2071" />
+            <avatar_polygon idx="2072" />
+            <avatar_polygon idx="2073" />
+            <avatar_polygon idx="2074" />
+            <avatar_polygon idx="2075" />
+            <avatar_polygon idx="2076" />
+            <avatar_polygon idx="2079" />
+            <avatar_polygon idx="2080" />
+            <avatar_polygon idx="2085" />
+            <avatar_polygon idx="2088" />
+            <avatar_polygon idx="2089" />
+            <avatar_polygon idx="2093" />
+            <avatar_polygon idx="2096" />
+            <avatar_polygon idx="2100" />
+            <avatar_polygon idx="2102" />
+            <avatar_polygon idx="2177" />
+            <avatar_polygon idx="2652" />
+            <avatar_polygon idx="2676" />
+            <avatar_polygon idx="2677" />
+            <avatar_polygon idx="2678" />
+            <avatar_polygon idx="2679" />
+            <avatar_polygon idx="2680" />
+            <avatar_polygon idx="2681" />
+            <avatar_polygon idx="2692" />
+            <avatar_polygon idx="2693" />
+            <avatar_polygon idx="2698" />
+            <avatar_polygon idx="2703" />
+            <avatar_polygon idx="2704" />
+            <avatar_polygon idx="2705" />
+            <avatar_polygon idx="2718" />
+            <avatar_polygon idx="2759" />
+            <avatar_polygon idx="2760" />
+            <avatar_polygon idx="2761" />
+        </avatar>
+    </attachment>
+    <attachment>
+        <name value="Male_safety_shoes.xml" />
+        <mesh name="local://Male_safety_shoes.mesh" linkskeleton="1" />
+        <material name="local://Male_safety_shoes.material" />
+        <category name="Custom" />
+        <avatar name="Jack.mesh">
+            <bone name="None" offset="0 0 0" rotation="1 0 0 0" scale="1 1 1" />
+            <avatar_polygon idx="181" />
+            <avatar_polygon idx="182" />
+            <avatar_polygon idx="184" />
+            <avatar_polygon idx="187" />
+            <avatar_polygon idx="188" />
+            <avatar_polygon idx="190" />
+            <avatar_polygon idx="194" />
+            <avatar_polygon idx="196" />
+            <avatar_polygon idx="198" />
+            <avatar_polygon idx="233" />
+            <avatar_polygon idx="235" />
+            <avatar_polygon idx="236" />
+            <avatar_polygon idx="237" />
+            <avatar_polygon idx="238" />
+            <avatar_polygon idx="239" />
+            <avatar_polygon idx="240" />
+            <avatar_polygon idx="241" />
+            <avatar_polygon idx="242" />
+            <avatar_polygon idx="243" />
+            <avatar_polygon idx="244" />
+            <avatar_polygon idx="245" />
+            <avatar_polygon idx="246" />
+            <avatar_polygon idx="247" />
+            <avatar_polygon idx="248" />
+            <avatar_polygon idx="249" />
+            <avatar_polygon idx="250" />
+            <avatar_polygon idx="251" />
+            <avatar_polygon idx="252" />
+            <avatar_polygon idx="253" />
+            <avatar_polygon idx="254" />
+            <avatar_polygon idx="255" />
+            <avatar_polygon idx="256" />
+            <avatar_polygon idx="257" />
+            <avatar_polygon idx="258" />
+            <avatar_polygon idx="259" />
+            <avatar_polygon idx="260" />
+            <avatar_polygon idx="261" />
+            <avatar_polygon idx="262" />
+            <avatar_polygon idx="263" />
+            <avatar_polygon idx="264" />
+            <avatar_polygon idx="265" />
+            <avatar_polygon idx="266" />
+            <avatar_polygon idx="267" />
+            <avatar_polygon idx="268" />
+            <avatar_polygon idx="269" />
+            <avatar_polygon idx="270" />
+            <avatar_polygon idx="271" />
+            <avatar_polygon idx="272" />
+            <avatar_polygon idx="273" />
+            <avatar_polygon idx="274" />
+            <avatar_polygon idx="275" />
+            <avatar_polygon idx="277" />
+            <avatar_polygon idx="278" />
+            <avatar_polygon idx="279" />
+            <avatar_polygon idx="280" />
+            <avatar_polygon idx="282" />
+            <avatar_polygon idx="283" />
+            <avatar_polygon idx="285" />
+            <avatar_polygon idx="286" />
+            <avatar_polygon idx="287" />
+            <avatar_polygon idx="288" />
+            <avatar_polygon idx="289" />
+            <avatar_polygon idx="290" />
+            <avatar_polygon idx="291" />
+            <avatar_polygon idx="292" />
+            <avatar_polygon idx="293" />
+            <avatar_polygon idx="294" />
+            <avatar_polygon idx="296" />
+            <avatar_polygon idx="298" />
+            <avatar_polygon idx="299" />
+            <avatar_polygon idx="300" />
+            <avatar_polygon idx="302" />
+            <avatar_polygon idx="783" />
+            <avatar_polygon idx="784" />
+            <avatar_polygon idx="785" />
+            <avatar_polygon idx="1406" />
+            <avatar_polygon idx="1407" />
+            <avatar_polygon idx="1408" />
+            <avatar_polygon idx="1409" />
+            <avatar_polygon idx="1410" />
+            <avatar_polygon idx="1411" />
+            <avatar_polygon idx="1412" />
+            <avatar_polygon idx="1413" />
+            <avatar_polygon idx="1414" />
+            <avatar_polygon idx="1610" />
+            <avatar_polygon idx="1611" />
+            <avatar_polygon idx="1613" />
+            <avatar_polygon idx="1616" />
+            <avatar_polygon idx="1617" />
+            <avatar_polygon idx="1620" />
+            <avatar_polygon idx="1623" />
+            <avatar_polygon idx="1625" />
+            <avatar_polygon idx="1627" />
+            <avatar_polygon idx="1654" />
+            <avatar_polygon idx="1655" />
+            <avatar_polygon idx="1656" />
+            <avatar_polygon idx="1658" />
+            <avatar_polygon idx="1659" />
+            <avatar_polygon idx="1660" />
+            <avatar_polygon idx="1661" />
+            <avatar_polygon idx="1662" />
+            <avatar_polygon idx="1663" />
+            <avatar_polygon idx="1664" />
+            <avatar_polygon idx="1665" />
+            <avatar_polygon idx="1666" />
+            <avatar_polygon idx="1667" />
+            <avatar_polygon idx="1668" />
+            <avatar_polygon idx="1669" />
+            <avatar_polygon idx="1670" />
+            <avatar_polygon idx="1671" />
+            <avatar_polygon idx="1672" />
+            <avatar_polygon idx="1673" />
+            <avatar_polygon idx="1674" />
+            <avatar_polygon idx="1675" />
+            <avatar_polygon idx="1676" />
+            <avatar_polygon idx="1677" />
+            <avatar_polygon idx="1678" />
+            <avatar_polygon idx="1679" />
+            <avatar_polygon idx="1680" />
+            <avatar_polygon idx="1681" />
+            <avatar_polygon idx="1682" />
+            <avatar_polygon idx="1683" />
+            <avatar_polygon idx="1684" />
+            <avatar_polygon idx="1685" />
+            <avatar_polygon idx="1686" />
+            <avatar_polygon idx="1687" />
+            <avatar_polygon idx="1688" />
+            <avatar_polygon idx="1689" />
+            <avatar_polygon idx="1690" />
+            <avatar_polygon idx="1691" />
+            <avatar_polygon idx="1692" />
+            <avatar_polygon idx="1693" />
+            <avatar_polygon idx="1694" />
+            <avatar_polygon idx="1695" />
+            <avatar_polygon idx="1696" />
+            <avatar_polygon idx="1698" />
+            <avatar_polygon idx="1699" />
+            <avatar_polygon idx="1700" />
+            <avatar_polygon idx="1701" />
+            <avatar_polygon idx="1702" />
+            <avatar_polygon idx="1704" />
+            <avatar_polygon idx="1705" />
+            <avatar_polygon idx="1706" />
+            <avatar_polygon idx="1708" />
+            <avatar_polygon idx="1709" />
+            <avatar_polygon idx="1710" />
+            <avatar_polygon idx="1711" />
+            <avatar_polygon idx="1712" />
+            <avatar_polygon idx="1713" />
+            <avatar_polygon idx="1714" />
+            <avatar_polygon idx="1715" />
+            <avatar_polygon idx="1717" />
+            <avatar_polygon idx="1718" />
+            <avatar_polygon idx="1719" />
+            <avatar_polygon idx="1722" />
+            <avatar_polygon idx="1723" />
+            <avatar_polygon idx="2203" />
+            <avatar_polygon idx="2204" />
+            <avatar_polygon idx="2205" />
+            <avatar_polygon idx="2800" />
+            <avatar_polygon idx="2801" />
+            <avatar_polygon idx="2802" />
+            <avatar_polygon idx="2803" />
+            <avatar_polygon idx="2804" />
+            <avatar_polygon idx="2805" />
+            <avatar_polygon idx="2806" />
+            <avatar_polygon idx="2807" />
+            <avatar_polygon idx="2808" />
+        </avatar>
+    </attachment>
+    <dynamic_animation_parameter name="Height_Adjust91" position="0.215789" />
+    <dynamic_animation name="Height_Adjust91">
+        <base_animations />
+        <bones>
+            <bone name="Bip01_Pelvis">
+                <rotation start="0 0 0" end="0 0 0" mode="absolute" />
+                <translation start="0 0 0" end="0 0 0" mode="absolute" />
+                <scale start="0.93 0.93 0.93" end="1.07 1.07 1.07" />
+            </bone>
+            <bone name="Bip01_Spine1">
+                <rotation start="0 0 0" end="0 0 0" mode="absolute" />
+                <translation start="0 0 0" end="0 0 0" mode="absolute" />
+                <scale start="0.97 0.97 0.97" end="1.03 1.03 1.03" />
+            </bone>
+            <bone name="Bip01_L_Thigh">
+                <rotation start="0 0 0" end="0 0 0" mode="absolute" />
+                <translation start="0 0 0" end="0 0 0" mode="absolute" />
+                <scale start="0.93 0.93 0.93" end="1.07 1.07 1.07" />
+            </bone>
+            <bone name="Bip01_R_Thigh">
+                <rotation start="0 0 0" end="0 0 0" mode="absolute" />
+                <translation start="0 0 0" end="0 0 0" mode="absolute" />
+                <scale start="0.93 0.93 0.93" end="1.07 1.07 1.07" />
+            </bone>
+        </bones>
+    </dynamic_animation>
+    <dynamic_animation_parameter name="Widen_Clavicles91" position="0" />
+    <dynamic_animation name="Widen_Clavicles91">
+        <base_animations />
+        <bones>
+            <bone name="Bip01_L_Clavicle">
+                <rotation start="0 0 0" end="0 0 0" mode="absolute" />
+                <translation start="0 0 0" end="0 0 0.05" mode="relative" />
+                <scale start="1 1 1" end="1 1 1" />
+            </bone>
+            <bone name="Bip01_R_Clavicle">
+                <rotation start="0 0 0" end="0 0 0" mode="absolute" />
+                <translation start="0 0 0" end="0 0 -0.05" mode="relative" />
+                <scale start="1 1 1" end="1 1 1" />
+            </bone>
+        </bones>
+    </dynamic_animation>
+    <dynamic_animation_parameter name="Spine_Posture91" position="0.5" />
+    <dynamic_animation name="Spine_Posture91">
+        <base_animations />
+        <bones>
+            <bone name="Bip01_Spine1">
+                <rotation start="0 0 -20" end="0 0 20" mode="relative" />
+                <translation start="0 0 0" end="0 0 0" mode="absolute" />
+                <scale start="1 1 1" end="1 1 1" />
+            </bone>
+            <bone name="Bip01_Head">
+                <rotation start="0 0 15" end="0 0 -15" mode="relative" />
+                <translation start="0 0 0" end="0 0 0" mode="absolute" />
+                <scale start="1 1 1" end="1 1 1" />
+            </bone>
+            <bone name="Bip01_R_UpperArm">
+                <rotation start="0 0 20" end="0 0 -20" mode="relative" />
+                <translation start="0 0 0" end="0 0 0" mode="absolute" />
+                <scale start="1 1 1" end="1 1 1" />
+            </bone>
+            <bone name="Bip01_L_UpperArm">
+                <rotation start="0 0 20" end="0 0 -20" mode="relative" />
+                <translation start="0 0 0" end="0 0 0" mode="absolute" />
+                <scale start="1 1 1" end="1 1 1" />
+            </bone>
+        </bones>
+    </dynamic_animation>
+    <dynamic_animation_parameter name="Leg_Twist91" position="0" />
+    <dynamic_animation name="Leg_Twist91">
+        <base_animations />
+        <bones>
+            <bone name="Bip01_L_Thigh">
+                <rotation start="0 0 0" end="0 -10 0" mode="relative" />
+                <translation start="0 0 0" end="0 0 0" mode="absolute" />
+                <scale start="1 1 1" end="1 1 1" />
+            </bone>
+            <bone name="Bip01_L_Calf">
+                <rotation start="0 0 0" end="0 -20 0" mode="relative" />
+                <translation start="0 0 0" end="0 0 0" mode="absolute" />
+                <scale start="1 1 1" end="1 1 1" />
+            </bone>
+            <bone name="Bip01_R_Thigh">
+                <rotation start="0 0 0" end="0 10 0" mode="relative" />
+                <translation start="0 0 0" end="0 0 0" mode="absolute" />
+                <scale start="1 1 1" end="1 1 1" />
+            </bone>
+            <bone name="Bip01_R_Calf">
+                <rotation start="0 0 0" end="0 20 0" mode="relative" />
+                <translation start="0 0 0" end="0 0 0" mode="absolute" />
+                <scale start="1 1 1" end="1 1 1" />
+            </bone>
+        </bones>
+    </dynamic_animation>
+    <dynamic_animation_parameter name="Arm_Twist91" position="0" />
+    <dynamic_animation name="Arm_Twist91">
+        <base_animations />
+        <bones>
+            <bone name="Bip01_L_UpperArm">
+                <rotation start="0 0 0" end="0 -20 0" mode="cumulative" />
+                <translation start="0 0 0" end="0 0 0" mode="absolute" />
+                <scale start="1 1 1" end="1 1 1" />
+            </bone>
+            <bone name="Bip01_L_Forearm">
+                <rotation start="0 0 0" end="0 10 0" mode="relative" />
+                <translation start="0 0 0" end="0 0 0" mode="absolute" />
+                <scale start="1 1 1" end="1 1 1" />
+            </bone>
+            <bone name="Bip01_R_UpperArm">
+                <rotation start="0 0 0" end="0 20 0" mode="cumulative" />
+                <translation start="0 0 0" end="0 0 0" mode="absolute" />
+                <scale start="1 1 1" end="1 1 1" />
+            </bone>
+            <bone name="Bip01_R_Forearm">
+                <rotation start="0 0 0" end="0 -10 0" mode="relative" />
+                <translation start="0 0 0" end="0 0 0" mode="absolute" />
+                <scale start="1 1 1" end="1 1 1" />
+            </bone>
+        </bones>
+    </dynamic_animation>
+    <morph_modifier name="Speech" internal_name="Speech" influence="0.000000" />
+    <morph_modifier name="eyebrows_up" internal_name="Morph_eyebrows_up" influence="0.000000" />
+    <morph_modifier name="eyes_closed" internal_name="Morph_eyes_closed" influence="0.000000" />
+    <morph_modifier name="eyes_down" internal_name="Morph_eyes_down" influence="0.000000" />
+    <morph_modifier name="eyes_left" internal_name="Morph_eyes_left" influence="0.000000" />
+    <morph_modifier name="eyes_right" internal_name="Morph_eyes_right" influence="0.000000" />
+    <morph_modifier name="eyes_up" internal_name="Morph_eyes_up" influence="0.000000" />
+    <morph_modifier name="fat-arms-lower" internal_name="Morph_fat-arms-lower" influence="0.000000" />
+    <morph_modifier name="fat-arms-upper" internal_name="Morph_fat-arms-upper" influence="0.000000" />
+    <morph_modifier name="fat-body-lower" internal_name="Morph_fat-body-lower" influence="0.000000" />
+    <morph_modifier name="fat-body-upper" internal_name="Morph_fat-body-upper" influence="0.000000" />
+    <morph_modifier name="fat-legs-lower" internal_name="Morph_fat-legs-lower" influence="0.000000" />
+    <morph_modifier name="fat-legs-upper" internal_name="Morph_fat-legs-upper" influence="0.000000" />
+    <morph_modifier name="mouth_EF" internal_name="Morph_mouth_EF" influence="0.000000" />
+    <morph_modifier name="mouth_O" internal_name="Morph_mouth_O" influence="0.000000" />
+    <morph_modifier name="mouth_round" internal_name="Morph_mouth_round" influence="0.000000" />
+    <morph_modifier name="mouth_wide" internal_name="Morph_mouth_wide" influence="0.000000" />
+    <morph_modifier name="muscular-arms-lower" internal_name="Morph_muscular-arms-lower" influence="0.000000" />
+    <morph_modifier name="muscular-arms-upper" internal_name="Morph_muscular-arms-upper" influence="0.000000" />
+    <morph_modifier name="muscular-body-lower" internal_name="Morph_muscular-body-lower" influence="0.000000" />
+    <morph_modifier name="muscular-body-upper" internal_name="Morph_muscular-body-upper" influence="0.000000" />
+    <morph_modifier name="muscular-legs-lower" internal_name="Morph_muscular-legs-lower" influence="0.000000" />
+    <morph_modifier name="muscular-legs-upper" internal_name="Morph_muscular-legs-upper" influence="0.000000" />
+    <morph_modifier name="thin-arms-lower" internal_name="Morph_thin-arms-lower" influence="0.800000" />
+    <morph_modifier name="thin-arms-upper" internal_name="Morph_thin-arms-upper" influence="0.800000" />
+    <morph_modifier name="thin-body-lower" internal_name="Morph_thin-body-lower" influence="0.800000" />
+    <morph_modifier name="thin-body-upper" internal_name="Morph_thin-body-upper" influence="0.800000" />
+    <morph_modifier name="thin-legs-lower" internal_name="Morph_thin-legs-lower" influence="0.800000" />
+    <morph_modifier name="thin-legs-upper" internal_name="Morph_thin-legs-upper" influence="0.800000" />
+    <animation name="AWAY" id="fd037134-85d4-f241-72c6-4f42164fedee" internal_name="Stand" looped="true" fadein="0.250000" fadeout="0.250000" speedfactor="1.000000" />
+    <animation name="CROUCHWALK" id="47f5f6fb-22e5-ae44-f871-73aaaf4a6022" internal_name="Crouch" looped="true" usevelocity="true" fadein="0.250000" fadeout="0.250000" speedfactor="1.400000" />
+    <animation name="FLY" id="aec4610c-757f-bc4e-c092-c6e9caf18daf" internal_name="Fly" looped="true" fadein="0.250000" fadeout="0.250000" speedfactor="1.100000" />
+    <animation name="HOVER" id="4ae8016b-31b9-03bb-c401-b1ea941db41d" internal_name="Hover" looped="true" fadein="0.250000" fadeout="0.250000" speedfactor="0.350000" />
+    <animation name="HOVER_DOWN" id="20f063ea-8306-2562-0b07-5c853b37b31e" internal_name="Hover" looped="true" fadein="0.250000" fadeout="0.250000" speedfactor="0.350000" />
+    <animation name="HOVER_UP" id="62c5de58-cb33-5743-3d07-9e4cd4352864" internal_name="Hover" looped="true" fadein="0.250000" fadeout="0.250000" speedfactor="0.350000" />
+    <animation name="RUN" id="05ddbff8-aaa9-92a1-2b74-8fe77a29b445" internal_name="Run" looped="true" usevelocity="true" fadein="0.250000" fadeout="0.250000" speedfactor="0.600000" />
+    <animation name="SIT" id="1a5fe8ac-a804-8a5d-7cbd-56bd83184568" internal_name="SitOnObject" fadein="0.400000" fadeout="0.500000" speedfactor="1.000000" />
+    <animation name="SIT_FEMALE" id="b1709c8d-ecd3-54a1-4f28-d55ac0840782" internal_name="SitOnObject" fadein="0.400000" fadeout="0.500000" speedfactor="1.000000" />
+    <animation name="SIT_GENERIC" id="245f3c54-f1c0-bf2e-811f-46d8eeb386e7" internal_name="SitOnObject" fadein="0.400000" fadeout="0.500000" speedfactor="1.000000" />
+    <animation name="SIT_GROUND" id="1c7600d6-661f-b87b-efe2-d7421eb93c86" internal_name="SitOnGround1" fadein="0.400000" fadeout="0.500000" speedfactor="1.000000" />
+    <animation name="SIT_GROUND_CONSTRAINED" id="1a2bd58e-87ff-0df8-0b4c-53e047b0bb6e" internal_name="SitOnGround1" fadein="0.400000" fadeout="0.500000" speedfactor="1.000000" />
+    <animation name="SIT_TO_STAND" id="a8dee56f-2eae-9e7a-05a2-6fb92b97e21e" internal_name="SitOnGround1" fadein="0.400000" fadeout="0.500000" speedfactor="1.000000" />
+    <animation name="STAND" id="2408fe9e-df1d-1d7d-f4ff-1384fa7b350f" internal_name="Stand" looped="true" fadein="0.250000" fadeout="0.250000" speedfactor="1.000000" />
+    <animation name="STAND_1" id="15468e00-3400-bb66-cecc-646d7c14458e" internal_name="Stand" looped="true" fadein="0.250000" fadeout="0.250000" speedfactor="1.000000" />
+    <animation name="STAND_2" id="370f3a20-6ca6-9971-848c-9a01bc42ae3c" internal_name="Stand" looped="true" fadein="0.250000" fadeout="0.250000" speedfactor="1.000000" />
+    <animation name="STAND_3" id="42b46214-4b44-79ae-deb8-0df61424ff4b" internal_name="Stand" looped="true" fadein="0.250000" fadeout="0.250000" speedfactor="1.000000" />
+    <animation name="STAND_4" id="f22fed8b-a5ed-2c93-64d5-bdd8b93c889f" internal_name="Stand" looped="true" fadein="0.250000" fadeout="0.250000" speedfactor="1.000000" />
+    <animation name="WALK" id="6ed24bd8-91aa-4b12-ccc7-c97c857ab4e0" internal_name="Walk" looped="true" usevelocity="true" fadein="0.250000" fadeout="0.250000" speedfactor="1.000000" />
+    <master_modifier name="Arms twist" position="0.000000" category="Posture">
+        <target_modifier type="dynamic_animation" name="Arm_Twist91" mode="cumulative" />
+    </master_modifier>
+    <master_modifier name="Body mass" position="0.100000" category="Body">
+        <target_modifier type="morph" name="thin-legs-lower" mode="cumulative">
+            <position_mapping master="0.000000" target="1.000000" />
+            <position_mapping master="0.500000" target="0.000000" />
+        </target_modifier>
+        <target_modifier type="morph" name="thin-legs-upper" mode="cumulative">
+            <position_mapping master="0.000000" target="1.000000" />
+            <position_mapping master="0.500000" target="0.000000" />
+        </target_modifier>
+        <target_modifier type="morph" name="thin-arms-lower" mode="cumulative">
+            <position_mapping master="0.000000" target="1.000000" />
+            <position_mapping master="0.500000" target="0.000000" />
+        </target_modifier>
+        <target_modifier type="morph" name="thin-arms-upper" mode="cumulative">
+            <position_mapping master="0.000000" target="1.000000" />
+            <position_mapping master="0.500000" target="0.000000" />
+        </target_modifier>
+        <target_modifier type="morph" name="thin-body-lower" mode="cumulative">
+            <position_mapping master="0.000000" target="1.000000" />
+            <position_mapping master="0.500000" target="0.000000" />
+        </target_modifier>
+        <target_modifier type="morph" name="thin-body-upper" mode="cumulative">
+            <position_mapping master="0.000000" target="1.000000" />
+            <position_mapping master="0.500000" target="0.000000" />
+        </target_modifier>
+        <target_modifier type="morph" name="fat-arms-lower" mode="cumulative">
+            <position_mapping master="0.500000" target="0.000000" />
+            <position_mapping master="1.000000" target="1.000000" />
+        </target_modifier>
+        <target_modifier type="morph" name="fat-arms-upper" mode="cumulative">
+            <position_mapping master="0.500000" target="0.000000" />
+            <position_mapping master="1.000000" target="1.000000" />
+        </target_modifier>
+        <target_modifier type="morph" name="fat-legs-lower" mode="cumulative">
+            <position_mapping master="0.500000" target="0.000000" />
+            <position_mapping master="1.000000" target="1.000000" />
+        </target_modifier>
+        <target_modifier type="morph" name="fat-legs-upper" mode="cumulative">
+            <position_mapping master="0.500000" target="0.000000" />
+            <position_mapping master="1.000000" target="1.000000" />
+        </target_modifier>
+        <target_modifier type="morph" name="fat-body-lower" mode="cumulative">
+            <position_mapping master="0.500000" target="0.000000" />
+            <position_mapping master="1.000000" target="0.800000" />
+        </target_modifier>
+        <target_modifier type="morph" name="fat-body-upper" mode="cumulative">
+            <position_mapping master="0.500000" target="0.000000" />
+            <position_mapping master="1.000000" target="1.000000" />
+        </target_modifier>
+        <target_modifier type="dynamic_animation" name="Widen_Clavicles91" mode="cumulative">
+            <position_mapping master="0.500000" target="0.000000" />
+            <position_mapping master="1.000000" target="0.800000" />
+        </target_modifier>
+    </master_modifier>
+    <master_modifier name="Body muscles" position="0.000000" category="Body">
+        <target_modifier type="morph" name="muscular-arms-lower" mode="cumulative" />
+        <target_modifier type="morph" name="muscular-arms-upper" mode="cumulative" />
+        <target_modifier type="morph" name="muscular-legs-lower" mode="cumulative" />
+        <target_modifier type="morph" name="muscular-legs-upper" mode="cumulative" />
+        <target_modifier type="morph" name="muscular-body-lower" mode="cumulative" />
+        <target_modifier type="morph" name="muscular-body-upper" mode="cumulative" />
+        <target_modifier type="dynamic_animation" name="Widen_Clavicles91" mode="cumulative">
+            <position_mapping master="0.300000" target="0.000000" />
+            <position_mapping master="1.000000" target="0.500000" />
+        </target_modifier>
+    </master_modifier>
+    <master_modifier name="Height" position="0.215789" category="Body">
+        <target_modifier type="dynamic_animation" name="Height_Adjust91" mode="cumulative" />
+    </master_modifier>
+    <master_modifier name="Leg twist" position="0.000000" category="Posture">
+        <target_modifier type="dynamic_animation" name="Leg_Twist91" mode="cumulative" />
+    </master_modifier>
+    <master_modifier name="Spine back/forward" position="0.500000" category="Posture">
+        <target_modifier type="dynamic_animation" name="Spine_Posture91" mode="cumulative" />
+    </master_modifier>
+    <property name="MovementSpeed" value="1" />
+    <property name="attach_Chest" value="Bip01_Spine1" />
+    <property name="attach_Chin" value="Bip01_Head" />
+    <property name="attach_L Forearm" value="Bip01_L_Forearm" />
+    <property name="attach_L Lower Leg" value="Bip01_L_Calf" />
+    <property name="attach_L Upper Arm" value="Bip01_L_UpperArm" />
+    <property name="attach_L Upper Leg" value="Bip01_L_Thigh" />
+    <property name="attach_Left Ear" value="Bip01_Head" />
+    <property name="attach_Left Eyeball" value="Bip01_Head" />
+    <property name="attach_Left Foot" value="Bip01_L_Foot" />
+    <property name="attach_Left Hand" value="Bip01_L_Hand" />
+    <property name="attach_Left Hip" value="Bip01_L_Thigh" />
+    <property name="attach_Left Pec" value="Bip01_Spine1" />
+    <property name="attach_Left Shoulder" value="Bip01_L_Clavicle" />
+    <property name="attach_Mouth" value="Bip01_Head" />
+    <property name="attach_Nose" value="Bip01_Head" />
+    <property name="attach_Pelvis" value="Bip01_Pelvis" />
+    <property name="attach_R Forearm" value="Bip01_R_Forearm" />
+    <property name="attach_R Lower Leg" value="Bip01_R_Calf" />
+    <property name="attach_R Upper Arm" value="Bip01_R_UpperArm" />
+    <property name="attach_R Upper Leg" value="Bip01_R_Thigh" />
+    <property name="attach_Right Ear" value="Bip01_Head" />
+    <property name="attach_Right Eyeball" value="Bip01_Head" />
+    <property name="attach_Right Foot" value="Bip01_R_Foot" />
+    <property name="attach_Right Hand" value="Bip01_R_Hand" />
+    <property name="attach_Right Hip" value="Bip01_R_Thigh" />
+    <property name="attach_Right Pec" value="Bip01_Spine1" />
+    <property name="attach_Right Shoulder" value="Bip01_R_Clavicle" />
+    <property name="attach_Skull" value="Bip01_Head" />
+    <property name="attach_Spine" value="Bip01_Spine" />
+    <property name="attach_Stomach" value="Bip01_Pelvis" />
+    <property name="basebone" value="Bip01_R_Toe0" />
+    <property name="basemesh" value="Jack.mesh" />
+    <property name="baseoffset" value="0 -0.03 0" />
+    <property name="headbone" value="Bip01_Head" />
+    <property name="neckbone" value="Bip01_Spine2" />
+    <property name="rootbone" value="Bip01" />
+    <property name="torsobone" value="Bip01_Spine1" />
+</avatar>

@@ -1,4 +1,4 @@
-engine.IncludeFile("wandererAi.js");
+engine.IncludeFile("local://wandererAi.js");
 
 /**
 * Crab script. IF you want to use wanderer ai. You need to make object as subclass of AiWanderer and override methods 

@@ -67,7 +67,7 @@ function ServerHandleUserConnected(connectionID, user)
     script.type = "js";
     script.runOnLoad = true;
     var r = script.scriptRef;
-    r.ref = "simpleavatar.js";
+    r.ref = "local://simpleavatar.js";
     script.scriptRef = r;
 
     var placeable = avatarEntity.placeable;

@@ -1,0 +1,246 @@
+<!DOCTYPE Scene>
+<scene>
+ <entity id="1" sync="1">
+  <component type="EC_Script" sync="1">
+   <attribute value="local://slidecircleapplication.js" name="Script ref"/>
+   <attribute value="true" name="Run on load"/>
+   <attribute value="0" name="Run mode"/>
+   <attribute value="" name="Script application name"/>
+   <attribute value="" name="Script class name"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="SlideCircle" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_InputMapper" sync="1">
+   <attribute value="EC_InputMapper" name="Input context name"/>
+   <attribute value="90" name="Input context priority"/>
+   <attribute value="false" name="Take keyboard events over Qt"/>
+   <attribute value="false" name="Take mouse events over Qt"/>
+   <attribute value="1" name="Action execution type"/>
+   <attribute value="true" name="Key modifiers enable"/>
+   <attribute value="true" name="Enable actions"/>
+   <attribute value="true" name="Trigger on keyrepeats"/>
+   <attribute value="false" name="Suppress used keyboard events"/>
+   <attribute value="false" name="Suppress used mouse events"/>
+  </component>
+  <component type="EC_DynamicComponent" sync="1" name="SlideCircleSettings">
+   <attribute value="false" type="bool" name="stereo"/>
+   <attribute value="d:/temp/3d/" type="string" name="recordpath"/>
+   <attribute value="false" type="bool" name="recording"/>
+   <attribute value="8" type="real" name="infront"/>
+   <attribute value="15" type="real" name="far"/>
+   <attribute value="false" type="bool" name="cshowvideo"/>
+   <attribute value="10" type="real" name="close"/>
+   <attribute value="autopath" type="string" name="cameramode"/>
+  </component>
+  <component type="EC_DynamicComponent" sync="1" name="SlideCircleInfo">
+   <attribute value="6" type="int" name="slidenumber"/>
+   <attribute value="http://2.bp.blogspot.com/_tGXydrnpO8Q/TJr233MG4-I/AAAAAAAADdQ/vTVgP-QrIaQ/s320/6.a.png" type="string" name="slide5"/>
+   <attribute value="http://comcastchd.vo.llnwd.net/o15/resized/213060f9-ef34-45fb-81e7-9c2a00bdd780.jpg" type="string" name="slide4"/>
+   <attribute value="http://www.astrogle.com/images/articles/numerology/number-4.jpg" type="string" name="slide3"/>
+   <attribute value="http://www.designofsignage.com/application/symbol/hands/image/600x600/hand-3-three.jpg" type="string" name="slide2"/>
+   <attribute value="http://www.heatherdew.net/wp-content/uploads/2011/05/2.jpg" type="string" name="slide1"/>
+   <attribute value="http://www.cernea.net/wp-content/uploads/2010/04/1NumberOneInCircle.png" type="string" name="slide0"/>
+   <attribute value="0" type="int" name="current"/>
+  </component>
+ </entity>
+ <entity id="2" sync="1">
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
+   <attribute value="local://screen.mesh" name="Mesh ref"/>
+   <attribute value="" name="Skeleton ref"/>
+   <attribute value="frame.material;screen0.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="-2.20161e-15,-3.28357e-07,20,-117.716,-1.06281e-05,-180,1,0.999996,0.999996" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+   <attribute value="1" name="Selection layer"/>
+   <attribute value="" name="Parent entity ref"/>
+   <attribute value="" name="Parent bone name"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="screen" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_Material" sync="1">
+   <attribute value="texture = http://www.cernea.net/wp-content/uploads/2010/04/1NumberOneInCircle.png" name="Parameters"/>
+   <attribute value="screen.material" name="Input Material"/>
+   <attribute value="screen0.material" name="Output Material"/>
+  </component>
+  <component type="EC_DynamicComponent" sync="1" name="SlideScreenInfo">
+   <attribute value="0" type="int" name="screennumber"/>
+  </component>
+ </entity>
+ <entity id="3" sync="1">
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
+   <attribute value="local://screen.mesh" name="Mesh ref"/>
+   <attribute value="" name="Skeleton ref"/>
+   <attribute value="frame.material;screen1.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="2.8923e-07,-8.83046e-07,-20,-58.1965,-78.4074,0.326494,0.999993,0.999988,0.999986" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+   <attribute value="1" name="Selection layer"/>
+   <attribute value="" name="Parent entity ref"/>
+   <attribute value="" name="Parent bone name"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="screen" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_Material" sync="1">
+   <attribute value="texture = http://www.heatherdew.net/wp-content/uploads/2011/05/2.jpg" name="Parameters"/>
+   <attribute value="screen.material" name="Input Material"/>
+   <attribute value="screen1.material" name="Output Material"/>
+  </component>
+  <component type="EC_DynamicComponent" sync="1" name="SlideScreenInfo">
+   <attribute value="1" type="int" name="screennumber"/>
+  </component>
+ </entity>
+ <entity id="4" sync="1">
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
+   <attribute value="local://screen.mesh" name="Mesh ref"/>
+   <attribute value="" name="Skeleton ref"/>
+   <attribute value="frame.material;screen2.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="20,6.17982e-07,4.91915e-07,29.709,-29.1244,0.526867,0.999997,0.999994,0.999993" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+   <attribute value="1" name="Selection layer"/>
+   <attribute value="" name="Parent entity ref"/>
+   <attribute value="" name="Parent bone name"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="screen" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_Material" sync="1">
+   <attribute value="texture = http://www.designofsignage.com/application/symbol/hands/image/600x600/hand-3-three.jpg" name="Parameters"/>
+   <attribute value="screen.material" name="Input Material"/>
+   <attribute value="screen2.material" name="Output Material"/>
+  </component>
+  <component type="EC_DynamicComponent" sync="1" name="SlideScreenInfo">
+   <attribute value="2" type="int" name="screennumber"/>
+  </component>
+ </entity>
+ <entity id="5" sync="1">
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
+   <attribute value="local://screen.mesh" name="Mesh ref"/>
+   <attribute value="" name="Skeleton ref"/>
+   <attribute value="frame.material;screen3.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="-20,1.75308e-08,-3.17822e-08,-10.5497,88.402,-0.0578296,0.999995,0.999995,0.99999" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+   <attribute value="1" name="Selection layer"/>
+   <attribute value="" name="Parent entity ref"/>
+   <attribute value="" name="Parent bone name"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="screen" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_Material" sync="1">
+   <attribute value="texture = http://www.astrogle.com/images/articles/numerology/number-4.jpg" name="Parameters"/>
+   <attribute value="screen.material" name="Input Material"/>
+   <attribute value="screen3.material" name="Output Material"/>
+  </component>
+  <component type="EC_DynamicComponent" sync="1" name="SlideScreenInfo">
+   <attribute value="3" type="int" name="screennumber"/>
+  </component>
+ </entity>
+ <entity id="6" sync="1">
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
+   <attribute value="local://WoodPallet.mesh" name="Mesh ref"/>
+   <attribute value="" name="Skeleton ref"/>
+   <attribute value="D:/rex/tundra-naali/bin/scenes/Avatar/WoodPallet.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="0,-13.8233,0,0,0,0,30,1,30" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+   <attribute value="1" name="Selection layer"/>
+   <attribute value="" name="Parent entity ref"/>
+   <attribute value="" name="Parent bone name"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="WoodPallet" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+ </entity>
+ <entity id="7" sync="1">
+  <component type="EC_Name" sync="1">
+   <attribute value="sky" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_SkyX" sync="1">
+   <attribute value="true" name="Volumetric clouds"/>
+   <attribute value="0" name="Time multiplier"/>
+   <attribute value="14.000000 7.500000 20.500000" name="Time"/>
+   <attribute value="1.000000 1.000000" name="Weather (volumetric clouds only)"/>
+   <attribute value="0" name="Wind direction"/>
+  </component>
+ </entity>
+ <entity id="8" sync="1">
+  <component type="EC_Script" sync="1">
+   <attribute value="local://freelookcamera.js" name="Script ref"/>
+   <attribute value="true" name="Run on load"/>
+   <attribute value="0" name="Run mode"/>
+   <attribute value="" name="Script application name"/>
+   <attribute value="" name="Script class name"/>
+  </component>
+  <component type="EC_Camera" sync="1">
+   <attribute value="0.000000 1.000000 0.000000" name="Up vector"/>
+   <attribute value="0.100000001" name="Near plane"/>
+   <attribute value="2000" name="Far plane"/>
+   <attribute value="45" name="Vertical FOV"/>
+   <attribute value="" name="Aspect ratio"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="-1.30931e-06,-7.08211,16.2793,-117.716,-2.01623e-05,-180,1,1,1" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+   <attribute value="1" name="Selection layer"/>
+   <attribute value="" name="Parent entity ref"/>
+   <attribute value="" name="Parent bone name"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="FreeLookCamera" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_InputMapper" sync="1">
+   <attribute value="EC_InputMapper" name="Input context name"/>
+   <attribute value="101" name="Input context priority"/>
+   <attribute value="false" name="Take keyboard events over Qt"/>
+   <attribute value="true" name="Take mouse events over Qt"/>
+   <attribute value="1" name="Action execution type"/>
+   <attribute value="false" name="Key modifiers enable"/>
+   <attribute value="true" name="Enable actions"/>
+   <attribute value="true" name="Trigger on keyrepeats"/>
+   <attribute value="false" name="Suppress used keyboard events"/>
+   <attribute value="false" name="Suppress used mouse events"/>
+  </component>
+  <component type="EC_SoundListener" sync="0">
+   <attribute value="true" name="active"/>
+  </component>
+ </entity>
+</scene>

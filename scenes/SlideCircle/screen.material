@@ -1,0 +1,19 @@
+material painting
+{
+    technique
+    {
+		pass
+		{
+			diffuse 0 0 1 1
+			ambient 0 0 1 1
+            
+            texture_unit
+            {
+                texture http://dl.dropbox.com/u/10635792/abc-pict/SergejJensen_DasHabIch2002.jpg
+                colour_op alpha_blend
+            }
+		}
+	}
+    
+    
+}

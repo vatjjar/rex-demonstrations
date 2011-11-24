@@ -1,0 +1,139 @@
+<!DOCTYPE Scene>
+<scene>
+ <entity id="289">
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,0,0,90,0,180,1,1,1" name="Transform"/>
+   <attribute value="http://www.realxtend.org/world/lvm/screen.mesh" name="Mesh ref"/>
+   <attribute value="" name="Skeleton ref"/>
+   <attribute value="http://www.realxtend.org/world/lvm/screen_frames.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="-77.8373,29.9316,9.09239,0,0,-175.709,0.5,0.5,0.5" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="screen" name="name"/>
+   <attribute value="" name="description"/>
+   <attribute value="false" name="user-defined"/>
+  </component>
+  <component type="EC_WebView" sync="1">
+   <attribute value="http://www.realxtend.org" name="View URL"/>
+   <attribute value="800 600" name="View Size"/>
+   <attribute value="1" name="Render Submesh"/>
+   <attribute value="0" name="Render FPS"/>
+   <attribute value="false" name="Interactive"/>
+   <attribute value="-1" name="ControllerId"/>
+  </component>
+ </entity>
+ <entity id="316"/>
+ <entity id="337">
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,0,0,90,0,180,1,1,1" name="Transform"/>
+   <attribute value="http://www.realxtend.org/world/lvm/screen.mesh" name="Mesh ref"/>
+   <attribute value="" name="Skeleton ref"/>
+   <attribute value="http://www.realxtend.org/world/lvm/screen_frames.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="-85.6372,20.0538,9.09239,0,0,-96.3887,0.5,0.5,0.5" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="screen" name="name"/>
+   <attribute value="" name="description"/>
+   <attribute value="false" name="user-defined"/>
+  </component>
+  <component type="EC_WebView" sync="1">
+   <attribute value="http://cowboyprogramming.com/images/eyh/Fig-2.gif" name="View URL"/>
+   <attribute value="600 500" name="View Size"/>
+   <attribute value="1" name="Render Submesh"/>
+   <attribute value="0" name="Render FPS"/>
+   <attribute value="true" name="Interactive"/>
+   <attribute value="-1" name="ControllerId"/>
+  </component>
+ </entity>
+ <entity id="338">
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,0,0,90,0,180,1,1,1" name="Transform"/>
+   <attribute value="http://www.realxtend.org/world/lvm/screen.mesh" name="Mesh ref"/>
+   <attribute value="" name="Skeleton ref"/>
+   <attribute value="http://www.realxtend.org/world/lvm/screen_frames.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="-61.4315,11.9123,9.09239,0,0,69.7019,0.5,0.5,0.5" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="screen" name="name"/>
+   <attribute value="" name="description"/>
+   <attribute value="false" name="user-defined"/>
+  </component>
+  <component type="EC_WebView" sync="1">
+   <attribute value="https://github.com/realXtend/doc/raw/master/arch_article/avapp.jpg" name="View URL"/>
+   <attribute value="1024 800" name="View Size"/>
+   <attribute value="1" name="Render Submesh"/>
+   <attribute value="0" name="Render FPS"/>
+   <attribute value="true" name="Interactive"/>
+   <attribute value="-1" name="ControllerId"/>
+  </component>
+ </entity>
+ <entity id="339">
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,0,0,90,0,180,1,1,1" name="Transform"/>
+   <attribute value="http://www.realxtend.org/world/lvm/screen.mesh" name="Mesh ref"/>
+   <attribute value="" name="Skeleton ref"/>
+   <attribute value="http://www.realxtend.org/world/lvm/screen_frames.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="-71.6044,24.2986,9.09239,0,0,126.109,0.5,0.5,0.5" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="screen" name="name"/>
+   <attribute value="" name="description"/>
+   <attribute value="false" name="user-defined"/>
+  </component>
+  <component type="EC_WebView" sync="1">
+   <attribute value="http://www.realxtend.org/kuvat/screenshotRexNantes02.jpg" name="View URL"/>
+   <attribute value="600 437" name="View Size"/>
+   <attribute value="1" name="Render Submesh"/>
+   <attribute value="0" name="Render FPS"/>
+   <attribute value="true" name="Interactive"/>
+   <attribute value="-1" name="ControllerId"/>
+  </component>
+ </entity>
+ <entity id="340">
+  <component type="EC_Name" sync="1">
+   <attribute value="SlideshowApp" name="name"/>
+   <attribute value="" name="description"/>
+   <attribute value="false" name="user-defined"/>
+  </component>
+  <component type="EC_Script" sync="1">
+   <attribute value="" name="Type"/>
+   <attribute value="true" name="Run on load"/>
+   <attribute value="local://slidecircleapplication.js" name="Script ref"/>
+  </component>
+  <component type="EC_InputMapper" sync="0">
+   <attribute value="EC_InputMapper" name="Input context name"/>
+   <attribute value="90" name="Input context priority"/>
+   <attribute value="false" name="Take keyboard events over Qt"/>
+   <attribute value="false" name="Take mouse events over Qt"/>
+   <attribute value="" name="Mappings"/>
+   <attribute value="1" name="Action execution type"/>
+   <attribute value="1" name="Key modifiers enable"/>
+   <attribute value="true" name="Enable actions"/>
+   <attribute value="true" name="Trigger on keyrepeats"/>
+  </component>
+ </entity>
+</scene>

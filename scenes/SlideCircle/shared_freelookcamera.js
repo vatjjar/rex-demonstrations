@@ -108,7 +108,6 @@ function Update(frametime)
 
 function HandleMove(param)
 {
-    print(param);
     if (param == "forward")
         motion_z = 1;
     if (param == "back")
@@ -247,7 +246,6 @@ if(!framework.IsHeadless()) {
     proxy.focusPolicy = Qt.NoFocus;
 
     function windowResized(w, h) {
-        print(h);
         proxy.x = w - 150;
         proxy.y = h - 50;
     }

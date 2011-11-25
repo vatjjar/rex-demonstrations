@@ -50,7 +50,7 @@
    <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
    <attribute value="local://screen.mesh" name="Mesh ref"/>
    <attribute value="" name="Skeleton ref"/>
-   <attribute value="frame.material;screen0.material" name="Mesh materials"/>
+   <attribute value="local://frame.material;local://screen0.material" name="Mesh materials"/>
    <attribute value="0" name="Draw distance"/>
    <attribute value="false" name="Cast shadows"/>
   </component>
@@ -80,7 +80,7 @@
    <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
    <attribute value="local://screen.mesh" name="Mesh ref"/>
    <attribute value="" name="Skeleton ref"/>
-   <attribute value="frame.material;screen1.material" name="Mesh materials"/>
+   <attribute value="local://frame.material;local://screen1.material" name="Mesh materials"/>
    <attribute value="0" name="Draw distance"/>
    <attribute value="false" name="Cast shadows"/>
   </component>
@@ -110,7 +110,7 @@
    <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
    <attribute value="local://screen.mesh" name="Mesh ref"/>
    <attribute value="" name="Skeleton ref"/>
-   <attribute value="frame.material;screen2.material" name="Mesh materials"/>
+   <attribute value="local://frame.material;local://screen2.material" name="Mesh materials"/>
    <attribute value="0" name="Draw distance"/>
    <attribute value="false" name="Cast shadows"/>
   </component>
@@ -140,7 +140,7 @@
    <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
    <attribute value="local://screen.mesh" name="Mesh ref"/>
    <attribute value="" name="Skeleton ref"/>
-   <attribute value="frame.material;screen3.material" name="Mesh materials"/>
+   <attribute value="local://frame.material;local://screen3.material" name="Mesh materials"/>
    <attribute value="0" name="Draw distance"/>
    <attribute value="false" name="Cast shadows"/>
   </component>

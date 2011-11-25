@@ -30,16 +30,22 @@ function changeSlide(index) {
     var currentScreen = screens[index % screennumber];
     var newurl = slideinfo.GetAttribute("slide" + (index));
     var oldurl = currentScreen.material.parameters;
+
+    //ecmat loading hackstery
+    var inputmat = currentscreen.material.inputMat;
+    currentscreen.material.inputMat = "";
+    currentscreen.material.inputMat = inputmat;
     
     if (debug) {
-    print("oldurl " + oldurl);
-    print("newurl " + newurl);
+        print("oldurl " + oldurl);
+        print("newurl " + newurl);
     }
     if (oldurl != newurl) {
-    if (debug) {
-        print("It changes");
-    }
-    currentScreen.material.parameters = ["texture = " + newurl];
+        if (debug) {
+            print("It changes");
+        }
+        
+        currentScreen.material.parameters = ["texture = " + newurl];
     }
     changes += 1;
 }

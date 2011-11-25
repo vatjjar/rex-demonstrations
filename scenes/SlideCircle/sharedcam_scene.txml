@@ -193,7 +193,7 @@
    <attribute value="" name="description"/>
   </component>
   <component type="EC_SkyX" sync="1">
-   <attribute value="true" name="Volumetric clouds"/>
+   <attribute value="false" name="Volumetric clouds"/>
    <attribute value="0" name="Time multiplier"/>
    <attribute value="14.000000 7.500000 20.500000" name="Time"/>
    <attribute value="1.000000 1.000000" name="Weather (volumetric clouds only)"/>

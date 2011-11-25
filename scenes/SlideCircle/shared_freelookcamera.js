@@ -1,4 +1,5 @@
-// A freelook camera script. Upon run, creates necessary components if they don't exist yet, and hooks to the InputMapper's
+// A shared, server-created freelook camera script. Tweaked from the bundled local one.
+// Upon run, creates necessary components if they don't exist yet, and hooks to the InputMapper's
 // input context to process camera movement (WASD + mouse)
 
 var rotate_sensitivity = 0.3;
@@ -9,21 +10,21 @@ var motion_x = 0;
 
 Initialize();
 
-function Initialize()
-{
+//not activated at start, but with the push of a gui button
+function setActive(now, prev) {
+    now.camera.SetActive();
+    now.soundlistener.active = true;
+    if (prev) {
+        prev.soundlistener.active = false;
+    }
+}
+
+function Initialize() {
     // Create components & setup default position/lookat for the camera
     var camera = me.GetOrCreateComponent("EC_Camera");
     var inputmapper = me.GetOrCreateComponent("EC_InputMapper");
     var placeable = me.GetOrCreateComponent("EC_Placeable");
     var soundlistener = me.GetOrCreateComponent("EC_SoundListener");
-
-    // Co-operate with the AvatarApplication: if AvatarCamera already exists, do not activate the freelookcamera right now
-    var avatarcameraentity = scene.GetEntityByName("AvatarCamera");
-    if (!avatarcameraentity)
-    {
-        camera.SetActive();
-        soundlistener.active = true;
-    }
 
     /*
     var transform = placeable.transform;
@@ -76,8 +77,7 @@ function Initialize()
 
 function IsCameraActive()
 {
-    var camera = me.GetComponent("EC_Camera");
-    return camera.IsActive();
+    return me.camera.IsActive();
 }
 
 function Update(frametime)
@@ -206,4 +206,55 @@ function GestureUpdated(gestureEvent)
         HandleMouseLookY(delta.y());
         gestureEvent.Accept();
     }
+}
+
+function getActiveCamera() {
+    var cameraEnts = scene.GetEntitiesWithComponent("EC_Camera");
+    for (idx in cameraEnts) {
+        var ent = cameraEnts[idx];
+        if (ent.camera.IsActive())
+            return ent;
+    }
+    console.LogWarning("Shared_Freelookcam: no active camera found.");
+}
+
+var prev_cam = null;
+function toggleActive() {
+    if (!me.camera.IsActive()) {
+        prev_cam = getActiveCamera();
+        setActive(me, prev_cam);
+    }
+    else {
+        setActive(prev_cam, me);
+    }
+}
+
+//GUI: activate toggle button
+if(!framework.IsHeadless()) {
+    engine.ImportExtension("qt.core");
+    engine.ImportExtension("qt.gui");
+
+    var actbut = new QPushButton();
+    actbut.checkable = true;
+    actbut.checked = me.camera.IsActive();
+    actbut.text = "Use Shared Camera";
+    actbut.clicked.connect(toggleActive);
+
+    var proxy = new UiProxyWidget(actbut);
+    ui.AddProxyWidgetToScene(proxy);
+    proxy.windowFlags = 0;
+    proxy.effect = 0;
+    proxy.focusPolicy = Qt.NoFocus;
+
+    function windowResized(w, h) {
+        print(h);
+        proxy.x = w - 150;
+        proxy.y = h - 50;
+    }
+
+    var window = ui.MainWindow();    
+    ui.MainWindow().WindowResizeEvent.connect(windowResized);
+    windowResized(window.width, window.height);
+
+    actbut.show();
 }

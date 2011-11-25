@@ -11,7 +11,7 @@
 //globals used in here & autopathcam
 var screens = [];
 var debug = 1;
-var camera = scene.GetEntityByName("FreeLookCamera"); //used in manualpathcam too
+var camera = scene.GetEntityByName("Shared_FreeLookCamera"); //used in manualpathcam too
 
 engine.IncludeFile("local://autopathcam.js");
 engine.IncludeFile("local://manualpathcam.js");

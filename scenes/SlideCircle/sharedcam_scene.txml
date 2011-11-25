@@ -2,7 +2,7 @@
 <scene>
  <entity id="1" sync="1">
   <component type="EC_Script" sync="1">
-   <attribute value="local://slidecircleapplication.js" name="Script ref"/>
+   <attribute value="local://shared_slidecircleapplication.js" name="Script ref"/>
    <attribute value="true" name="Run on load"/>
    <attribute value="0" name="Run mode"/>
    <attribute value="" name="Script application name"/>
@@ -170,7 +170,7 @@
    <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
    <attribute value="local://WoodPallet.mesh" name="Mesh ref"/>
    <attribute value="" name="Skeleton ref"/>
-   <attribute value="D:/rex/tundra-naali/bin/scenes/Avatar/WoodPallet.material" name="Mesh materials"/>
+   <attribute value="local://WoodPallet.material" name="Mesh materials"/>
    <attribute value="0" name="Draw distance"/>
    <attribute value="false" name="Cast shadows"/>
   </component>
@@ -202,7 +202,7 @@
  </entity>
  <entity id="8" sync="1">
   <component type="EC_Script" sync="1">
-   <attribute value="local://freelookcamera.js" name="Script ref"/>
+   <attribute value="local://shared_freelookcamera.js" name="Script ref"/>
    <attribute value="true" name="Run on load"/>
    <attribute value="0" name="Run mode"/>
    <attribute value="" name="Script application name"/>
@@ -224,7 +224,7 @@
    <attribute value="" name="Parent bone name"/>
   </component>
   <component type="EC_Name" sync="1">
-   <attribute value="FreeLookCamera" name="name"/>
+   <attribute value="Shared_FreeLookCamera" name="name"/>
    <attribute value="" name="description"/>
   </component>
   <component type="EC_InputMapper" sync="1">
@@ -240,7 +240,7 @@
    <attribute value="false" name="Suppress used mouse events"/>
   </component>
   <component type="EC_SoundListener" sync="0">
-   <attribute value="true" name="active"/>
+   <attribute value="false" name="active"/>
   </component>
  </entity>
 </scene>

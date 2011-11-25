@@ -68,7 +68,7 @@
   </component>
   <component type="EC_Material" sync="1">
    <attribute value="texture = http://comcastchd.vo.llnwd.net/o15/resized/213060f9-ef34-45fb-81e7-9c2a00bdd780.jpg" name="Parameters"/>
-   <attribute value="screen.material" name="Input Material"/>
+   <attribute value="local://screen.material" name="Input Material"/>
    <attribute value="screen0.material" name="Output Material"/>
   </component>
   <component type="EC_DynamicComponent" sync="1" name="SlideScreenInfo">
@@ -98,7 +98,7 @@
   </component>
   <component type="EC_Material" sync="1">
    <attribute value="texture = http://2.bp.blogspot.com/_tGXydrnpO8Q/TJr233MG4-I/AAAAAAAADdQ/vTVgP-QrIaQ/s320/6.a.png" name="Parameters"/>
-   <attribute value="screen.material" name="Input Material"/>
+   <attribute value="local://screen.material" name="Input Material"/>
    <attribute value="screen1.material" name="Output Material"/>
   </component>
   <component type="EC_DynamicComponent" sync="1" name="SlideScreenInfo">
@@ -128,7 +128,7 @@
   </component>
   <component type="EC_Material" sync="1">
    <attribute value="texture = http://www.designofsignage.com/application/symbol/hands/image/600x600/hand-3-three.jpg" name="Parameters"/>
-   <attribute value="screen.material" name="Input Material"/>
+   <attribute value="local://screen.material" name="Input Material"/>
    <attribute value="screen2.material" name="Output Material"/>
   </component>
   <component type="EC_DynamicComponent" sync="1" name="SlideScreenInfo">
@@ -158,7 +158,7 @@
   </component>
   <component type="EC_Material" sync="1">
    <attribute value="texture = http://www.astrogle.com/images/articles/numerology/number-4.jpg" name="Parameters"/>
-   <attribute value="screen.material" name="Input Material"/>
+   <attribute value="local://screen.material" name="Input Material"/>
    <attribute value="screen3.material" name="Output Material"/>
   </component>
   <component type="EC_DynamicComponent" sync="1" name="SlideScreenInfo">

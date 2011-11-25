@@ -233,7 +233,7 @@ if(!framework.IsHeadless()) {
     var actbut = new QPushButton();
     actbut.checkable = true;
     actbut.checked = me.camera.IsActive();
-    actbut.text = "Use Shared Camera";
+    actbut.text = "Presentation View";
     actbut.clicked.connect(toggleActive);
 
     var proxy = new UiProxyWidget(actbut);

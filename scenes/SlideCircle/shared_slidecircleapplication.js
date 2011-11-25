@@ -114,15 +114,11 @@ function reset() {
 
 function updateSettings() {
     var settings = me.GetComponent("EC_DynamicComponent", "SlideCircleSettings");
+    cameramode = settings.GetAttribute('cameramode');
     infront = settings.GetAttribute('infront');
     close = settings.GetAttribute('close');
     far = settings.GetAttribute('far');
-    recording = settings.GetAttribute('record')
-    stereo = settings.GetAttribute('stereo')
-    recordpath = settings.GetAttribute('recordpath')
-    cshowvideo = settings.GetAttribute('cshowvideo')
 }
-
 
 function initializeScreenMaterials() {
 	for (i = 0; i < screens.length; i++) {
@@ -190,13 +186,28 @@ function find_screens() {
     }
 }
 
-var settings = me.GetComponent("EC_DynamicComponent", "SlideCircleSettings");
-settings.AttributeChanged.connect(updateSettings);
+var settings, cameramode, infront, close, far;
+function initSettings() {
+    settings.AttributeChanged.connect(updateSettings);
+    updateSettings();
+}
+settings = me.GetComponent("EC_DynamicComponent", "SlideCircleSettings");
+if (settings) {
+    initSettings();
+}
+else {
+    me.ComponentAdded.connect(checkComponent);
+}
+//Check if the required settings component is added after EC_Script to Entity
+function checkComponent(comp, type) {
+    if (comp.typeName == "EC_DynamicComponent" &&
+        comp.name == "SlideCircleSettings") {
+        settings = comp;
+        initSettings();
+    }
+}
+            
 
-var cameramode = settings.GetAttribute('cameramode');
-var infront = settings.GetAttribute('infront');
-var close = settings.GetAttribute('close');
-var far = settings.GetAttribute('far');
 var recordstarted = false;
 var waitTicks = 0;
 

@@ -1,18 +1,11 @@
 // Deer2 - copy-pasted from guard.js which is perhaps more suitable than WandererAi .. for accurate travel between points
-engine.IncludeFile("local://vector.js");
-
 const ANIM_FADE_TIME = 0.25;
 const TERRAIN_DELTA = 0.02;
 
 var currentAnimState = '';
 var animState = null;
 
-var trans = me.mesh.nodeTransformation;
-trans.rot.z = 0;
-me.mesh.nodeTransformation = trans;
-    
-var velocity = new Vector3df();
-velocity.x = 1.0;
+var velocity = new float3(1.0, 0, 0);
 
 var maxSpeed = 0.917;
 var minSpeed = 0.2;
@@ -20,19 +13,19 @@ var maxSteer = 0.05;
 reachedDistance = 0.5;
 
 $ = { 
-    name: scene.GetEntityByNameRaw //for some reason without *Raw doesn't work on ubuntu lucid now
+    name: scene.GetEntityByName
 }; //again getting the jquery feel :)
 var target = null;
     
 var targetidx = 0;
 var turning = 0;
     
-var terrainEntity = scene.GetEntityRaw(scene.GetEntityIdsWithComponent('EC_Terrain')[0]);
+var terrainEntity = scene.GetEntity(scene.GetEntityIdsWithComponent('EC_Terrain')[0]);
 var terrain;
 if(terrainEntity)
     terrain = terrainEntity.terrain;
 else {
-    throw 'Terrain not found';
+    print('Terrain not found');
     terrain = null;
 }
         
@@ -46,7 +39,10 @@ function serverUpdate(dt) {
     // Are we are pursuing something
     if(target) {
         //print("Target: " + target);
-        var distance = Get2DDistance(target, tm.pos);
+        //distance check in 2d
+        var meflat = new float3(tm.pos.x, 0, tm.pos.z);
+        var tflat = new float3(target.x, 0, target.z);
+        var distance = tflat.Sub(meflat).Length();
         //print("Distance: " + distance);
         if(distance < reachedDistance) {
             target = null;
@@ -86,7 +82,7 @@ function updateVelocity(dt) {
     if(!target)
         return;
     
-    var direction = GetUnitVector(velocity);
+    var direction = velocity.Normalized();
     var slowDown = 0;
     
     // // Angle between current direction and target
@@ -126,19 +122,17 @@ function updateVelocity(dt) {
     var steer = get2DSteer(tm.pos, target, maxSteer, maxSpeed, slowDown);
     
     velocity.x += steer.x;
-    velocity.y += steer.y;
+    velocity.z += steer.z;
     
-    // Limit XY-speed
-    var v = new Vector3df();
+    // Limit XZ-speed
+    var v = new float3();
     v.x = velocity.x; 
-    v.y = velocity.y
-    v.z = 0;
-    v = GetLimitedVector(v, maxSpeed, minSpeed);
+    v.y = 0; 
+    v.z = velocity.z;
+    v = getLimitedVector(v, maxSpeed, minSpeed);
     
     velocity.x = v.x;
-    velocity.y = v.y;
-        
-    // Set Z-speed
+    velocity.z = v.z;
  }
 
 // Turns object to right direction and sets this.turning_ for animation
@@ -163,23 +157,34 @@ function updateOrientation(dt) {
     else 
         turning = 0;*/
     
-    tm.rot = terrain.GetTerrainRotationAngles(tm.pos.x, tm.pos.y, tm.pos.z, velocity);
+    //tm.rot = new float3(0, 0, 0); //terrain.GetTerrainRotationAngles(tm.pos.x, tm.pos.y, tm.pos.z, velocity);
+    var deerfwd = new float3(0, 0, 1);
+    var normal = terrain.GetInterpolatedNormal(tm.pos.x, tm.pos.y);
+    var quat = Quat.LookAt(deerfwd, velocity.Normalized(), scene.UpVector(), normal);
     me.placeable.transform = tm;
+    me.placeable.SetOrientation(quat);
 }
 
 function updatePosition(dt) {
     var tm = me.placeable.transform;
-    tm.pos = VectorSum(tm.pos, VectorMult(velocity, dt));
-    
-    var distanceToTerrain = terrain.GetDistanceToTerrain(tm.pos);
-    tm.pos.z -= distanceToTerrain;
-    tm.pos.z += TERRAIN_DELTA;
+    tm.pos = tm.pos.Add(velocity.Mul(dt));
+
+    /*var pointInHeightmapspace = new float3(tm.pos.x, tm.pos.z, tm.pos.y);
+    var distanceToTerrain = terrain.GetDistanceToTerrain(pointInHeightmapspace);
+    print("distanceToTerrain: " + distanceToTerrain);
+    if (distanceToTerrain != 0) {
+        tm.pos.y -= distanceToTerrain;
+        tm.pos.y += TERRAIN_DELTA;
+    }*/
+    var p = terrain.GetPointOnMap(tm.pos);
+    p.y -= 2.2 //adjust to workaround GetPointOnMap behaviour
+    tm.pos = p;
     
     me.placeable.transform = tm;
 }
 
 function updateAnimationState(dt) {
-    var speed = GetMagnitude(velocity);
+    var speed = velocity.Length();
     var state = null;
     
     me.Exec(7, 'PlayLoopedAnim', 'Walk_1-38', ANIM_FADE_TIME);
@@ -273,36 +278,46 @@ function updateAnimationState(dt) {
 //     this.currentAnimState_ = state;
 // }
 */
+function getLimitedVector(v, max, min) {
+    var l = v.Length();
+    if(l > max) {
+        v.Normalize();
+        v = v.Mul(max);
+    }
+    else if (min != undefined && l < min) {
+        v.Normalize();
+        v = v.Mul(min);
+    }
+    return v;
+}
 
 function get2DSteer(pos, target, maxSteer, maxSpeed, slowDownDistance) {
-    // Ignore Z
+    // Ignore Y
     var steer = null;
     
-    var desired = VectorSub(target, pos);
-    desired.z = 0;
+    var desired = target.Sub(pos);
+    desired.y = 0;
     
-    var distance = GetMagnitude(desired);
-    if(distance > 0) {        
+    var distance = desired.Length();
+    if(distance > 0) {
         if(slowDownDistance) {
             // Slowdown before reaching the target
             if(distance < slowDownDistance ) { 
-                desired = VectorMult(desired, maxSpeed*(distance/slowDownDistance));
+                desired = desired.Mul(maxSpeed * (distance/slowDownDistance));
             }
             else {
-                desired = VectorMult(desired, maxSpeed);
+                desired = desired.Mul(maxSpeed);
             }
         }
         else {
-            desired = VectorMult(desired, maxSpeed);
+            desired = desired.Mul(maxSpeed);
         }
-        var v = new Vector3df();
-        v.x = velocity.x;
-        v.y = velocity.y;
-        steer = VectorSub(desired, v);
-        steer = GetLimitedVector(steer, maxSteer);
+        var v = new float3(velocity.x, 0, velocity.z);
+        steer = desired.Sub(v);
+        steer = getLimitedVector(steer, maxSteer);
     }
     else {
-        steer = new Vector3df();
+        steer = new float3();
     }
     return steer;
 }

@@ -10645,7 +10645,7 @@
    <attribute value="0,0,0,-90,0,0,1,1,1" name="Transform"/>
    <attribute value="local://LVM_terrain.mesh" name="Mesh ref"/>
    <attribute value="" name="Skeleton ref"/>
-   <attribute value="LVMTerrain_Weighted2.material" name="Mesh materials"/>
+   <attribute value="local://LVMTerrain_Weighted2.material" name="Mesh materials"/>
    <attribute value="0" name="Draw distance"/>
    <attribute value="false" name="Cast shadows"/>
   </component>
@@ -10697,49 +10697,6 @@
    <attribute value="14.000000 7.500000 20.500000" name="Time"/>
    <attribute value="1.000000 1.000000" name="Weather (volumetric clouds only)"/>
    <attribute value="0" name="Wind direction"/>
-  </component>
- </entity>
- <entity id="-2147483646" sync="0">
-  <component type="EC_Script" sync="1">
-   <attribute value="local://freelookcamera.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_Camera" sync="1">
-   <attribute value="0.000000 1.000000 0.000000" name="Up vector"/>
-   <attribute value="0.100000001" name="Near plane"/>
-   <attribute value="2000" name="Far plane"/>
-   <attribute value="45" name="Vertical FOV"/>
-   <attribute value="" name="Aspect ratio"/>
-  </component>
-  <component type="EC_Placeable" sync="1">
-   <attribute value="-69.4194,14.6016,30.6436,-17.7,20.3999,0,1,1,1" name="Transform"/>
-   <attribute value="false" name="Show bounding box"/>
-   <attribute value="true" name="Visible"/>
-   <attribute value="1" name="Selection layer"/>
-   <attribute value="" name="Parent entity ref"/>
-   <attribute value="" name="Parent bone name"/>
-  </component>
-  <component type="EC_Name" sync="1">
-   <attribute value="FreeLookCamera" name="name"/>
-   <attribute value="" name="description"/>
-  </component>
-  <component type="EC_InputMapper" sync="1">
-   <attribute value="EC_InputMapper" name="Input context name"/>
-   <attribute value="101" name="Input context priority"/>
-   <attribute value="false" name="Take keyboard events over Qt"/>
-   <attribute value="true" name="Take mouse events over Qt"/>
-   <attribute value="1" name="Action execution type"/>
-   <attribute value="false" name="Key modifiers enable"/>
-   <attribute value="true" name="Enable actions"/>
-   <attribute value="true" name="Trigger on keyrepeats"/>
-   <attribute value="false" name="Suppress used keyboard events"/>
-   <attribute value="false" name="Suppress used mouse events"/>
-  </component>
-  <component type="EC_SoundListener" sync="0">
-   <attribute value="true" name="active"/>
   </component>
  </entity>
 </scene>

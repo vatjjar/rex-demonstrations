@@ -18,19 +18,19 @@ material wt_deer
             }
             texture_unit baseMap
             {
-                texture MAP_deer_G-03.png
+                texture local://MAP_deer_G-03.png
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit specularMap
             {
-                texture MAP_deer_G-03_SPEC.png
+                texture local://MAP_deer_G-03_SPEC.png
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit normalMap
             {
-                texture MAP_deer_G-03_NRM.png
+                texture local://MAP_deer_G-03_NRM.png
                 tex_address_mode wrap
                 filtering trilinear
             }

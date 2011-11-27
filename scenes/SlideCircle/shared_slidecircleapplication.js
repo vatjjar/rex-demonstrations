@@ -33,8 +33,8 @@ function changeSlide(index) {
 
     //ecmat loading hackstery
     var inputmat = currentscreen.material.inputMat;
-    currentscreen.material.inputMat = "";
-    currentscreen.material.inputMat = inputmat;
+    currentScreen.material.inputMat = "";
+    currentScreen.material.inputMat = inputmat;
     
     if (debug) {
         print("oldurl " + oldurl);

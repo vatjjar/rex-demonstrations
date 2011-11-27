@@ -1,0 +1,163 @@
+<!DOCTYPE Scene>
+<scene>
+ <entity id="1" sync="1">
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
+   <attribute value="local://screen.mesh" name="Mesh ref"/>
+   <attribute value="" name="Skeleton ref"/>
+   <attribute value="local://screen_frames.material;local://screen.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="1.44532,8.38572,-27.5815,8.91167,47.1377,-8.53774e-07,0.5,0.5,0.5" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+   <attribute value="1" name="Selection layer"/>
+   <attribute value="" name="Parent entity ref"/>
+   <attribute value="" name="Parent bone name"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="screen-pong" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_WebView" sync="1">
+   <attribute value="file:///home/antont/src/doc/tundra.png" name="View URL"/>
+   <attribute value="1064 720" name="View Size"/>
+   <attribute value="1" name="Render Submesh"/>
+   <attribute value="1" name="Render FPS"/>
+   <attribute value="true" name="Enabled"/>
+   <attribute value="true" name="Interactive"/>
+   <attribute value="true" name="Illuminating"/>
+   <attribute value="-1" name="ControllerId"/>
+  </component>
+ </entity>
+ <entity id="2" sync="1">
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
+   <attribute value="local://screen.mesh" name="Mesh ref"/>
+   <attribute value="" name="Skeleton ref"/>
+   <attribute value="local://screen_frames.material;local://screen.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="-23.8384,9.09239,-16.7716,0,41.5457,0,0.5,0.5,0.5" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+   <attribute value="1" name="Selection layer"/>
+   <attribute value="" name="Parent entity ref"/>
+   <attribute value="" name="Parent bone name"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="screen-tundra_diagram" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_WebView" sync="1">
+   <attribute value="file:///home/antont/Pictures/rexslides/pong.png" name="View URL"/>
+   <attribute value="800 600" name="View Size"/>
+   <attribute value="1" name="Render Submesh"/>
+   <attribute value="0" name="Render FPS"/>
+   <attribute value="true" name="Enabled"/>
+   <attribute value="false" name="Interactive"/>
+   <attribute value="true" name="Illuminating"/>
+   <attribute value="-1" name="ControllerId"/>
+  </component>
+ </entity>
+ <entity id="3" sync="1">
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
+   <attribute value="local://screen.mesh" name="Mesh ref"/>
+   <attribute value="" name="Skeleton ref"/>
+   <attribute value="local://screen_frames.material;local://screen.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="-45.2207,11.997,3.35248,0,69.7019,0,0.5,0.5,0.5" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+   <attribute value="1" name="Selection layer"/>
+   <attribute value="" name="Parent entity ref"/>
+   <attribute value="" name="Parent bone name"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="screen" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_WebView" sync="1">
+   <attribute value="file:///home/antont/Pictures/rexslides/toy.png" name="View URL"/>
+   <attribute value="800 600" name="View Size"/>
+   <attribute value="1" name="Render Submesh"/>
+   <attribute value="0" name="Render FPS"/>
+   <attribute value="true" name="Enabled"/>
+   <attribute value="false" name="Interactive"/>
+   <attribute value="true" name="Illuminating"/>
+   <attribute value="-1" name="ControllerId"/>
+  </component>
+ </entity>
+ <entity id="4" sync="1">
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
+   <attribute value="local://screen.mesh" name="Mesh ref"/>
+   <attribute value="" name="Skeleton ref"/>
+   <attribute value="local://screen_frames.material;local://screen.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="-85.6372,9.09239,-20.0538,0,-96.3887,0,0.5,0.5,0.5" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+   <attribute value="1" name="Selection layer"/>
+   <attribute value="" name="Parent entity ref"/>
+   <attribute value="" name="Parent bone name"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="screen" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_WebView" sync="1">
+   <attribute value="file:///home/antont/Pictures/rexslides/org.png" name="View URL"/>
+   <attribute value="800 600" name="View Size"/>
+   <attribute value="1" name="Render Submesh"/>
+   <attribute value="0" name="Render FPS"/>
+   <attribute value="true" name="Enabled"/>
+   <attribute value="false" name="Interactive"/>
+   <attribute value="true" name="Illuminating"/>
+   <attribute value="-1" name="ControllerId"/>
+  </component>
+ </entity>
+ <entity id="5" sync="1">
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
+   <attribute value="local://screen.mesh" name="Mesh ref"/>
+   <attribute value="" name="Skeleton ref"/>
+   <attribute value="local://screen_frames.material;local://screen.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="-51.1529,9.82426,-36.2288,0,-175.709,0,0.5,0.5,0.5" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+   <attribute value="1" name="Selection layer"/>
+   <attribute value="" name="Parent entity ref"/>
+   <attribute value="" name="Parent bone name"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="screen" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_WebView" sync="1">
+   <attribute value="file:///home/vatjjar/projects/rex-demonstrations/scenes/LVM-assets/slide1.jpg" name="View URL"/>
+   <attribute value="1024 768" name="View Size"/>
+   <attribute value="1" name="Render Submesh"/>
+   <attribute value="0" name="Render FPS"/>
+   <attribute value="true" name="Enabled"/>
+   <attribute value="false" name="Interactive"/>
+   <attribute value="true" name="Illuminating"/>
+   <attribute value="-1" name="ControllerId"/>
+  </component>
+ </entity>
+</scene>

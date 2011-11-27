@@ -10663,8 +10663,8 @@
    <attribute value="6" name="Grid Height"/>
    <attribute value="0.129999995" name="Tex. U scale"/>
    <attribute value="0.129999995" name="Tex. V scale"/>
-   <attribute value="m_terrain_op.material" name="Material"/>
-   <attribute value="tundra2_terrain.ntf" name="Heightmap"/>
+   <attribute value="local://m_terrain_op.material" name="Material"/>
+   <attribute value="local://tundra2_terrain.ntf" name="Heightmap"/>
   </component>
   <component type="EC_RigidBody" sync="1">
    <attribute value="0" name="Mass"/>

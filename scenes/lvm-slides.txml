@@ -1338,7 +1338,7 @@
    <attribute value="" name="description"/>
   </component>
   <component type="EC_Placeable" sync="1">
-   <attribute value="-76.8389,7.68913,-37.8423,28.144,-80.4875,-28.4753,1.51075,1.51075,1.51075" name="Transform"/>
+   <attribute value="-63.4308,6.52085,-34.0478,160.233,75.0308,159.595,1.51075,1.51075,1.51075" name="Transform"/>
    <attribute value="false" name="Show bounding box"/>
    <attribute value="true" name="Visible"/>
    <attribute value="1" name="Selection layer"/>
@@ -1359,7 +1359,7 @@
   <component type="EC_Script" sync="1">
    <attribute value="local://deer2.js" name="Script ref"/>
    <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
+   <attribute value="2" name="Run mode"/>
    <attribute value="" name="Script application name"/>
    <attribute value="" name="Script class name"/>
   </component>
@@ -10238,16 +10238,23 @@
    <attribute value="10" type="real" name="close"/>
    <attribute value="autopath" type="string" name="cameramode"/>
   </component>
-  <component type="EC_DynamicComponent" sync="1" name="SlideCircleInfo">
-   <attribute value="6" type="int" name="slidenumber"/>
-   <attribute value="http://2.bp.blogspot.com/_tGXydrnpO8Q/TJr233MG4-I/AAAAAAAADdQ/vTVgP-QrIaQ/s320/6.a.png" type="string" name="slide5"/>
-   <attribute value="http://comcastchd.vo.llnwd.net/o15/resized/213060f9-ef34-45fb-81e7-9c2a00bdd780.jpg" type="string" name="slide4"/>
-   <attribute value="http://www.astrogle.com/images/articles/numerology/number-4.jpg" type="string" name="slide3"/>
-   <attribute value="http://www.designofsignage.com/application/symbol/hands/image/600x600/hand-3-three.jpg" type="string" name="slide2"/>
-   <attribute value="http://www.heatherdew.net/wp-content/uploads/2011/05/2.jpg" type="string" name="slide1"/>
-   <attribute value="http://www.cernea.net/wp-content/uploads/2010/04/1NumberOneInCircle.png" type="string" name="slide0"/>
-   <attribute value="0" type="int" name="current"/>
-  </component>
+    <component type="EC_DynamicComponent" sync="1" name="SlideCircleInfo">
+      <attribute value="0" type="int" name="current" />
+      <attribute value="13" type="int" name="slidenumber" />
+      <attribute value="local://Slide1.PNG" type="string" name="slide0" />
+      <attribute value="local://Slide2.PNG" type="string" name="slide1" />
+      <attribute value="local://Slide3.PNG" type="string" name="slide2" />
+      <attribute value="local://Slide4.PNG" type="string" name="slide3" />
+      <attribute value="local://Slide5.PNG" type="string" name="slide4" />
+      <attribute value="local://Slide6.PNG" type="string" name="slide5" />
+      <attribute value="local://Slide7.PNG" type="string" name="slide6" />
+      <attribute value="local://Slide8.PNG" type="string" name="slide7" />
+      <attribute value="local://Slide9.PNG" type="string" name="slide8" />
+      <attribute value="local://Slide10.PNG" type="string" name="slide9" />
+      <attribute value="local://Slide11.PNG" type="string" name="slide10" />
+      <attribute value="local://Slide12.PNG" type="string" name="slide11" />
+      <attribute value="local://Slide13.PNG" type="string" name="slide12" />
+    </component>
  </entity>
  <entity id="363" sync="1">
   <component type="EC_Script" sync="1">

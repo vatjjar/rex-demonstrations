@@ -481,35 +481,6 @@
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
   </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.500000 3.650000 0.650000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
-  </component>
  </entity>
  <entity id="19" sync="1">
   <component type="EC_Mesh" sync="1">
@@ -532,35 +503,6 @@
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
   </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.500000 3.650000 0.650000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
-  </component>
  </entity>
  <entity id="20" sync="1">
   <component type="EC_Mesh" sync="1">
@@ -582,35 +524,6 @@
   <component type="EC_Name" sync="1">
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.500000 3.650000 0.650000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
   </component>
  </entity>
  <entity id="21" sync="1">
@@ -1147,32 +1060,6 @@
   <component type="EC_AnimationController" sync="1">
    <attribute value="" name="Animation state"/>
   </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://crab.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.050000 0.050000 0.010000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
-  </component>
  </entity>
  <entity id="32" sync="1">
   <component type="EC_Mesh" sync="1">
@@ -1194,35 +1081,6 @@
   <component type="EC_Name" sync="1">
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.500000 3.650000 0.650000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
   </component>
  </entity>
  <entity id="33" sync="1">
@@ -1246,35 +1104,6 @@
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
   </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.500000 3.650000 0.650000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
-  </component>
  </entity>
  <entity id="34" sync="1">
   <component type="EC_Mesh" sync="1">
@@ -1296,35 +1125,6 @@
   <component type="EC_Name" sync="1">
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.500000 3.650000 0.650000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
   </component>
  </entity>
  <entity id="35" sync="1">
@@ -1348,35 +1148,6 @@
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
   </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.500000 3.650000 0.650000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
-  </component>
  </entity>
  <entity id="36" sync="1">
   <component type="EC_Mesh" sync="1">
@@ -1398,35 +1169,6 @@
   <component type="EC_Name" sync="1">
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.500000 3.650000 0.650000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
   </component>
  </entity>
  <entity id="37" sync="1">
@@ -1450,35 +1192,6 @@
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
   </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.500000 3.650000 0.650000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
-  </component>
  </entity>
  <entity id="38" sync="1">
   <component type="EC_Mesh" sync="1">
@@ -1500,35 +1213,6 @@
   <component type="EC_Name" sync="1">
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.500000 3.650000 0.650000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
   </component>
  </entity>
  <entity id="39" sync="1">
@@ -1552,35 +1236,6 @@
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
   </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.500000 3.650000 0.650000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
-  </component>
  </entity>
  <entity id="40" sync="1">
   <component type="EC_Mesh" sync="1">
@@ -1603,35 +1258,6 @@
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
   </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.500000 3.650000 0.650000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
-  </component>
  </entity>
  <entity id="41" sync="1">
   <component type="EC_Mesh" sync="1">
@@ -1653,35 +1279,6 @@
   <component type="EC_Name" sync="1">
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.500000 3.650000 0.650000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
   </component>
  </entity>
  <entity id="42" sync="1">
@@ -1741,7 +1338,7 @@
    <attribute value="" name="description"/>
   </component>
   <component type="EC_Placeable" sync="1">
-   <attribute value="-64.0735,6.51176,-33.8895,160.244,75.0195,159.605,1.51075,1.51075,1.51075" name="Transform"/>
+   <attribute value="-76.8389,7.68913,-37.8423,28.144,-80.4875,-28.4753,1.51075,1.51075,1.51075" name="Transform"/>
    <attribute value="false" name="Show bounding box"/>
    <attribute value="true" name="Visible"/>
    <attribute value="1" name="Selection layer"/>
@@ -1912,32 +1509,6 @@
   <component type="EC_AnimationController" sync="1">
    <attribute value="" name="Animation state"/>
   </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://crab.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.050000 0.050000 0.010000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
-  </component>
  </entity>
  <entity id="47" sync="1">
   <component type="EC_Name" sync="1">
@@ -1962,32 +1533,6 @@
   </component>
   <component type="EC_AnimationController" sync="1">
    <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://crab.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.050000 0.050000 0.010000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
   </component>
  </entity>
  <entity id="48" sync="1">
@@ -2014,32 +1559,6 @@
   <component type="EC_AnimationController" sync="1">
    <attribute value="" name="Animation state"/>
   </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://crab.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.050000 0.050000 0.010000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
-  </component>
  </entity>
  <entity id="49" sync="1">
   <component type="EC_Name" sync="1">
@@ -2064,32 +1583,6 @@
   </component>
   <component type="EC_AnimationController" sync="1">
    <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://crab.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.050000 0.050000 0.010000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
   </component>
  </entity>
  <entity id="50" sync="1">
@@ -2116,32 +1609,6 @@
   <component type="EC_AnimationController" sync="1">
    <attribute value="" name="Animation state"/>
   </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://crab.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.050000 0.050000 0.010000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
-  </component>
  </entity>
  <entity id="51" sync="1">
   <component type="EC_Name" sync="1">
@@ -2167,32 +1634,6 @@
   <component type="EC_AnimationController" sync="1">
    <attribute value="" name="Animation state"/>
   </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://crab.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.050000 0.050000 0.010000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
-  </component>
  </entity>
  <entity id="52" sync="1">
   <component type="EC_Name" sync="1">
@@ -2217,32 +1658,6 @@
   </component>
   <component type="EC_AnimationController" sync="1">
    <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://crab.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
-  <component type="EC_RigidBody" sync="1">
-   <attribute value="0" name="Mass"/>
-   <attribute value="0" name="Shape type"/>
-   <attribute value="0.050000 0.050000 0.010000" name="Size"/>
-   <attribute value="" name="Collision mesh ref"/>
-   <attribute value="0.5" name="Friction"/>
-   <attribute value="0" name="Restitution"/>
-   <attribute value="0" name="Linear damping"/>
-   <attribute value="0" name="Angular damping"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Linear factor"/>
-   <attribute value="1.000000 1.000000 1.000000" name="Angular factor"/>
-   <attribute value="false" name="Kinematic"/>
-   <attribute value="false" name="Phantom"/>
-   <attribute value="false" name="Draw Debug"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Linear velocity"/>
-   <attribute value="0.000000 0.000000 0.000000" name="Angular velocity"/>
-   <attribute value="-1" name="Collision Layer"/>
-   <attribute value="-1" name="Collision Mask"/>
   </component>
  </entity>
  <entity id="53" sync="1">
@@ -2411,16 +1826,6 @@
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
   </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
  </entity>
  <entity id="59" sync="1">
   <component type="EC_Placeable" sync="1">
@@ -2442,16 +1847,6 @@
   <component type="EC_Name" sync="1">
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
   </component>
  </entity>
  <entity id="60" sync="1">
@@ -2488,16 +1883,6 @@
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
   </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
  </entity>
  <entity id="62" sync="1">
   <component type="EC_Placeable" sync="1">
@@ -2520,16 +1905,6 @@
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
   </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
-  </component>
  </entity>
  <entity id="63" sync="1">
   <component type="EC_Placeable" sync="1">
@@ -2551,16 +1926,6 @@
   <component type="EC_Name" sync="1">
    <attribute value="OspreyGame_Fish" name="name"/>
    <attribute value="" name="description"/>
-  </component>
-  <component type="EC_AnimationController" sync="1">
-   <attribute value="" name="Animation state"/>
-  </component>
-  <component type="EC_Script" sync="1">
-   <attribute value="local://fish.js" name="Script ref"/>
-   <attribute value="true" name="Run on load"/>
-   <attribute value="0" name="Run mode"/>
-   <attribute value="" name="Script application name"/>
-   <attribute value="" name="Script class name"/>
   </component>
  </entity>
  <entity id="64" sync="1">
@@ -10645,7 +10010,7 @@
    <attribute value="0,0,0,-90,0,0,1,1,1" name="Transform"/>
    <attribute value="local://LVM_terrain.mesh" name="Mesh ref"/>
    <attribute value="" name="Skeleton ref"/>
-   <attribute value="LVMTerrain_Weighted2.material" name="Mesh materials"/>
+   <attribute value="local://LVMTerrain_Weighted2.material" name="Mesh materials"/>
    <attribute value="0" name="Draw distance"/>
    <attribute value="false" name="Cast shadows"/>
   </component>
@@ -10663,8 +10028,8 @@
    <attribute value="6" name="Grid Height"/>
    <attribute value="0.129999995" name="Tex. U scale"/>
    <attribute value="0.129999995" name="Tex. V scale"/>
-   <attribute value="m_terrain_op.material" name="Material"/>
-   <attribute value="tundra2_terrain.ntf" name="Heightmap"/>
+   <attribute value="local://m_terrain_op.material" name="Material"/>
+   <attribute value="local://tundra2_terrain.ntf" name="Heightmap"/>
   </component>
   <component type="EC_RigidBody" sync="1">
    <attribute value="0" name="Mass"/>
@@ -10750,7 +10115,7 @@
   </component>
   <component type="EC_DynamicComponent" sync="1" name="SlideScreenInfo"/>
   <component type="EC_Material" sync="1">
-   <attribute value="texture = https://github.com/realXtend/doc/raw/master/tundra.png" name="Parameters"/>
+   <attribute value="texture = http://www.heatherdew.net/wp-content/uploads/2011/05/2.jpg" name="Parameters"/>
    <attribute value="local://screen.material" name="Input Material"/>
    <attribute value="screen2.material" name="Output Material"/>
   </component>
@@ -10834,12 +10199,12 @@
   </component>
   <component type="EC_DynamicComponent" sync="1" name="SlideScreenInfo"/>
   <component type="EC_Material" sync="1">
-   <attribute value="texture =http://comcastchd.vo.llnwd.net/o15/resized/213060f9-ef34-45fb-81e7-9c2a00bdd780.jpg" name="Parameters"/>
+   <attribute value="texture = http://comcastchd.vo.llnwd.net/o15/resized/213060f9-ef34-45fb-81e7-9c2a00bdd780.jpg" name="Parameters"/>
    <attribute value="local://screen.material" name="Input Material"/>
    <attribute value="screen5.material" name="Output Material"/>
   </component>
  </entity>
- <entity id="1001" sync="1">
+ <entity id="362" sync="1">
   <component type="EC_Script" sync="1">
    <attribute value="local://shared_slidecircleapplication.js" name="Script ref"/>
    <attribute value="true" name="Run on load"/>
@@ -10884,7 +10249,7 @@
    <attribute value="0" type="int" name="current"/>
   </component>
  </entity>
- <entity id="8" sync="1">
+ <entity id="363" sync="1">
   <component type="EC_Script" sync="1">
    <attribute value="local://shared_freelookcamera.js" name="Script ref"/>
    <attribute value="true" name="Run on load"/>
@@ -10900,7 +10265,7 @@
    <attribute value="" name="Aspect ratio"/>
   </component>
   <component type="EC_Placeable" sync="1">
-   <attribute value="23.6913,10.6407,3.07526,-26.1477,-80.0807,4.95631e-06,1,1,1" name="Transform"/>
+   <attribute value="-4.3996,9.03288,-33.0053,175.36,-47.14,-180,1,1,1" name="Transform"/>
    <attribute value="false" name="Show bounding box"/>
    <attribute value="true" name="Visible"/>
    <attribute value="1" name="Selection layer"/>
@@ -10924,7 +10289,7 @@
    <attribute value="false" name="Suppress used mouse events"/>
   </component>
   <component type="EC_SoundListener" sync="0">
-   <attribute value="true" name="active"/>
+   <attribute value="false" name="active"/>
   </component>
  </entity>
 </scene>

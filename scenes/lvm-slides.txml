@@ -10299,4 +10299,156 @@
    <attribute value="false" name="active"/>
   </component>
  </entity>
+
+ <!-- admino tools -->
+ <entity id="1288">
+  <component type="EC_Name" sync="1">
+   <attribute value="AdminoEventManager" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_Script" sync="1" name="EventManagerScript">
+   <attribute value="http://adminotech.data.s3.amazonaws.com/tundra2/app/event-manager/event-manager-deploy.js" name="Script ref"/>
+   <attribute value="true" name="Run on load"/>
+   <attribute value="0" name="Run mode"/>
+   <attribute value="" name="Script application name"/>
+   <attribute value="" name="Script class name"/>
+  </component>
+ </entity>
+ <entity id="1287">
+  <component type="EC_Name" sync="1">
+   <attribute value="LockSessionTool" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_Placeable" sync="1">
+   <attribute value="30.432,14.4539,-298.987,0,0,0,1,1,1" name="Transform"/>
+   <attribute value="false" name="Show bounding box"/>
+   <attribute value="true" name="Visible"/>
+   <attribute value="1" name="Selection layer"/>
+   <attribute value="" name="Parent entity ref"/>
+   <attribute value="" name="Parent bone name"/>
+  </component>
+  <component type="EC_Mesh" sync="1">
+   <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
+   <attribute value="http://adminotech.data.s3.amazonaws.com/tundra2/assets/lock_open.mesh" name="Mesh ref"/>
+   <attribute value="" name="Skeleton ref"/>
+   <attribute value="http://adminotech.data.s3.amazonaws.com/tundra2/assets/lock_open.material" name="Mesh materials"/>
+   <attribute value="0" name="Draw distance"/>
+   <attribute value="false" name="Cast shadows"/>
+  </component>
+  <component type="EC_Script" sync="1">
+   <attribute value="http://adminotech.data.s3.amazonaws.com/tundra2/app/lock-session-tool/locksessiontool-deploy.js" name="Script ref"/>
+   <attribute value="true" name="Run on load"/>
+   <attribute value="0" name="Run mode"/>
+   <attribute value="" name="Script application name"/>
+   <attribute value="" name="Script class name"/>
+  </component>
+ </entity>
+ <entity id="1206">
+  <component type="EC_Name" sync="1">
+   <attribute value="WeatherApp" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_Script" sync="1">
+   <attribute value="http://adminotech.data.s3.amazonaws.com/tundra2/app/time-weather-application/time-weather-application-deploy.js" name="Script ref"/>
+   <attribute value="true" name="Run on load"/>
+   <attribute value="1" name="Run mode"/>
+   <attribute value="" name="Script application name"/>
+   <attribute value="" name="Script class name"/>
+  </component>
+ </entity>
+ <entity id="1122">
+  <component type="EC_Name" sync="1">
+   <attribute value="AdminotechScripts" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_Script" sync="1">
+   <attribute value="http://adminotech.data.s3.amazonaws.com/tundra2/app/adminotech-help/adminotech-help.js" name="Script ref"/>
+   <attribute value="true" name="Run on load"/>
+   <attribute value="1" name="Run mode"/>
+   <attribute value="" name="Script application name"/>
+   <attribute value="" name="Script class name"/>
+  </component>
+  <component type="EC_Script" sync="1" name="Library">
+   <attribute value="http://adminotech.data.s3.amazonaws.com/tundra2/app/library/library-deploy.js" name="Script ref"/>
+   <attribute value="true" name="Run on load"/>
+   <attribute value="1" name="Run mode"/>
+   <attribute value="" name="Script application name"/>
+   <attribute value="" name="Script class name"/>
+  </component>
+ </entity>
+ <entity id="1120">
+  <component type="EC_Name" sync="1">
+   <attribute value="ClockApplication" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_Script" sync="1">
+   <attribute value="http://adminotech.data.s3.amazonaws.com/tundra2/app/world-clock/clock-creator-deploy.js" name="Script ref"/>
+   <attribute value="true" name="Run on load"/>
+   <attribute value="0" name="Run mode"/>
+   <attribute value="" name="Script application name"/>
+   <attribute value="" name="Script class name"/>
+  </component>
+ </entity>
+ <entity id="1119">
+  <component type="EC_Name" sync="1">
+   <attribute value="AdminoVoipApplication" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_Script" sync="1">
+   <attribute value="http://adminotech.data.s3.amazonaws.com/tundra2/app/voip/MumbleApplication-deploy.js" name="Script ref"/>
+   <attribute value="true" name="Run on load"/>
+   <attribute value="0" name="Run mode"/>
+   <attribute value="" name="Script application name"/>
+   <attribute value="" name="Script class name"/>
+  </component>
+ </entity>
+ <entity id="1118">
+  <component type="EC_Name" sync="1">
+   <attribute value="ContentTools" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_Script" sync="1">
+   <attribute value="http://adminotech.data.s3.amazonaws.com/tundra2/app/contenttools/content-manager-deploy.js" name="Script ref"/>
+   <attribute value="true" name="Run on load"/>
+   <attribute value="1" name="Run mode"/>
+   <attribute value="" name="Script application name"/>
+   <attribute value="" name="Script class name"/>
+  </component>
+ </entity>
+ <entity id="1009">
+  <component type="EC_Name" sync="1">
+   <attribute value="ChatApplication" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_Script" sync="1">
+   <attribute value="http://adminotech.data.s3.amazonaws.com/tundra2/app/chat/chat-deploy.js" name="Script ref"/>
+   <attribute value="true" name="Run on load"/>
+   <attribute value="0" name="Run mode"/>
+   <attribute value="" name="Script application name"/>
+   <attribute value="" name="Script class name"/>
+  </component>
+  <component type="EC_DynamicComponent" sync="1" name="AdminoChatData">
+   <attribute value="Public Chat" type="string" name="PublicChannel"/>
+   <attribute value="600" type="int" name="WidgetWidth"/>
+   <attribute value="165" type="int" name="LogHeight"/>
+  </component>
+ </entity>
+ <entity id="1002">
+  <component type="EC_Script" sync="1">
+   <attribute value="http://adminotech.data.s3.amazonaws.com/tundra2/app/avatar/avatar-manager-deploy.js" name="Script ref"/>
+   <attribute value="true" name="Run on load"/>
+   <attribute value="0" name="Run mode"/>
+   <attribute value="AvatarApp" name="Script application name"/>
+   <attribute value="" name="Script class name"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="AdminoAvatarManager" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_DynamicComponent" sync="1" name="AdminoAvatarAppData">
+   <attribute value="-5.000000 30.000000 -35.000000" type="float3" name="SpawnPosition"/>
+   <attribute value="10" type="int" name="SpawnArea"/>
+   <attribute value="true" type="bool" name="EnableNotifications"/>
+  </component>
+ </entity>
 </scene>

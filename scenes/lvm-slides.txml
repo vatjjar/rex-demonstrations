@@ -1741,7 +1741,7 @@
    <attribute value="" name="description"/>
   </component>
   <component type="EC_Placeable" sync="1">
-   <attribute value="-99.551,7.37325,-16.3829,-1.54967,57.9003,-1.82916,1.51075,1.51075,1.51075" name="Transform"/>
+   <attribute value="-64.0735,6.51176,-33.8895,160.244,75.0195,159.605,1.51075,1.51075,1.51075" name="Transform"/>
    <attribute value="false" name="Show bounding box"/>
    <attribute value="true" name="Visible"/>
    <attribute value="1" name="Selection layer"/>
@@ -10704,7 +10704,7 @@
    <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
    <attribute value="local://screen.mesh" name="Mesh ref"/>
    <attribute value="" name="Skeleton ref"/>
-   <attribute value="local://frame.material;local://screen.material" name="Mesh materials"/>
+   <attribute value="local://frame.material;screen1.material" name="Mesh materials"/>
    <attribute value="0" name="Draw distance"/>
    <attribute value="false" name="Cast shadows"/>
   </component>
@@ -10720,15 +10720,11 @@
    <attribute value="screen-pong" name="name"/>
    <attribute value="" name="description"/>
   </component>
-  <component type="EC_WebView" sync="1">
-   <attribute value="file:///home/antont/src/doc/tundra.png" name="View URL"/>
-   <attribute value="1064 720" name="View Size"/>
-   <attribute value="1" name="Render Submesh"/>
-   <attribute value="1" name="Render FPS"/>
-   <attribute value="true" name="Enabled"/>
-   <attribute value="true" name="Interactive"/>
-   <attribute value="true" name="Illuminating"/>
-   <attribute value="-1" name="ControllerId"/>
+  <component type="EC_DynamicComponent" sync="1" name="SlideScreenInfo"/>
+  <component type="EC_Material" sync="1">
+   <attribute value="texture = http://www.cernea.net/wp-content/uploads/2010/04/1NumberOneInCircle.png" name="Parameters"/>
+   <attribute value="local://screen.material" name="Input Material"/>
+   <attribute value="screen1.material" name="Output Material"/>
   </component>
  </entity>
  <entity id="358" sync="1">
@@ -10736,7 +10732,7 @@
    <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
    <attribute value="local://screen.mesh" name="Mesh ref"/>
    <attribute value="" name="Skeleton ref"/>
-   <attribute value="local://frame.material;local://screen.material" name="Mesh materials"/>
+   <attribute value="local://frame.material;screen2.material" name="Mesh materials"/>
    <attribute value="0" name="Draw distance"/>
    <attribute value="false" name="Cast shadows"/>
   </component>
@@ -10752,15 +10748,11 @@
    <attribute value="screen-tundra_diagram" name="name"/>
    <attribute value="" name="description"/>
   </component>
-  <component type="EC_WebView" sync="1">
-   <attribute value="file:///home/antont/Pictures/rexslides/pong.png" name="View URL"/>
-   <attribute value="800 600" name="View Size"/>
-   <attribute value="1" name="Render Submesh"/>
-   <attribute value="0" name="Render FPS"/>
-   <attribute value="true" name="Enabled"/>
-   <attribute value="false" name="Interactive"/>
-   <attribute value="true" name="Illuminating"/>
-   <attribute value="-1" name="ControllerId"/>
+  <component type="EC_DynamicComponent" sync="1" name="SlideScreenInfo"/>
+  <component type="EC_Material" sync="1">
+   <attribute value="texture = https://github.com/realXtend/doc/raw/master/tundra.png" name="Parameters"/>
+   <attribute value="local://screen.material" name="Input Material"/>
+   <attribute value="screen2.material" name="Output Material"/>
   </component>
  </entity>
  <entity id="359" sync="1">
@@ -10768,7 +10760,7 @@
    <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
    <attribute value="local://screen.mesh" name="Mesh ref"/>
    <attribute value="" name="Skeleton ref"/>
-   <attribute value="local://frame.material;local://screen.material" name="Mesh materials"/>
+   <attribute value="local://frame.material;screen3.material" name="Mesh materials"/>
    <attribute value="0" name="Draw distance"/>
    <attribute value="false" name="Cast shadows"/>
   </component>
@@ -10781,18 +10773,14 @@
    <attribute value="" name="Parent bone name"/>
   </component>
   <component type="EC_Name" sync="1">
-   <attribute value="screen" name="name"/>
+   <attribute value="screen3" name="name"/>
    <attribute value="" name="description"/>
   </component>
-  <component type="EC_WebView" sync="1">
-   <attribute value="file:///home/antont/Pictures/rexslides/toy.png" name="View URL"/>
-   <attribute value="800 600" name="View Size"/>
-   <attribute value="1" name="Render Submesh"/>
-   <attribute value="0" name="Render FPS"/>
-   <attribute value="true" name="Enabled"/>
-   <attribute value="false" name="Interactive"/>
-   <attribute value="true" name="Illuminating"/>
-   <attribute value="-1" name="ControllerId"/>
+  <component type="EC_DynamicComponent" sync="1" name="SlideScreenInfo"/>
+  <component type="EC_Material" sync="1">
+   <attribute value="texture = http://www.designofsignage.com/application/symbol/hands/image/600x600/hand-3-three.jpg" name="Parameters"/>
+   <attribute value="local://screen.material" name="Input Material"/>
+   <attribute value="screen3.material" name="Output Material"/>
   </component>
  </entity>
  <entity id="360" sync="1">
@@ -10800,7 +10788,7 @@
    <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
    <attribute value="local://screen.mesh" name="Mesh ref"/>
    <attribute value="" name="Skeleton ref"/>
-   <attribute value="local://frame.material;local://screen.material" name="Mesh materials"/>
+   <attribute value="local://frame.material;screen4.material" name="Mesh materials"/>
    <attribute value="0" name="Draw distance"/>
    <attribute value="false" name="Cast shadows"/>
   </component>
@@ -10813,18 +10801,14 @@
    <attribute value="" name="Parent bone name"/>
   </component>
   <component type="EC_Name" sync="1">
-   <attribute value="screen" name="name"/>
+   <attribute value="screen4" name="name"/>
    <attribute value="" name="description"/>
   </component>
-  <component type="EC_WebView" sync="1">
-   <attribute value="file:///home/antont/Pictures/rexslides/org.png" name="View URL"/>
-   <attribute value="800 600" name="View Size"/>
-   <attribute value="1" name="Render Submesh"/>
-   <attribute value="0" name="Render FPS"/>
-   <attribute value="true" name="Enabled"/>
-   <attribute value="false" name="Interactive"/>
-   <attribute value="true" name="Illuminating"/>
-   <attribute value="-1" name="ControllerId"/>
+  <component type="EC_DynamicComponent" sync="1" name="SlideScreenInfo"/>
+  <component type="EC_Material" sync="1">
+   <attribute value="texture = http://www.astrogle.com/images/articles/numerology/number-4.jpg" name="Parameters"/>
+   <attribute value="local://screen.material" name="Input Material"/>
+   <attribute value="screen4.material" name="Output Material"/>
   </component>
  </entity>
  <entity id="361" sync="1">
@@ -10832,7 +10816,7 @@
    <attribute value="0,0,0,0,0,0,1,1,1" name="Transform"/>
    <attribute value="local://screen.mesh" name="Mesh ref"/>
    <attribute value="" name="Skeleton ref"/>
-   <attribute value="local://frame.material;local://screen.material" name="Mesh materials"/>
+   <attribute value="local://frame.material;screen5.material" name="Mesh materials"/>
    <attribute value="0" name="Draw distance"/>
    <attribute value="false" name="Cast shadows"/>
   </component>
@@ -10845,23 +10829,64 @@
    <attribute value="" name="Parent bone name"/>
   </component>
   <component type="EC_Name" sync="1">
-   <attribute value="screen" name="name"/>
+   <attribute value="screen5" name="name"/>
    <attribute value="" name="description"/>
   </component>
-  <component type="EC_WebView" sync="1">
-   <attribute value="file:///home/vatjjar/projects/rex-demonstrations/scenes/LVM-assets/slide1.jpg" name="View URL"/>
-   <attribute value="1024 768" name="View Size"/>
-   <attribute value="1" name="Render Submesh"/>
-   <attribute value="0" name="Render FPS"/>
-   <attribute value="true" name="Enabled"/>
-   <attribute value="false" name="Interactive"/>
-   <attribute value="true" name="Illuminating"/>
-   <attribute value="-1" name="ControllerId"/>
+  <component type="EC_DynamicComponent" sync="1" name="SlideScreenInfo"/>
+  <component type="EC_Material" sync="1">
+   <attribute value="texture =http://comcastchd.vo.llnwd.net/o15/resized/213060f9-ef34-45fb-81e7-9c2a00bdd780.jpg" name="Parameters"/>
+   <attribute value="local://screen.material" name="Input Material"/>
+   <attribute value="screen5.material" name="Output Material"/>
   </component>
  </entity>
- <entity id="-2147483646" sync="0">
+ <entity id="1001" sync="1">
   <component type="EC_Script" sync="1">
-   <attribute value="local://freelookcamera.js" name="Script ref"/>
+   <attribute value="local://shared_slidecircleapplication.js" name="Script ref"/>
+   <attribute value="true" name="Run on load"/>
+   <attribute value="0" name="Run mode"/>
+   <attribute value="" name="Script application name"/>
+   <attribute value="" name="Script class name"/>
+  </component>
+  <component type="EC_Name" sync="1">
+   <attribute value="SlideCircle" name="name"/>
+   <attribute value="" name="description"/>
+  </component>
+  <component type="EC_InputMapper" sync="1">
+   <attribute value="EC_InputMapper" name="Input context name"/>
+   <attribute value="90" name="Input context priority"/>
+   <attribute value="false" name="Take keyboard events over Qt"/>
+   <attribute value="false" name="Take mouse events over Qt"/>
+   <attribute value="1" name="Action execution type"/>
+   <attribute value="true" name="Key modifiers enable"/>
+   <attribute value="true" name="Enable actions"/>
+   <attribute value="true" name="Trigger on keyrepeats"/>
+   <attribute value="false" name="Suppress used keyboard events"/>
+   <attribute value="false" name="Suppress used mouse events"/>
+  </component>
+  <component type="EC_DynamicComponent" sync="1" name="SlideCircleSettings">
+   <attribute value="false" type="bool" name="stereo"/>
+   <attribute value="d:/temp/3d/" type="string" name="recordpath"/>
+   <attribute value="false" type="bool" name="recording"/>
+   <attribute value="8" type="real" name="infront"/>
+   <attribute value="15" type="real" name="far"/>
+   <attribute value="false" type="bool" name="cshowvideo"/>
+   <attribute value="10" type="real" name="close"/>
+   <attribute value="autopath" type="string" name="cameramode"/>
+  </component>
+  <component type="EC_DynamicComponent" sync="1" name="SlideCircleInfo">
+   <attribute value="6" type="int" name="slidenumber"/>
+   <attribute value="http://2.bp.blogspot.com/_tGXydrnpO8Q/TJr233MG4-I/AAAAAAAADdQ/vTVgP-QrIaQ/s320/6.a.png" type="string" name="slide5"/>
+   <attribute value="http://comcastchd.vo.llnwd.net/o15/resized/213060f9-ef34-45fb-81e7-9c2a00bdd780.jpg" type="string" name="slide4"/>
+   <attribute value="http://www.astrogle.com/images/articles/numerology/number-4.jpg" type="string" name="slide3"/>
+   <attribute value="http://www.designofsignage.com/application/symbol/hands/image/600x600/hand-3-three.jpg" type="string" name="slide2"/>
+   <attribute value="http://www.heatherdew.net/wp-content/uploads/2011/05/2.jpg" type="string" name="slide1"/>
+   <attribute value="http://www.cernea.net/wp-content/uploads/2010/04/1NumberOneInCircle.png" type="string" name="slide0"/>
+   <attribute value="0" type="int" name="current"/>
+  </component>
+ </entity>
+ <entity id="8" sync="1">
+  <component type="EC_Script" sync="1">
+   <attribute value="local://shared_freelookcamera.js" name="Script ref"/>
    <attribute value="true" name="Run on load"/>
    <attribute value="0" name="Run mode"/>
    <attribute value="" name="Script application name"/>
@@ -10875,7 +10900,7 @@
    <attribute value="" name="Aspect ratio"/>
   </component>
   <component type="EC_Placeable" sync="1">
-   <attribute value="-56.6622,20.1475,-14.736,-24.3,295.5,0,1,1,1" name="Transform"/>
+   <attribute value="23.6913,10.6407,3.07526,-26.1477,-80.0807,4.95631e-06,1,1,1" name="Transform"/>
    <attribute value="false" name="Show bounding box"/>
    <attribute value="true" name="Visible"/>
    <attribute value="1" name="Selection layer"/>
@@ -10883,7 +10908,7 @@
    <attribute value="" name="Parent bone name"/>
   </component>
   <component type="EC_Name" sync="1">
-   <attribute value="FreeLookCamera" name="name"/>
+   <attribute value="Shared_FreeLookCamera" name="name"/>
    <attribute value="" name="description"/>
   </component>
   <component type="EC_InputMapper" sync="1">

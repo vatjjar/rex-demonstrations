@@ -7,28 +7,28 @@ var AiWanderer = Class.extend({
     init: function() {
 
         // Intialise Environment
-        var terrain_entity = scene.GetEntityRaw(scene.GetEntityIdsWithComponent("EC_Terrain")[0]);
+        var terrain_entity = scene.GetEntity(scene.GetEntityIdsWithComponent("EC_Terrain")[0]);
         if (terrain_entity != null && typeof (terrain_entity) != "undefined") {
-            this.terrain_ = terrain_entity.GetComponentRaw("EC_Terrain");
+            this.terrain_ = terrain_entity.terrain;
         }
         else
             this.terrain_ = null;
 
-        this.placeable_ = me.GetComponentRaw("EC_Placeable");
+        this.placeable_ = me.placeable;
 
         // Get pointers to all waterplanes in scene.
 
         var ids = scene.GetEntityIdsWithComponent("EC_WaterPlane");
         this.waterPlaneComponents_ = [];
         for (var i = 0; i < ids.length; ++i) {
-            var entity = scene.GetEntityRaw(ids[i]);
-            this.waterPlaneComponents_.push(entity.GetComponentRaw("EC_WaterPlane"));
+            var entity = scene.GetEntity(ids[i]);
+            this.waterPlaneComponents_.push(entity.waterplane);
         }
 
         this.waterPlane_ = null;
 
         // Animation controller 
-        this.anim_ = me.GetComponentRaw("EC_AnimationController");
+        this.anim_ = me.animationcontroller;
 
         // Object itself.
         this.walking_ = false;
@@ -129,10 +129,10 @@ var AiWanderer = Class.extend({
         var volumes = [];
         for (var i = 0; i < ids.length; ++i) {
           
-            var ent = scene.GetEntityRaw(ids[i]);
-            var comp = ent.GetComponentRaw("EC_Name");
+            var ent = scene.GetEntity(ids[i]);
+            var comp = ent.GetComponent("EC_Name");
             if (comp.name == name) {
-                var volume = ent.GetComponentRaw("EC_VolumeTrigger");
+                var volume = ent.volumetrigger;
                 if (volume != null) {
                     volumes.push(volume);
                 }
@@ -148,8 +148,8 @@ var AiWanderer = Class.extend({
         var ids = scene.GetEntityIdsWithComponent("EC_VolumeTrigger");
 
         for (var i = 0; i < ids.lenght; ++i) {
-            var ent = scene.GetEntityRaw(ids[i]);
-            var volume = ent.GetComponent("EC_VolumeTrigger");
+            var ent = scene.GetEntity(ids[i]);
+            var volume = ent.volumetrigger;
             if (IsInsideVolume(point, volume))
                 return true;
         }
@@ -224,7 +224,7 @@ var AiWanderer = Class.extend({
     // Update loop, this loop should be called in function which is connected to frame update signal.
 
     Update: function(frametime) {
-
+        return;
         var currentTime = frame.GetWallClockTime();
         this.frameTime_ = frametime;
 

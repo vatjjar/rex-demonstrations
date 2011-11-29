@@ -4,7 +4,6 @@
 engine.IncludeFile("local://osprey_avatar.js");
 
 if (server.IsRunning()) {
-
     // In case that player disconnect..
     server.UserDisconnected.connect(Disconnect);
 }
@@ -13,15 +12,13 @@ if (server.IsRunning()) {
 var current_osprey_avatars_ = [];
 
 function StartGame() {
+    print("Starting Osprey Game..");
     if (server.IsRunning()) {
-
         // Currently because of UI - bug we define that only one player can play Osprey-game.
-        if (current_osprey_avatars_.length > 0) {
-            
+        if (current_osprey_avatars_.length > 0) {            
             var client = server.GetActionSender();
             
-            // Assure that client has ui in valid state:
-            
+            // Assure that client has ui in valid state:            
             var ids = scene.GetEntityIdsWithComponent("EC_Name");
             for (var i = 0; i < ids.length; ++i) {
 
@@ -39,10 +36,10 @@ function StartGame() {
         // Position where avatar will be spawned.
         
         //TODO Define position randomly?
-        var position = new Vector3df;
+        var position = new float3();
         position.x = -2.0;
-        position.y = -4.72;
-        position.z = 9.0;
+        position.y = 9.0;
+        position.z = -4.72;
             
         // Populate game area with fishes
         //TODO

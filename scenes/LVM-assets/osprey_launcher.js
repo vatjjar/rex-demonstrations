@@ -18,16 +18,9 @@ var widgetLaunch_ = null;
 
 
 function LaunchGame() {
-
-    var ids = scene.GetEntityIdsWithComponent("EC_Name");
-    for (var i = 0; i < ids.length; ++i) {
-
-        var e = scene.GetEntityRaw(ids[i]);
-        if (e.GetComponentRaw("EC_Name").name == "OspreyGame") {
-            e.Exec(2, "LaunchGame");  
-        }
-    }
-    
+    print("Launching Osprey Game");
+    var e = scene.GetEntityByName("OspreyGame");
+    e.Exec(2, "LaunchGame");  
 }
 
 function ShowGameDialog() {
@@ -68,7 +61,7 @@ function ShowGameDialog() {
 
         widgetLaunch_.move(gscene.width() / 2.0 - launchSizeX_ / 2.0, gscene.height() / 2.0 - launchSizeY_ / 2.0);
 
-        proxy.ToggleVisibility();
+        proxy.visible = true;
     }
     else {
         var gscene = ui.GraphicsScene();
@@ -116,7 +109,7 @@ function ShowControls() {
         
         widget_.move(gscene.width() / 2.0 - sizeX_ / 2.0, gscene.height() / 2.0 - sizeY_ / 2.0);
 
-        proxy.ToggleVisibility();
+        proxy.visible = true;
     
     }
     else {
@@ -143,7 +136,6 @@ function OnWindowSizeChanged() {
 }
 
 function Start() {
-    
     if ( widgetLaunch_ != null )
         widgetLaunch_.hide();
     
@@ -151,7 +143,7 @@ function Start() {
     LaunchGame();
 
     // Hide main right panel
-    var e = scene.GetEntityByNameRaw("MainHud");
+    var e = scene.GetEntityByName("MainHud");
     e.Exec(1, "HideMainUI");
 }
 

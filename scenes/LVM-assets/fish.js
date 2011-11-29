@@ -2,7 +2,7 @@ engine.IncludeFile("local://wandererAi.js");
 
 var Fish = AiWanderer.extend({
     init: function() {
-         
+        return;
          this.r_ = 0;
          this.currentDirection_ = 0;
          this.angularSpeed_ = 0.025;
@@ -10,7 +10,7 @@ var Fish = AiWanderer.extend({
          this.terrainDelta_= 0.5;
          this.waterDelta_ = 0.10;
          
-         var meshComp = me.GetComponentRaw("EC_Mesh");
+         var meshComp = me.mesh;
          var trans = meshComp.nodeTransformation;
          // Orginal 180 degree. 
          trans.rot.z = 0;

@@ -8,15 +8,20 @@ var hudRightPanel_ = null;
 var hudGamePanel_ = null;
 var hudGamePanelProxy_ = null;
 
-function CreateMainRightPanel() {
-      
-        var file = "local://main_right_panel.ui";
-        hudRightPanel_ = ui.LoadFromFile(file, false);
-        if (hudRightPanel_ == null) {
-            print("MainHud.js: LoadFromFile ui-file:" + file + " failed.");
-            return;
-        }
+keep = [];
 
+function CreateMainRightPanel() {  
+    var file = "local://main_right_panel.ui";
+    hudRightPanel_ = ui.LoadFromFile(file, false);
+    if (hudRightPanel_ == null) {
+        print("MainHud.js: LoadFromFile ui-file:" + file + " failed.");
+        return;
+    }
+
+    //print(hudRightPanel_);
+    //hudRightPanel_.show();
+    //keep.gui = hudRightPanel_;
+    
         var proxy = ui.AddWidgetToScene(hudRightPanel_);
 
         // No window borders.
@@ -26,24 +31,21 @@ function CreateMainRightPanel() {
         gscene.sceneRectChanged.connect(OnWindowSizeChanged);
         //hudRightPanel_.resize(154, 300);
         hudRightPanel_.move(gscene.width() - hudRightPanel_.width, gscene.height() - hudRightPanel_.height - 10);
-        proxy.ToggleVisibility();
+    print("MainHud trying to show");
+    print(proxy);
+    proxy.visible = true;
 
-
-        var butGames = findChild(hudRightPanel_, "butGames");
-        if (butGames == null) {
-            print("MainHud.js: Did not find games icon");
-            return;
-        }
+    var butGames = findChild(hudRightPanel_, "butGames");
+    if (butGames == null) {
+        print("MainHud.js: Did not find games icon");
+        return;
+    }
        
-        butGames.clicked.connect(ShowGamesPanel);
-     
-  
+    butGames.clicked.connect(ShowGamesPanel);
 }
 
-function ShowGamesPanel() {
-    
+function ShowGamesPanel() {    
     if (hudGamePanel_ == null) {
-        
         var location = "local://game_choice.ui";
         hudGamePanel_ = ui.LoadFromFile(location, false);
         if (hudGamePanel_ == null) {
@@ -75,14 +77,13 @@ function ShowGamesPanel() {
         gscene.sceneRectChanged.connect(OnWindowSizeChanged);
         //hudRightPanel_.resize(154, 300);
         hudGamePanel_.move(gscene.width() / 2.0 -  hudGamePanel_.width / 2.0, gscene.height() / 2.0 -  hudGamePanel_.height/ 2.0);
-        hudGamePanelProxy_.ToggleVisibility();
+        hudGamePanelProxy_.visible = true;
         
     }
     else {
-          
         var gscene = ui.GraphicsScene();   
         hudGamePanel_.move(gscene.width() / 2.0 -  hudGamePanel_.width / 2.0, gscene.height() / 2.0 -  hudGamePanel_.height/ 2.0);
-        hudGamePanelProxy_.ToggleVisibility();
+        hudGamePanelProxy_.visible = true;
     }
 
 }
@@ -135,39 +136,20 @@ function HideMainRightPanel() {
 }
 
 function HideChatPanel() {
-    var ids = scene.GetEntityIdsWithComponent("EC_Name");
-    for (var i = 0; i < ids.length; ++i) {
-
-        var e = scene.GetEntityRaw(ids[i]);
-        if (e.GetComponentRaw("EC_Name").name == "ChatApplication") {
-            e.Exec(1, "HideChat");
-        }
-    }
+    var e = scene.GetEntityByName("ChatApplication");
+    if(e)
+        e.Exec(1, "HideChat");
 }
 
 function ShowChatPanel() {
-    var ids = scene.GetEntityIdsWithComponent("EC_Name");
-    for (var i = 0; i < ids.length; ++i) {
-
-        var e = scene.GetEntityRaw(ids[i]);
-        if (e.GetComponentRaw("EC_Name").name == "ChatApplication") {
-            e.Exec(1, "ShowChat");
-        }
-    }
+    var e = scene.GetEntityByName("ChatApplication");
+    e.Exec(1, "ShowChat");
 }
 
 function StartOspreyGame() {
-
-    var ids = scene.GetEntityIdsWithComponent("EC_Name");
-    for (var i = 0; i < ids.length; ++i) {
-
-        var e = scene.GetEntityRaw(ids[i]);
-        if (e.GetComponentRaw("EC_Name").name == "OspreyLauncher") {
-            e.Exec(1, "ShowControls");
-        }
-    }
-   
-   hudGamePanelProxy_.ToggleVisibility();
+    var e = scene.GetEntityByName("OspreyLauncher");
+    e.Exec(1, "ShowControls");
+    hudGamePanelProxy_.visible = false;
 }
 
 function StartFishGame() {
@@ -205,4 +187,3 @@ me.Action("ShowChatPanel").Triggered.connect(ShowChatPanel);
 if (server.IsRunning() == false) {
     CreateMainRightPanel();
 }
-

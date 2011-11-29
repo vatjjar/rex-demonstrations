@@ -96,9 +96,9 @@ var OspreyController = Class.extend({
         this.avatarCamRotDefaultX_ = 60.0;
         this.diveHeightRelation_ = (this.ospreyCameraHeight_) / this.avatarCamRotDefaultX_;
 
-        var terrain_entity = scene.GetEntityRaw(scene.GetEntityIdsWithComponent("EC_Terrain")[0]);
+        var terrain_entity = scene.GetEntity(scene.GetEntityIdsWithComponent("EC_Terrain")[0]);
         if (terrain_entity != null && typeof (terrain_entity) != "undefined") {
-            this.terrain_ = terrain_entity.GetComponentRaw("EC_Terrain");
+            this.terrain_ = terrain_entity.terrain;
         }
         else
             this.terrain_ = null;
@@ -106,8 +106,8 @@ var OspreyController = Class.extend({
         var ids = scene.GetEntityIdsWithComponent("EC_WaterPlane");
         this.waterPlaneComponents_ = [];
         for (var i = 0; i < ids.length; ++i) {
-            var entity = scene.GetEntityRaw(ids[i]);
-            this.waterPlaneComponents_.push(entity.GetComponentRaw("EC_WaterPlane"));
+            var entity = scene.GetEntity(ids[i]);
+            this.waterPlaneComponents_.push(entity.waterplane);
         }
 
         this.waterPlane_ = null;
@@ -142,6 +142,7 @@ var OspreyController = Class.extend({
             me.Action("Move").Triggered.connect(this, this.SetMoveState);
             me.Action("Stop").Triggered.connect(this, this.SetStopState);
             
+            /*
             var ids = scene.GetEntityIdsWithComponent("EC_Name");
             for (var i = 0; i < ids.length; ++i) {
 
@@ -149,11 +150,11 @@ var OspreyController = Class.extend({
                 if (e.GetComponentRaw("EC_Name").name == "OspreyGame_Fish") {
                     this.fishes_.push(e);
                 }
-            }   
+            } */  
         }
         
         else {
-            if (me.GetName() == "Osprey_" + client.GetConnectionID()) {
+            if (me.name == "Osprey_" + client.GetConnectionID()) {
                 debug.Log("own osprey" + client.GetConnectionID());
                 this.ownAvatar_ = true;
                 this.CreateInputMapper();
@@ -166,7 +167,7 @@ var OspreyController = Class.extend({
     CreateNestTargets : function()
     {
         
-        for ( var index = 1; index < 3; ++index)
+/*        for ( var index = 1; index < 3; ++index)
         {
             var nestName = "ospreynest.00" + index;
             var nest = scene.GetEntityByNameRaw(nestName);
@@ -188,7 +189,7 @@ var OspreyController = Class.extend({
            
            var volume = nest.GetOrCreateComponentRaw("EC_VolumeTrigger");
          
-         }
+         }*/
    
     },
 
@@ -621,6 +622,7 @@ var OspreyController = Class.extend({
     },
 
     MoveOsprey: function(frameTime) {
+        return;
         var tm = me.placeable.transform;
 
         if (this.motionStateY_ == 1) {

@@ -9,7 +9,7 @@ engine.IncludeFile("local://wandererAi.js");
 
 var Crab = AiWanderer.extend({
     init: function() {
-
+        return;
         this.r_ = 0;
         this.actions_ = 3;
         this.speed_ = 0.1; // (dimensions m/s )

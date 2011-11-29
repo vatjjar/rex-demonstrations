@@ -10,7 +10,7 @@ var OspreyAvatar = Class.extend({
         // Creates osprey avatar entity and sets it name and description.
         print("OspreyAvatar START");
         
-        this.entity_ = scene.CreateEntityRaw(scene.NextFreeId(), ["EC_Script", "EC_Placeable", "EC_AnimationController", "EC_Mesh"]);
+        this.entity_ = scene.CreateEntity(scene.NextFreeId(), ["EC_Script", "EC_Placeable", "EC_AnimationController", "EC_Mesh"]);
         this.entity_.SetName("Osprey_" + user.GetConnectionID());
         this.entity_.SetDescription(user.GetProperty("username"));
 
@@ -18,7 +18,7 @@ var OspreyAvatar = Class.extend({
 
         // Set mesh to correct state.
 
-        var meshComp = this.entity_.GetComponentRaw("EC_Mesh");
+        var meshComp = this.entity_.mesh;
         var meshRef = meshComp.meshRef;
         meshRef.ref = "local://Osprey.mesh";
         meshComp.meshRef = meshRef;
@@ -54,7 +54,7 @@ var OspreyAvatar = Class.extend({
 
         placeable.transform = transform;
 
-        scene.EmitEntityCreatedRaw(this.entity_);
+        scene.EmitEntityCreated(this.entity_);
         print("OspreyAvatar END");
         //frame.DelayedExecute(1.0).Triggered.connect(this, this.CreateController);
         //this.entity_.Exec(7, "CreateController", user);

@@ -229,10 +229,14 @@ camid2module =
 var camcontroller = camid2module[cameramode];
 
 find_screens();
-camcontroller.init();
+
+if (server.IsRunning()) {
+    camcontroller.init();
+    frame.Updated.connect(animationUpdate);
+}
 
 //initialize screens
- print("--------------- initialize screens -------------------");
+print("--------------- initialize screens -------------------");
 
 initializeScreenMaterials();
 
@@ -240,7 +244,9 @@ var currentIndex = slideinfo.GetAttribute("current");
 var endIndex = slideinfo.GetAttribute("slidenumber") - 1; 
 var screennumber = screens.length
 
-var inputmapper = me.GetOrCreateComponent("EC_InputMapper", 2, false);
+if (!framework.IsHeadless()) {
+    var inputmapper = me.GetOrCreateComponent("EC_InputMapper", 2, false);
+    inputmapper.executionType = 2; // Execute actions on server
 
 //freecam overrides these buttons, consider using a clean cam
 //inputmapper.RegisterMapping("Left", "HandleGotoNext()", 1);
@@ -254,13 +260,14 @@ var inputmapper = me.GetOrCreateComponent("EC_InputMapper", 2, false);
 //inputmapper.RegisterMapping('r', "reset()", 1)
 //inputmapper.RegisterMapping('v', "StartRecord()", 1);
 
-inputmapper.RegisterMapping('n', "GotoNext", 1);
-inputmapper.RegisterMapping('p', "GotoPrev", 1);
-inputmapper.RegisterMapping("Space", "GotoNext", 1);
-inputmapper.RegisterMapping("Right", "GotoNext", 1);
-inputmapper.RegisterMapping('Left', "GotoPrev", 1);
-inputmapper.RegisterMapping('r', "ResetShow", 1)
-inputmapper.RegisterMapping('Esc', "ResetShow", 1)
+    inputmapper.RegisterMapping('n', "GotoNext", 1);
+    inputmapper.RegisterMapping('p', "GotoPrev", 1);
+    inputmapper.RegisterMapping("Space", "GotoNext", 1);
+    inputmapper.RegisterMapping("Right", "GotoNext", 1);
+    inputmapper.RegisterMapping('Left', "GotoPrev", 1);
+    inputmapper.RegisterMapping('r', "ResetShow", 1)
+    inputmapper.RegisterMapping('Esc', "ResetShow", 1)
+}
 
 // variables for viewpoint infront is the distance where you want to
 // end up (and leave) close is the distance to which you back up still
@@ -271,5 +278,4 @@ me.Action("GotoNext").Triggered.connect(HandleGotoNext);
 me.Action("GotoPrev").Triggered.connect(HandleGotoPrev);
 me.Action("ResetShow").Triggered.connect(reset);
 
-frame.Updated.connect(animationUpdate);
 print('Slide circle started');

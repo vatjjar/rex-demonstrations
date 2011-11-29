@@ -158,11 +158,13 @@ function updateOrientation(dt) {
         turning = 0;*/
     
     //tm.rot = new float3(0, 0, 0); //terrain.GetTerrainRotationAngles(tm.pos.x, tm.pos.y, tm.pos.z, velocity);
-    var deerfwd = new float3(0, 0, 1);
-    var normal = terrain.GetInterpolatedNormal(tm.pos.x, tm.pos.y);
-    var quat = Quat.LookAt(deerfwd, velocity.Normalized(), scene.UpVector(), normal);
-    me.placeable.transform = tm;
-    me.placeable.SetOrientation(quat);
+    if (terrain) {
+        var deerfwd = new float3(0, 0, 1);
+        var normal = terrain.GetInterpolatedNormal(tm.pos.x, tm.pos.y);
+        var quat = Quat.LookAt(deerfwd, velocity.Normalized(), scene.UpVector(), normal);
+        me.placeable.transform = tm;
+        me.placeable.SetOrientation(quat);
+    }
 }
 
 function updatePosition(dt) {

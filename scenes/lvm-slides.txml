@@ -10240,7 +10240,7 @@
   </component>
     <component type="EC_DynamicComponent" sync="1" name="SlideCircleInfo">
       <attribute value="0" type="int" name="current" />
-      <attribute value="13" type="int" name="slidenumber" />
+      <attribute value="42" type="int" name="slidenumber" />
       <attribute value="local://Slide1.PNG" type="string" name="slide0" />
       <attribute value="local://Slide2.PNG" type="string" name="slide1" />
       <attribute value="local://Slide3.PNG" type="string" name="slide2" />
@@ -10254,6 +10254,35 @@
       <attribute value="local://Slide11.PNG" type="string" name="slide10" />
       <attribute value="local://Slide12.PNG" type="string" name="slide11" />
       <attribute value="local://Slide13.PNG" type="string" name="slide12" />
+      <attribute value="local://Slide14.PNG" type="string" name="slide13" />
+      <attribute value="local://Slide15.PNG" type="string" name="slide14" />
+      <attribute value="local://Slide16.PNG" type="string" name="slide15" />
+      <attribute value="local://Slide17.PNG" type="string" name="slide16" />
+      <attribute value="local://Slide18.PNG" type="string" name="slide17" />
+      <attribute value="local://Slide19.PNG" type="string" name="slide18" />
+      <attribute value="local://Slide20.PNG" type="string" name="slide19" />
+      <attribute value="local://Slide21.PNG" type="string" name="slide20" />
+      <attribute value="local://Slide22.PNG" type="string" name="slide21" />
+      <attribute value="local://Slide23.PNG" type="string" name="slide22" />
+      <attribute value="local://Slide24.PNG" type="string" name="slide23" />
+      <attribute value="local://Slide25.PNG" type="string" name="slide24" />
+      <attribute value="local://Slide26.PNG" type="string" name="slide25" />
+      <attribute value="local://Slide27.PNG" type="string" name="slide26" />
+      <attribute value="local://Slide28.PNG" type="string" name="slide27" />
+      <attribute value="local://Slide29.PNG" type="string" name="slide28" />
+      <attribute value="local://Slide30.PNG" type="string" name="slide29" />
+      <attribute value="local://Slide31.PNG" type="string" name="slide30" />
+      <attribute value="local://Slide32.PNG" type="string" name="slide31" />
+      <attribute value="local://Slide33.PNG" type="string" name="slide32" />
+      <attribute value="local://Slide34.PNG" type="string" name="slide33" />
+      <attribute value="local://Slide35.PNG" type="string" name="slide34" />
+      <attribute value="local://Slide36.PNG" type="string" name="slide35" />
+      <attribute value="local://Slide37.PNG" type="string" name="slide36" />
+      <attribute value="local://Slide38.PNG" type="string" name="slide37" />
+      <attribute value="local://Slide39.PNG" type="string" name="slide38" />
+      <attribute value="local://Slide40.PNG" type="string" name="slide39" />
+      <attribute value="local://Slide41.PNG" type="string" name="slide40" />
+      <attribute value="local://Slide42.PNG" type="string" name="slide41" />
     </component>
  </entity>
  <entity id="363" sync="1">

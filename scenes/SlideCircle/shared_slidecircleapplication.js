@@ -262,9 +262,10 @@ if (!framework.IsHeadless()) {
 
     inputmapper.RegisterMapping('n', "GotoNext", 1);
     inputmapper.RegisterMapping('p', "GotoPrev", 1);
-    inputmapper.RegisterMapping("Space", "GotoNext", 1);
-    inputmapper.RegisterMapping("Right", "GotoNext", 1);
-    inputmapper.RegisterMapping('Left', "GotoPrev", 1);
+    //ppl wanted to use this together with avatars, which is not perhaps a good idea, but anyhow better disable:
+    //inputmapper.RegisterMapping("Space", "GotoNext", 1);
+    //inputmapper.RegisterMapping("Right", "GotoNext", 1);
+    //inputmapper.RegisterMapping('Left', "GotoPrev", 1);
     inputmapper.RegisterMapping('r', "ResetShow", 1)
     inputmapper.RegisterMapping('Esc', "ResetShow", 1)
 }

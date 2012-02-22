@@ -1,6 +1,6 @@
-engine.IncludeFile("local://guard.js");
-engine.IncludeFile("local://schoolwanderer.js");
-engine.IncludeFile("local://fish_avatar.js");
+engine.IncludeFile("guard.js");
+engine.IncludeFile("schoolwanderer.js");
+engine.IncludeFile("fish_avatar.js");
 
 var guardsCount = 4;
 var guards = [];
@@ -10,22 +10,19 @@ var avatars = [];
 me.Action('LaunchGame').Triggered.connect(createAvatar);
 me.Action('StopGame').Triggered.connect(stopGame);
 
-if(server.IsRunning()) {
+if(!client.IsConnected()) {
     startGame();
 
     server.UserDisconnected.connect(handleUserDisconnect);
 }
 
 function startGame() {
-    if(!server.IsRunning())
+    if(client.IsConnected())
         return;
         
     frame.Updated.connect(updateFishGame);
     
-    var pos = new Vector3df();
-    pos.x = -11;
-    pos.y = 18;
-    pos.z = 6;
+    var pos = new float3(-11, 18, 6);
 
     for (var i = 0; i < 1; i++) {
         var guard = createGuard('Guard', pos);
@@ -61,26 +58,26 @@ function updateFishGame(dt) {
 }
 
 function createGuard(name, pos) {
-    var guardEntity = scene.CreateEntityRaw(scene.NextFreeId(), ['EC_Placeable', 'EC_RigidBody', 'EC_Mesh', 'EC_AnimationController', 'EC_Script']);
+    var guardEntity = scene.CreateEntity(scene.NextFreeId(), ['EC_Placeable', 'EC_RigidBody', 'EC_Mesh', 'EC_AnimationController', 'EC_Script']);
     guardEntity.SetName(name);
     guardEntity.SetTemporary(true); 
-    scene.EmitEntityCreatedRaw(guardEntity);
+    scene.EmitEntityCreated(guardEntity);
     var guard = new Guard(guardEntity, pos);
     return guard;
 }
 
 function createSchool(name, pos) {
-    var schoolEntity = scene.CreateEntityRaw(scene.NextFreeId(), ['EC_Placeable', 'EC_Mesh', 'EC_Script']); //, 'EC_RigidBody']);
+    var schoolEntity = scene.CreateEntity(scene.NextFreeId(), ['EC_Placeable', 'EC_Mesh', 'EC_Script']); //, 'EC_RigidBody']);
     schoolEntity.SetTemporary(true);
     schoolEntity.SetName(name);
-    scene.EmitEntityCreatedRaw(schoolEntity);
+    scene.EmitEntityCreated(schoolEntity);
     
     //the clientside code to run the multiple particle systems inside the school
     var script = schoolEntity.script;
     script.type = "js";
     script.runOnLoad = true;
     var r = script.scriptRef;
-    r.ref = "local://school_clientside.js";
+    r.ref = "school_clientside.js";
     script.scriptRef = r;
 
     var school = new School(schoolEntity, pos); //the server side AIWanderer for the whole school
@@ -91,7 +88,7 @@ function createAvatar() {
     // User connection, defines which client did start game.
     var user = server.GetActionSender();
     var avatarName = 'Avatar' + user.GetConnectionID();
-    scene.GetEntityByNameRaw(avatarName).Exec(7,'HideEntity');
+    scene.GetEntityByName(avatarName).Exec(7,'HideEntity');
     var avatar = new FishAvatar(user);
     print('anchovy avatar created');
     avatars.push(avatar);
@@ -107,7 +104,7 @@ function stopGame(id) {
         }
     }
 
-    var playerav = scene.GetEntityByNameRaw(avatarName);
+    var playerav = scene.GetEntityByName(avatarName);
     if (playerav) {
         playerav.Exec(7, 'ShowEntity');
         print("showing avatar entity for client that stopped playing:" + avatarName);

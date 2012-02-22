@@ -116,14 +116,14 @@ material Rex/TerrainPCF_weighted
 	}
 
 	// fallback
-	technique Fallback
-	{
-		pass
-		{
-			texture_unit baseMap
-			{
-				texture TextureMissing.png
-			}
-		}
-      }	
+	//technique Fallback
+	//{
+	//	pass
+	//	{
+	//		texture_unit baseMap
+	//		{
+	//			texture TextureMissing.png
+	//		}
+	//	}
+    //  }	
 }

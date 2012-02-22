@@ -2,7 +2,7 @@
 
 
 
-engine.IncludeFile("local://vector.js");
+engine.IncludeFile("vector.js");
 
 const SLOW_SWIM_SPEED = 1.5;
 const MEDIUM_SWIM_SPEED = 2.0;
@@ -12,10 +12,7 @@ const ANIM_FADE_TIME = 0.25;
 const SURFACE_DELTA = 0.18;
 const TERRAIN_DELTA = 0.12;
 
-var scale = new Vector3df();
-scale.x = 0.2;
-scale.y = 0.2;
-scale.z = 0.2;
+var scale = new float3(0.2, 0.2, 0.2);
 
 function Guard(entity, pos) {
     this.currentAnimState_ = '';
@@ -32,14 +29,14 @@ function Guard(entity, pos) {
     
     var mesh = this.entity_.mesh;
     var meshRef = mesh.meshRef;
-    meshRef.ref = 'local://stripedbass2.mesh';
+    meshRef.ref = 'stripedbass2.mesh';
     mesh.meshRef = meshRef;
     var skelRef = mesh.skeletonRef;
-    skelRef.ref = 'local://stripedbass2.skeleton';
+    skelRef.ref = 'stripedbass2.skeleton';
     mesh.skeletonRef = skelRef;
     
     var materials = mesh.meshMaterial;
-    materials = ['local://stripedbass2.material'];
+    materials = ['stripedbass2.material'];
     mesh.meshMaterial = materials;
     
     var meshTm = mesh.nodeTransformation;
@@ -50,8 +47,8 @@ function Guard(entity, pos) {
     
     var rigidbody = this.entity_.rigidbody
     rigidbody.mass = 0;
-    rigidbody.linearFactor = new Vector3df();
-    rigidbody.angularFactor = new Vector3df();
+    rigidbody.linearFactor = new float3(0,0,0);
+    rigidbody.angularFactor = new float3(0,0,0);
     rigidbody.shapeType = 0; 
     
     // This script updates animations
@@ -59,10 +56,10 @@ function Guard(entity, pos) {
     // script.type = "js";
     // script.runOnLoad = true;
     // var r = script.scriptRef;
-    // r.ref = "local://guard_animation_controller.js";
+    // r.ref = "guard_animation_controller.js";
     // script.scriptRef = r;
     
-    this.velocity_ = new Vector3df();
+    this.velocity_ = new float3(0,0,0);
     this.maxSpeed_ = 3.0;
     this.minSpeed_ = 0.5;
     this.maxSteer_ = 0.08;
@@ -76,12 +73,12 @@ function Guard(entity, pos) {
     this.pursuing_ = false;
     this.turning_ = 0;
     
-    //this.school_ = scene.GetEntityByNameRaw('School_1');
+    //this.school_ = scene.GetEntityByName('School_1');
     
     // Terrain
     var terrainEntity = scene.GetEntityRaw(scene.GetEntityIdsWithComponent('EC_Terrain')[0]);
     if(terrainEntity)
-        this.terrain_ = terrainEntity.GetComponentRaw('EC_Terrain');
+        this.terrain_ = terrainEntity.GetComponent('EC_Terrain');
     else {
         throw 'Terrain not found';
         this.terrain_ = null;
@@ -97,7 +94,7 @@ function Guard(entity, pos) {
     }
     
     
-    var area = scene.GetEntityByNameRaw('FishGameArea');
+    var area = scene.GetEntityByName('FishGameArea');
     var areaPl = area.placeable;
     var areaTm = areaPl.transform;
     var areaBody = area.rigidbody;
@@ -226,7 +223,7 @@ Guard.prototype.getPrey = function() {
     for (var i=0; i < avatars.length; ++i) {
         var avatar = avatars[i];
         var avatarPos = avatar.getPos();
-        var distance = GetDistance(tm.pos, avatarPos);
+        var distance = tm.pos.Distance(avatarPos);
         if(distance < this.maxPursuingDistance_) {
             return avatar;
         }
@@ -235,7 +232,7 @@ Guard.prototype.getPrey = function() {
 }
 
 Guard.prototype.getWanderingTarget = function() {
-    var target = new Vector3df();
+    var target = new float3(0,0,0);
     target.x = this.areaPos_.x + (Math.random() - 0.5)*this.areaSize_.x;
     target.y = this.areaPos_.y + (Math.random() - 0.5)*this.areaSize_.y;
     target.z = this.areaPos_.z + (Math.random() - 0.5)*this.areaSize_.z;
@@ -249,18 +246,18 @@ Guard.prototype.updateVelocity = function(dt) {
         return;
     
     var target = this.target_;
-    var direction = GetUnitVector(this.velocity_);
+    var direction = this.velocity_.Normalized();
     var maxSpeed = this.maxSpeed_;
     var maxSteer = this.maxSteer_;
     var minSpeed = this.minSpeed_;
     var slowDown = 0;
     
     // // Angle between current direction and target
-    // var w = new Vector3df();
+    // var w = new float3(0,0,0);
     // w.x = target.x - tm.pos.x;
     // w.y = target.y - tm.pos.y;
     // var dotProduct = direction.x*w.x + direction.y*w.y;
-    // var cos = dotProduct/GetMagnitude(w);
+    // var cos = dotProduct/w.Length();
     // var dirDiff = Math.acos(cos)
     // 
     // var maxDiff = Math.PI/6; // 30 degree
@@ -274,10 +271,10 @@ Guard.prototype.updateVelocity = function(dt) {
     //     else
     //         var dir = -maxDiff;
     //     
-    //     var tmpTarget = new Vector3df();
+    //     var tmpTarget = new float3(0,0,0);
     //     tmpTarget.x = direction.x*Math.cos(dir) - direction.y*Math.sin(dir);
     //     tmpTarget.y = direction.x*Math.sin(dir) + direction.y*Math.cos(dir);
-    //     // tmpTarget = VectorMult(tmpTarget, 5);
+    //     // tmpTarget = tmpTarget.Mul(5);
     //     tmpTarget.x += tm.pos.x;
     //     tmpTarget.y += tm.pos.y;
     //     
@@ -309,7 +306,7 @@ Guard.prototype.updateVelocity = function(dt) {
     }
     
     // Limit XY-speed
-    var v = new Vector3df();
+    var v = new float3(0,0,0);
     v.x = this.velocity_.x; v.y = this.velocity_.y; v.z = 0;
     v = GetLimitedVector(v, maxSpeed, minSpeed);
     
@@ -320,11 +317,11 @@ Guard.prototype.updateVelocity = function(dt) {
     // Set Z-speed
     
     var xDelta = 0.4;
-    var deltaPoint = new Vector3df();
+    var deltaPoint = new float3(0,0,0);
     deltaPoint.x = xDelta;
-    deltaPoint = this.placeable_.GetRelativeVector(deltaPoint);
+    deltaPoint = this.placeable_.LocalToWorld().MulDir(deltaPoint);
     deltaPoint.z = 0; 
-    var point = VectorSum(tm.pos, deltaPoint); // A point in front of fish
+    var point = tm.pos.Add(deltaPoint); // A point in front of fish
     
     var distanceToTerrain = this.getDistanceToTerrain(point);
     var distanceToSurface = this.getDistanceToSurface(point);
@@ -332,7 +329,7 @@ Guard.prototype.updateVelocity = function(dt) {
     var desiredZVel = 0;
     
     if(distanceToSurface > SURFACE_DELTA) {
-        var nextPos = VectorSum(point, VectorMult(v, dt));
+        var nextPos = point.Add(v.Mul(dt));
         var distanceToSurface = this.getDistanceToSurface(nextPos);
         nextPos.z -= distanceToSurface;
         nextPos.z -= SURFACE_DELTA;
@@ -342,7 +339,7 @@ Guard.prototype.updateVelocity = function(dt) {
     }
     
     else if(distanceToTerrain < TERRAIN_DELTA) {
-        var nextPos = VectorSum(point, VectorMult(v, dt));
+        var nextPos = point.Add(v.Mul(dt));
         nextPos.z -= this.getDistanceToTerrain(nextPos);
         nextPos.z += TERRAIN_DELTA;
         var zDiff = nextPos.z - point.z;
@@ -350,7 +347,7 @@ Guard.prototype.updateVelocity = function(dt) {
         //print("TERRAIN_DELTA desired Z: " + desiredZVel);
     }
     else {
-        var xySpeed = GetMagnitude(v);
+        var xySpeed = v.Length();
         var xyDistance = Get2DDistance(tm.pos, target);
         var timeToTarget = xyDistance/xySpeed;
         
@@ -375,15 +372,12 @@ Guard.prototype.updateVelocity = function(dt) {
 
 // Turns object to right direction and sets this.turning_ for animation
 Guard.prototype.updateOrientation = function(dt) {
+return;
     var tm = this.placeable_.transform;
-    var d = new Vector3df();
-    d.x = 1; d.y = 0; d.z = 0;
+    var d = new float3(1,0,0);
     
-    var r = new Vector3df();
-    r.x = this.velocity_.x;
-    r.y = this.velocity_.y;
-    r.z = this.velocity_.z;
-    
+    var r = new float3(this.velocity_);
+    print("TODO REWRITE THIS: IT IS NOT MATH!");
     var rot = this.placeable_.GetRotationFromTo(d, r);
     rot.x = 0;
     
@@ -402,13 +396,13 @@ Guard.prototype.updateOrientation = function(dt) {
 
 Guard.prototype.updatePosition = function(dt) {
     var tm = this.placeable_.transform;
-    tm.pos = VectorSum(tm.pos, VectorMult(this.velocity_, dt));
+    tm.pos = tm.pos.Add(this.velocity_.Mul(dt));
     this.placeable_.transform = tm;
 }
 
 Guard.prototype.updateAnimationState = function(dt) {
     var entity = this.entity_;
-    var speed = GetMagnitude(this.velocity_);
+    var speed = this.velocity_.Length();
     var state = null;
 
     if(this.turning_ == -1)
@@ -509,32 +503,32 @@ Guard.prototype.get2DSteer = function(pos, target, maxSteer, maxSpeed, slowDownD
     // Ignore Z
     var steer = null;
     
-    var desired = VectorSub(target, pos);
+    var desired = target.Sub(pos);
     desired.z = 0;
     
-    var distance = GetMagnitude(desired);
+    var distance = desired.Length();
     if(distance > 0) {
         
         if(slowDownDistance) {
             // Slowdown before reaching the target
             if(distance < slowDownDistance ) { 
-                desired = VectorMult(desired, maxSpeed*(distance/slowDownDistance));
+                desired = desired.Mul(maxSpeed*(distance/slowDownDistance));
             }
             else {
-                desired = VectorMult(desired, maxSpeed);
+                desired = desired.Mul(maxSpeed);
             }
         }
         else {
-            desired = VectorMult(desired, maxSpeed);
+            desired = desired.Mul(maxSpeed);
         }
-        var v = new Vector3df();
+        var v = new float3(0,0,0);
         v.x = this.velocity_.x;
         v.y = this.velocity_.y;
-        steer = VectorSub(desired, v);
+        steer = desired.Sub(v);
         steer = GetLimitedVector(steer, maxSteer);
     }
     else {
-        steer = new Vector3df();
+        steer = new float3(0,0,0);
     }
     return steer;
 }

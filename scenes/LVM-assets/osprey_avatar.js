@@ -1,7 +1,7 @@
 
 /// Osprey Avatar class. Defines osprey game player avatar.
 
-engine.IncludeFile("local://class.js");
+engine.IncludeFile("class.js");
 engine.ImportExtension("qt.core");
 
 var OspreyAvatar = Class.extend({
@@ -20,14 +20,14 @@ var OspreyAvatar = Class.extend({
 
         var meshComp = this.entity_.mesh;
         var meshRef = meshComp.meshRef;
-        meshRef.ref = "local://Osprey.mesh";
+        meshRef.ref = "Osprey.mesh";
         meshComp.meshRef = meshRef;
         var skeletorRef = meshComp.skeletonRef;
-        skeletorRef.ref = "local://Osprey.skeleton";
+        skeletorRef.ref = "Osprey.skeleton";
         meshComp.skeletonRef = skeletorRef;
         
         var materials = meshComp.meshMaterial;  
-        materials = ["local://leathers.002.material", "local://body.001.material"];
+        materials = ["leathers.002.material", "body.001.material"];
         meshComp.meshMaterial = materials;
 
         // Change mesh rotation so that we look from avatar camera behind of osprey.      
@@ -41,7 +41,7 @@ var OspreyAvatar = Class.extend({
         script.runOnLoad = true;
         var r = script.scriptRef;
         //r.ref = "./jsmodules/apitest/osprey_game_avatar.js";
-        r.ref = "local://osprey_avatar_controller.js";
+        r.ref = "osprey_avatar_controller.js";
         script.scriptRef = r;
 
         var placeable = this.entity_.placeable;

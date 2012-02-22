@@ -1,8 +1,8 @@
 /// This is a script which is set to some visible entity. If this is clicked by user it launch the anchovy game
 
-// !ref: local://osprey_controls.ui
-// !ref: local://quit_ON.png
-// !ref: local://quit_OFF.png
+// !ref: osprey_controls.ui
+// !ref: quit_ON.png
+// !ref: quit_OFF.png
 
 engine.ImportExtension("qt.core");
 engine.ImportExtension("qt.gui");
@@ -14,7 +14,7 @@ var launchSizeX_;
 var launchSizeY_;
 
 /*function showui() {
-    var file = "local://osprey_game_launch.ui";
+    var file = "osprey_game_launch.ui";
 
     if (widgetLaunch_ == null) {
         widgetLaunch_ = uiservice.LoadFromFile(file, false);
@@ -49,7 +49,7 @@ var launchSizeY_;
 
         widgetLaunch_.move(gscene.width() / 2.0 - launchSizeX_ / 2.0, gscene.height() / 2.0 - launchSizeY_ / 2.0);
 
-        proxy.ToggleVisibility();
+        proxy.visible = !proxy.visible;
     }
     else {
         var gscene = ui.GraphicsScene();
@@ -62,10 +62,10 @@ function LaunchGame() {
     //showui();
 
     // Hide main right panel
-    var e = scene.GetEntityByNameRaw("MainHud");
+    var e = scene.GetEntityByName("MainHud");
     e.Exec(1, "HideMainUI");    
 
-    e = scene.GetEntityByNameRaw("FishGame");
+    e = scene.GetEntityByName("FishGame");
     e.Exec(2, "LaunchGame");
 }
 

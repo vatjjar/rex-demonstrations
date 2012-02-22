@@ -1,4 +1,9 @@
-engine.IncludeFile("local://wandererAi.js");
+engine.IncludeFile("wandererAi.js");
+
+function frac(x)
+{
+	return x - Math.floor(x);
+}
 
 /**
 * Crab script. IF you want to use wanderer ai. You need to make object as subclass of AiWanderer and override methods 
@@ -8,24 +13,25 @@ engine.IncludeFile("local://wandererAi.js");
 */
 
 var Crab = AiWanderer.extend({
-    init: function() {
-        return;
+    init: function(entity) {
+         print("crabctor");
+        this.entity = entity;
         this.r_ = 0;
         this.actions_ = 3;
         this.speed_ = 0.1; // (dimensions m/s )
         this.swim_speed_ = 0.1;
         this.chooseSwimAction_ = false;
-        
+
         this.currentDirection_ = 0;
         this.angularSpeed_ = 0.025;
 
         // Currently Crab - mesh is authored so that its front (face) is looking to -y -axis.
         // Now we rotated EC_Mesh over z-axis -90 degree so that its front is looking to x-axis.
 
-        var meshComp = me.GetComponentRaw("EC_Mesh");
+        var meshComp = this.entity.GetComponent("EC_Mesh");
         var trans = meshComp.nodeTransformation;
         // Orginal 180 degree. 
-        trans.rot.z = 90;
+        trans.rot.z = 0;
         meshComp.nodeTransformation = trans;
 
         // Get volume triggers that i am intrested.
@@ -37,11 +43,19 @@ var Crab = AiWanderer.extend({
 
         // Remember call this, initialises base class.
         this._super();
-
-        // Get trigger volumes.
+        
+		// Get trigger volumes.
         this.volumes_ = this.GetTriggerVolumes("CrabVolume");
         
         this.orginalPos_ = this.placeable_.transform.pos;
+
+//		 this.crabScale_ = 0.1 + 0.5*Math.random(); // Who the hell designed these "0.1 scale miniature fishes?" No way we are keeping those. Replace with random fish sizes.. -jj
+
+// Todo: Convert to using script classes, to be able to use the above, and not this hack.
+		 this.crabScale_ = 2.2 + 4.0*frac(Math.random() * 0.8 * this.placeable_.transform.pos.x * this.placeable_.transform.pos.y * this.placeable_.transform.pos.z * 123414.0);
+		var tm = this.placeable_.transform;
+		 tm.scale = float3.FromScalar(this.crabScale_);        
+		 this.placeable_.transform = tm;
          
         if ( this.volumes_.length > 1 )
         {
@@ -53,16 +67,15 @@ var Crab = AiWanderer.extend({
          
              for (var i = 0; i < ids.length; ++i) 
              {
-               
                 var ent = scene.GetEntityRaw(ids[i]);
-                var nameComp = ent.GetComponentRaw("EC_Name");
+                var nameComp = ent.GetComponent("EC_Name");
                 if ( nameComp != null && nameComp.name == "CrabVolume")
                 {
-                    var placeableComp = ent.GetComponentRaw("EC_Placeable");
+                    var placeableComp = ent.GetComponent("EC_Placeable");
                     if ( placeableComp != null )
                     {
                        var pos = placeableComp.transform.pos;
-                       var d = (this.orginalPos_.x - pos.x)*(this.orginalPos_.x - pos.x)+(this.orginalPos_.y - pos.y)*(this.orginalPos_.y - pos.y)+(this.orginalPos_.z - pos.z)*(this.orginalPos_.z - pos.z);
+					   var d = this.orginalPos_.DistanceSq(pos);
                        if ( d < smallestDistance )
                        {
                             smallestDistance = d;
@@ -74,24 +87,14 @@ var Crab = AiWanderer.extend({
             
             if ( nearestVolume != null )
             {
-                var pl = nearestVolume.GetComponentRaw("EC_Placeable");
+                var pl = nearestVolume.GetComponent("EC_Placeable");
                 // Now set that "orginal" pos is our volume trigger center..our object triest to always get there.
                 this.orginalPos_ = pl.transform.pos;
             }
              
         }
             
-        this.rigidBody_ = null;
-         
-        if ( me.HasComponent("EC_RigidBody") )
-        {
-            this.rigidBody_ = me.GetComponentRaw("EC_RigidBody");
-        } 
-         
-         
-         
-        
-
+            this.rigidBody_ = this.entity.GetComponent("EC_RigidBody");
     },
 
 
@@ -121,7 +124,7 @@ var Crab = AiWanderer.extend({
         else if (index == 4) {
 
             // Rotate mesh to look -y axis.
-            var meshComp = me.GetComponentRaw("EC_Mesh");
+            var meshComp = me.GetComponent("EC_Mesh");
             var trans = meshComp.nodeTransformation;
             // Orginal 180 degree. 
             trans.rot.z = 180;
@@ -158,13 +161,12 @@ var Crab = AiWanderer.extend({
         var angle = this.SlerpDirectionAngle(this.currentDirection_, this.r_, this.angularSpeed_,time);
 
         // Calculate new position.
-        tm.pos.x += this.speed_ * time * Math.cos(angle * 3.14);
-        tm.pos.y += this.speed_ * time * Math.sin(angle * 3.14);
+        tm.pos.x += this.speed_ * this.crabScale_ * time * Math.cos(angle * 3.14);
+        tm.pos.z += this.speed_ * this.crabScale_ * time * Math.sin(angle * 3.14);
 
         // Check that is new position of crab inside water plane
 
-        var waterPlane = null;
-        waterPlane = this.GetWaterPlane(tm);
+        var waterPlane = this.GetWaterPlane(tm);
 
         if (waterPlane == null) {
             
@@ -176,22 +178,18 @@ var Crab = AiWanderer.extend({
             var lastTm = this.placeable_.transform;
             var distanceToTerrain = this.GetDistanceToTerrain(lastTm);
 
-            tm.pos.z -= distanceToTerrain;
-            tm.pos.z += this.terrainDelta_;
+            tm.pos.y -= distanceToTerrain;
+            tm.pos.y += this.terrainDelta_;
             
             // Rotate crab correctly
             
-            var direction = new Vector3df;
+            var direction = new float3(Math.cos(angle * 3.14), 0, Math.sin(angle * 3.14));
 
-            direction.x = Math.cos(angle * 3.14);
-            direction.y = Math.sin(angle * 3.14);
-            direction.z = 0;
             if (this.terrain_ != null) {
-
-                var rotation = this.terrain_.GetTerrainRotationAngles(tm.pos.x, tm.pos.y, tm.pos.z, direction);
-                tm.rot.x = rotation.x;
-                tm.rot.y = rotation.y;
-                tm.rot.z = rotation.z;
+//				var s = tm.scale; // To save and restore the original scale.
+				var s = float3.FromScalar(this.crabScale_); // To use our modified scale.
+				tm.FromFloat3x4(float3x4(Quat.LookAt(float3.unitX, this.terrain_.Tangent(tm.pos, direction), float3.unitY, float3.unitY), tm.pos));
+				tm.scale = s;
             }
         
         }
@@ -212,31 +210,24 @@ var Crab = AiWanderer.extend({
                     // We are below surface and going to surface, when we transit to up we go direct path  
 
                     var move = this.swim_speed_ * time * Math.cos(Math.PI / 4.0);
-                    tm.pos.z += move;
+                    tm.pos.y += move;
 
 
                     //Rotate, so that "crab head" is looking same direction as our swimming direction
                     // First rotate it to -y -axis position.
-                    var from = new Vector3df;
-                    from.x = 0;
-                    from.y = -1;
-                    from.z = 0;
-                    var to = new Vector3df;
-                    to.x = Math.cos(angle * 3.14);
-                    to.y = Math.sin(angle * 3.14);
-                    to.z = Math.cos(Math.PI / 4.0);
+                    var from = new float3(0, 0, -1);
+                    var to = new float3(angle * 3.14, Math.PI / 4.0, angle * 3.14);
 
-                    var rotation = this.placeable_.GetRotationFromTo(from, to);
+					tm.SetOrientation(Quat.RotateFromTo(from, to));
 
-                    tm.rot.x = rotation.x;
-                    tm.rot.y = rotation.y;
-                    tm.rot.z = rotation.z;
+                    //var rotation = this.placeable_.GetRotationFromTo(from, to);
+//                    tm.rot = rotation;
 
                 }
                 else {
                     // We are on surface so we just swim.. on random direction.
-                    tm.pos.z -= distanceToWater;
-                    tm.pos.z -= this.waterDelta_;
+                    tm.pos.y -= distanceToWater;
+                    tm.pos.y -= this.waterDelta_;
 
                     // Special case check position.
                     if (!this.CheckPosition(tm.pos))
@@ -244,41 +235,26 @@ var Crab = AiWanderer.extend({
                        
                        var tmTmp = this.placeable_.transform;
       
-                       var target = new Vector3df;
-                       target.x = this.orginalPos_.x - tmTmp.pos.x; 
-                       target.y = this.orginalPos_.y - tmTmp.pos.y;
+                       var target = new float3(this.orginalPos_.x - tmTmp.pos.x, 0, this.orginalPos_.z - tmTmp.pos.z);
                        //var r = Math.sqrt(target.x * target.x + target.y * target.y);
         
-                       this.r_ = Math.atan2(target.y, target.x)/3.14;
+                       this.r_ = Math.atan2(target.z, target.x)/3.14;
                        // Note here is added little bit angular speed --> turn faster to correct direction.
                        angle = this.SlerpDirectionAngle(this.currentDirection_, this.r_, this.angularSpeed_+0.1,time);
                      
                     }
 
-                    var from = new Vector3df;
-                    from.x = 0;
-                    from.y = -1;
-                    from.z = 0;
-                    var to = new Vector3df;
-                    to.x = Math.cos(angle * 3.14);
-                    to.y = Math.sin(angle * 3.14);
-                    to.z = 0;
+                    var from = new float3(0, 0, -1);
+                    var to = new float3(Math.cos(angle * 3.14), 0, Math.sin(angle * 3.14));
                     
                     //to.z = Math.cos(Math.PI / 4.0);
 
-                    var rotation = this.placeable_.GetRotationFromTo(from, to);
-
-                    tm.rot.x = rotation.x;
-                    tm.rot.y = rotation.y;
-                    tm.rot.z = rotation.z;
+					tm.SetOrientation(Quat.RotateFromTo(from, to));
+  //                  var rotation = this.placeable_.GetRotationFromTo(from, to);
+//                    tm.rot = rotation;
                 }
-
-
-
             }
             else if (this.currentAction_.name == "Dive") {
-
-
                 // Now we move our crab so that it looks like that it, is going to surface to bottom..
                 var lastTm = this.placeable_.transform;
                 var distanceToTerrain = this.GetDistanceToTerrain(lastTm);
@@ -286,24 +262,16 @@ var Crab = AiWanderer.extend({
                 if (distanceToTerrain > 0 && Math.abs(distanceToTerrain) > this.terrainDelta_) {
                   
                     var move = this.swim_speed_ * time * Math.cos(Math.PI / 4.0);
-                    tm.pos.z -= move;
+                    tm.pos.y -= move;
 
                     //Rotate, so that "crab head" is looking same direction as our swimming direction
 
-                    var from = new Vector3df;
-                    from.x = 0;
-                    from.y = -1;
-                    from.z = 0;
-                    var to = new Vector3df;
-                    to.x = Math.cos(angle * 3.14);
-                    to.y = Math.sin(angle * 3.14);
-                    to.z = -Math.cos(Math.PI / 4.0);
+                    var from = new float3(0,0,-1);
+                    var to = new float3(Math.cos(angle * 3.14), -Math.cos(Math.PI / 4.0), Math.sin(angle * 3.14));
 
-                    var rotation = this.placeable_.GetRotationFromTo(from, to);
-                    tm.rot.x = rotation.x;
-                    tm.rot.y = rotation.y;
-                    tm.rot.z = rotation.z;
-
+					tm.SetOrientation(Quat.RotateFromTo(from, to));
+//                    var rotation = this.placeable_.GetRotationFromTo(from, to);
+//                    tm.rot = rotation;
                 }
                 else {
                     // We are bottom.
@@ -312,10 +280,10 @@ var Crab = AiWanderer.extend({
                     this.actionStopTime_ = 0;
 
                     var distanceToTerrain = this.GetDistanceToTerrain(tm);
-                    tm.pos.z -= distanceToTerrain;
+                    tm.pos.y -= distanceToTerrain;
 
                     // Rotate mesh to look -y axis.
-                    var meshComp = me.GetComponentRaw("EC_Mesh");
+                    var meshComp = this.entity.GetComponent("EC_Mesh");
                     var trans = meshComp.nodeTransformation;
 
                     // Orginal 180 degree. 
@@ -324,19 +292,15 @@ var Crab = AiWanderer.extend({
 
                     // Rotate crab:
 
-                    var direction = new Vector3df;
-
-                    direction.x = Math.cos(angle * 3.14);
-                    direction.y = Math.sin(angle * 3.14);
-                    direction.z = 0;
+                    var direction = new float3(Math.cos(angle * 3.14), 0, Math.sin(angle * 3.14));
 
                     // Rotate crab correctly
                     if (this.terrain_ != null) {
 
-                        var rotation = this.terrain_.GetTerrainRotationAngles(tm.pos.x, tm.pos.y, tm.pos.z, direction);
-                        tm.rot.x = rotation.x;
-                        tm.rot.y = rotation.y;
-                        tm.rot.z = rotation.z;
+//						var s = tm.scale; // To save and restore the original scale.
+						var s = float3.FromScalar(this.crabScale_); // To use our modified scale.
+						tm.FromFloat3x4(float3x4(Quat.LookAt(float3.unitX, this.terrain_.Tangent(tm.pos, direction), float3.unitY, float3.unitY), tm.pos));
+						tm.scale = s;
                     }
 
                 }
@@ -346,23 +310,19 @@ var Crab = AiWanderer.extend({
                 // Just walk.
 
                 var distanceToTerrain = this.GetDistanceToTerrain(tm);
-                tm.pos.z -= distanceToTerrain;
+                tm.pos.y -= distanceToTerrain;
 
                 // Rotate crab:
 
-                var direction = new Vector3df;
-
-                direction.x = Math.cos(angle * 3.14);
-                direction.y = Math.sin(angle * 3.14);
-                direction.z = 0;
+                var direction = new float3(Math.cos(angle * 3.14), 0, Math.sin(angle * 3.14));
 
                 // Rotate crab correctly
                 if (this.terrain_ != null) {
 
-                    var rotation = this.terrain_.GetTerrainRotationAngles(tm.pos.x, tm.pos.y, tm.pos.z, direction);
-                    tm.rot.x = rotation.x;
-                    tm.rot.y = rotation.y;
-                    tm.rot.z = rotation.z;
+//					var s = tm.scale; // To save and restore the original scale.
+					var s = float3.FromScalar(this.crabScale_); // To use our modified scale.
+					tm.FromFloat3x4(float3x4(Quat.LookAt(float3.unitZ, this.terrain_.Tangent(tm.pos, direction), float3.unitY, float3.unitY), tm.pos));
+					tm.scale = s;
                 }
 
             }
@@ -370,9 +330,9 @@ var Crab = AiWanderer.extend({
         }
 
         // Set entity new position.
-        if (  this.rigidBody_ != null && !this.rigidBody_.IsActive())
+        if (this.rigidBody_ != null && !this.rigidBody_.IsActive())
              this.rigidBody_.Activate();
-        
+
         this.placeable_.transform = tm;
         this.currentDirection_ = angle;        
 
@@ -397,12 +357,11 @@ var Crab = AiWanderer.extend({
             // Calculate position when dive ends.
             
             tm.pos.x += this.speed_ * dive_time * Math.cos(this.r_ * 3.14);
-            tm.pos.y += this.speed_ * dive_time * Math.sin(this.r_ * 3.14);
-            tm.pos.z -= this.swim_speed_ * dive_time * Math.cos(Math.PI / 4.0);
+            tm.pos.y -= this.swim_speed_ * dive_time * Math.cos(Math.PI / 4.0);
+            tm.pos.z += this.speed_ * dive_time * Math.sin(this.r_ * 3.14);
           
             if (this.CheckPosition(tm.pos))
-                return true;
-       
+                return true;       
         }
         
         if ( this.currentAction_.name == "Surface" )
@@ -420,8 +379,8 @@ var Crab = AiWanderer.extend({
             // Calculate position when dive ends.
             
             tm.pos.x += this.speed_ * swim_time * Math.cos(this.r_ * 3.14);
-            tm.pos.y += this.speed_ * swim_time * Math.sin(this.r_ * 3.14);
-            tm.pos.z += this.swim_speed_ * swim_time * Math.cos(Math.PI / 4.0);
+            tm.pos.y += this.swim_speed_ * swim_time * Math.cos(Math.PI / 4.0);
+            tm.pos.z += this.speed_ * swim_time * Math.sin(this.r_ * 3.14);
                  
             if (this.CheckPosition(tm.pos))
                 return true;
@@ -432,8 +391,8 @@ var Crab = AiWanderer.extend({
         {
             // Calculate new position.
             tm.pos.x += this.speed_ * this.currentAction_.time * Math.cos(this.r_ * 3.14);
-            tm.pos.y += this.speed_ * this.currentAction_.time * Math.sin(this.r_ * 3.14);   
-            tm.pos.z -= this.GetDistanceToTerrain(tm);
+            tm.pos.y -= this.GetDistanceToTerrain(tm);
+            tm.pos.z += this.speed_ * this.currentAction_.time * Math.sin(this.r_ * 3.14);   
         
             if (this.CheckPosition(tm.pos))
                 return true;
@@ -464,11 +423,9 @@ var Crab = AiWanderer.extend({
         // Create direction vector to trigger volume pivot point. Or if there exist many trigger volumes, to orginal position of opossum.  
         var tm = this.placeable_.transform;
       
-        var target = new Vector3df;
-        target.x = this.orginalPos_.x - tm.pos.x; 
-        target.y = this.orginalPos_.y - tm.pos.y;
+        var target = new float3(this.orginalPos_.x - tm.pos.x, 0, this.orginalPos_.z - tm.pos.z);
         //var r = Math.sqrt(target.x * target.x + target.y * target.y);
-        this.r_ = Math.atan2(target.y, target.x)/3.14;
+        this.r_ = Math.atan2(target.z, target.x)/3.14;
         
     },
     
@@ -479,7 +436,7 @@ var Crab = AiWanderer.extend({
            if ( this.IsInsideVolume(point, this.volumes_[i]) )
                 return true;          
         }
-        
+
         return false;
     },
 
@@ -488,22 +445,29 @@ var Crab = AiWanderer.extend({
 });
 
 
+function CrabObject(entity, component)
+{
+         print("crabobject");
+  this.entity = entity;
+  this.p_ = new Crab(entity);
+  if (!client.IsConnected())
+  {
+    frame.Updated.connect(this.p_, "Update");
+  }
+}
+
 /**
-* IF you want to run script through signal, you need to make this kind HACK. Direct 
+* IF you want to run script through signal, you need to make this kind HACK. Direct
 * frame.Updated.connect(p_.Update) does not work correctly (all objects attributes are undefined?).
 */
-var p_ = new Crab;
+//var p_ = new Crab;
 
-function Update(frametime) {
+//function Update(frametime) {
     //print("Call Update START");
-    p_.Update(frametime);
+//    p_.Update(frametime);
     //print("Call Update END");
-}
+//}
 
-if ( server != null && server.IsRunning() )
-{
-    frame.Updated.connect(Update);
-}
 
 //me.Action("MousePress").Triggered.connect(Update);
 

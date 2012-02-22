@@ -5,8 +5,8 @@ engine.ImportExtension("qt.core");
 engine.ImportExtension("qt.gui");
 //engine.ImportExtension("qt.uitools"); //naali core ui wraps this and is in remote js sandbox
 
-// !ref: local://osprey_controls.ui
-// !ref: local://osprey_game_launch.ui
+// !ref: osprey_controls.ui
+// !ref: osprey_game_launch.ui
 
 var sizeX_ = 200;
 var sizeY_ = 200;
@@ -25,7 +25,7 @@ function LaunchGame() {
 
 function ShowGameDialog() {
     print("click!");
-    var file = "local://osprey_game_launch.ui";
+    var file = "osprey_game_launch.ui";
 
     if (widgetLaunch_ == null) {
 
@@ -75,7 +75,7 @@ function ShowControls() {
     if ( widgetLaunch_ != null)
         widgetLaunch_.hide();
     
-    var file = "local://osprey_controls.ui";
+    var file = "osprey_controls.ui";
 
     if (widget_ == null) 
     {
@@ -145,9 +145,11 @@ function Start() {
     // Hide main right panel
     var e = scene.GetEntityByName("MainHud");
     e.Exec(1, "HideMainUI");
+	print("start");
 }
 
 function Exit() {
+	print("exit");
     widgetLaunch_.hide();
     if ( widget_ != null )
         widget_.hide();

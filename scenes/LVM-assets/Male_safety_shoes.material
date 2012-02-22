@@ -10,7 +10,7 @@ material Male_safety_shoes
             emissive 0.0 0.0 0.0
             texture_unit
             {
-                texture local://safety_shoes.jpg 
+                texture safety_shoes.jpg 
             }
         }
     }

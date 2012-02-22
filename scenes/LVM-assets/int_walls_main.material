@@ -18,13 +18,7 @@ material int_walls_main
                 scale 0.1 0.1
              //   colour_op_ex blend_manual src_current src_texture 0.0803571343422
             }
-          //  texture_unit
-            {
-                texture ext_walls_AO.png
-                tex_address_mode wrap
-                scale 1.0 1.0
-                colour_op_ex blend_manual src_current src_texture 0.614035069942
-            }
+
         }
     }
 }

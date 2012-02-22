@@ -1,6 +1,6 @@
-engine.IncludeFile("local://vector.js");
-engine.IncludeFile("local://wandererAi.js");
-engine.IncludeFile("local://fishgame_schoolconst.js");
+engine.IncludeFile("vector.js");
+engine.IncludeFile("wandererAi.js");
+engine.IncludeFile("fishgame_schoolconst.js");
 
 var School = AiWanderer.extend({
    init: function(entity, pos) {
@@ -8,7 +8,7 @@ var School = AiWanderer.extend({
        
        this.entity_     = entity;
        this.pos_        = pos;
-       this.velocity_   = new Vector3df();
+       this.velocity_   = new float3(0,0,0);
        this.systems_    = [];
        
        this.maxSpeed_ = 0.3;
@@ -20,9 +20,9 @@ var School = AiWanderer.extend({
 
        this.volume_ = volumes[0];
        // Get volume size and pos
-       var volumeEntity = this.volume_.GetParentEntity();
-       var volumeBody = volumeEntity.GetComponentRaw('EC_RigidBody');
-       var volumePlaceable = volumeEntity.GetComponentRaw('EC_Placeable');
+       var volumeEntity = this.volume_.ParentEntity();
+       var volumeBody = volumeEntity.GetComponent('EC_RigidBody');
+       var volumePlaceable = volumeEntity.GetComponent('EC_Placeable');
        if(!volumeBody)
            throw 'FishGameArea has no rigidbody';
        if(!volumePlaceable)
@@ -34,7 +34,7 @@ var School = AiWanderer.extend({
        this.volumeSize_ = volumeBody.size;
        
        
-       this.targetPos_ = new Vector3df();
+       this.targetPos_ = new float3(0,0,0);
        this.updateTarget();
        
        
@@ -57,15 +57,15 @@ var School = AiWanderer.extend({
        var placeable = this.entity_.placeable;
        var tm = placeable.transform;
        
-       if(GetDistance(this.pos_, this.targetPos_) < 1.0) {
+       if(this.pos_.Distance(this.targetPos_) < 1.0) {
            this.updateTarget();
        }
        
        var steer = this.getSteer();
-       this.velocity_ = VectorSum(this.velocity_, steer);
-       var delta = VectorMult(this.velocity_, dt);
+       this.velocity_ = this.velocity_.Add(steer);
+       var delta = this.velocity_.Mul(dt);
        
-       this.pos_ = VectorSum(this.pos_, delta);
+       this.pos_ = this.pos_.Add(delta);
        tm.pos = this.pos_;
        placeable.transform = tm;       
    },
@@ -98,17 +98,17 @@ var School = AiWanderer.extend({
    
    getSteer: function() {
        var steer = null;
-       var desired = VectorSub(this.targetPos_, this.pos_);
-       var distance = GetMagnitude(desired);
+       var desired = this.targetPos_.Sub(this.pos_);
+       var distance = desired.Length();
        if(distance > 0) {
-           desired = GetUnitVector(desired);
-           desired = VectorMult(desired, this.maxSpeed_);
+           desired = desired.Normalized();
+           desired = desired.Mul(this.maxSpeed_);
            
-           steer = VectorSub(desired, this.velocity_);
+           steer = desired.Sub(this.velocity_);
            steer = GetLimitedVector(steer, this.maxSteer_);
        }
        else {
-           steer = new Vector3df();
+           steer = new float3(0,0,0);
        }
        return steer;
    },

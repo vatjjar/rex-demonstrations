@@ -86,11 +86,11 @@ function updateVelocity(dt) {
     var slowDown = 0;
     
     // // Angle between current direction and target
-    // var w = new Vector3df();
+    // var w = new float3(0,0,0);
     // w.x = target.x - tm.pos.x;
     // w.y = target.y - tm.pos.y;
     // var dotProduct = direction.x*w.x + direction.y*w.y;
-    // var cos = dotProduct/GetMagnitude(w);
+    // var cos = dotProduct/w.Length();
     // var dirDiff = Math.acos(cos)
     // 
     // var maxDiff = Math.PI/6; // 30 degree
@@ -104,10 +104,10 @@ function updateVelocity(dt) {
     //     else
     //         var dir = -maxDiff;
     //     
-    //     var tmpTarget = new Vector3df();
+    //     var tmpTarget = new float3(0,0,0);
     //     tmpTarget.x = direction.x*Math.cos(dir) - direction.y*Math.sin(dir);
     //     tmpTarget.y = direction.x*Math.sin(dir) + direction.y*Math.cos(dir);
-    //     // tmpTarget = VectorMult(tmpTarget, 5);
+    //     // tmpTarget = tmpTarget.Mul(5);
     //     tmpTarget.x += tm.pos.x;
     //     tmpTarget.y += tm.pos.y;
     //     
@@ -125,10 +125,7 @@ function updateVelocity(dt) {
     velocity.z += steer.z;
     
     // Limit XZ-speed
-    var v = new float3();
-    v.x = velocity.x; 
-    v.y = 0; 
-    v.z = velocity.z;
+    var v = new float3(velocity.x, 0, velocity.z);
     v = getLimitedVector(v, maxSpeed, minSpeed);
     
     velocity.x = v.x;
@@ -139,10 +136,10 @@ function updateVelocity(dt) {
 function updateOrientation(dt) {
     var tm = me.placeable.transform;
     
-    /*var d = new Vector3df();
+    /*var d = new float3(0,0,0);
     d.x = 1; d.y = 0; d.z = 0;
     
-    var r = new Vector3df();
+    var r = new float3(0,0,0);
     r.x = velocity.x;
     r.y = velocity.y;
     r.z = velocity.z;
@@ -156,14 +153,17 @@ function updateOrientation(dt) {
         turning = 1;
     else 
         turning = 0;*/
-    
-    //tm.rot = new float3(0, 0, 0); //terrain.GetTerrainRotationAngles(tm.pos.x, tm.pos.y, tm.pos.z, velocity);
+
     if (terrain) {
-        var deerfwd = new float3(0, 0, 1);
-        var normal = terrain.GetInterpolatedNormal(tm.pos.x, tm.pos.y);
-        var quat = Quat.LookAt(deerfwd, velocity.Normalized(), scene.UpVector(), normal);
+
+		tm.FromFloat3x4(float3x4(Quat.LookAt(float3.unitZ, terrain.Tangent(tm.pos, velocity), float3.unitY, float3.unitY), tm.pos));
+/*
+		var tangentFrame = terrain.TangentFrame(tm.pos);
+		var worldTM = float3x4.LookAt(new float3(0,1,0), tangentFrame.Col(1).Normalized(), new float3(0,0,1), velocity.Normalized());
+		worldTM.SetTranslatePart(tangentFrame.Col(3));
+		tm.FromFloat3x4(worldTM);
+*/
         me.placeable.transform = tm;
-        me.placeable.SetOrientation(quat);
     }
 }
 
@@ -179,7 +179,7 @@ function updatePosition(dt) {
         tm.pos.y += TERRAIN_DELTA;
     }*/
     var p = terrain.GetPointOnMap(tm.pos);
-    p.y -= 2.2 //adjust to workaround GetPointOnMap behaviour
+//    p.y -= 2.2 //adjust to workaround GetPointOnMap behaviour
     tm.pos = p;
     
     me.placeable.transform = tm;
@@ -319,7 +319,7 @@ function get2DSteer(pos, target, maxSteer, maxSpeed, slowDownDistance) {
         steer = getLimitedVector(steer, maxSteer);
     }
     else {
-        steer = new float3();
+        steer = new float3(0,0,0);
     }
     return steer;
 }

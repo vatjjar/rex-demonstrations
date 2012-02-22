@@ -1,17 +1,17 @@
-engine.IncludeFile("local://class.js");
+engine.IncludeFile("class.js");
 
 engine.ImportExtension("qt.core");
 engine.ImportExtension("qt.gui");
 // Asset dependency chain.
 
-// !ref: local://osprey_game_hud.ui
-// !ref: local://osprey_nest_controller.js
-// !ref: local://fishOFF.png
-// !ref: local://fishON.png
+// !ref: osprey_game_hud.ui
+// !ref: osprey_nest_controller.js
+// !ref: fishOFF.png
+// !ref: fishON.png
 
 //NOTE: had to remove those as they break headless mode alltogether 
 //- stop this script from loading there. possibly breaks the effect for clients
-// NOT: local://watersplash.particle
+// !ref: local://watersplash.particle
 // NOT: local://watersplash_drops.particle
 // NOT: local://watersplash_hispeed.particle
 
@@ -22,7 +22,7 @@ var OspreyController = Class.extend({
 
         // Are used to define motion can be -1,0,1
         this.motionStateX_ = 0;
-        this.motionStateY_ = 0;
+        this.motionStateZ_ = 0;
 
         // Contains current animation.
         this.currentAnimation_ = null;
@@ -147,7 +147,7 @@ var OspreyController = Class.extend({
             for (var i = 0; i < ids.length; ++i) {
 
                 var e = scene.GetEntityRaw(ids[i]);
-                if (e.GetComponentRaw("EC_Name").name == "OspreyGame_Fish") {
+                if (e.GetComponent("EC_Name").name == "OspreyGame_Fish") {
                     this.fishes_.push(e);
                 }
             } */  
@@ -155,7 +155,7 @@ var OspreyController = Class.extend({
         
         else {
             if (me.name == "Osprey_" + client.GetConnectionID()) {
-                debug.Log("own osprey" + client.GetConnectionID());
+                print("own osprey" + client.GetConnectionID());
                 this.ownAvatar_ = true;
                 this.CreateInputMapper();
                 this.CreateAvatarCamera();
@@ -170,7 +170,7 @@ var OspreyController = Class.extend({
 /*        for ( var index = 1; index < 3; ++index)
         {
             var nestName = "ospreynest.00" + index;
-            var nest = scene.GetEntityByNameRaw(nestName);
+            var nest = scene.GetEntityByName(nestName);
             if ( nest == null )
             {
                 print("OspreyAvatarController: CreateNestTargets, did not find a nest: " + nestName);
@@ -179,15 +179,15 @@ var OspreyController = Class.extend({
             }
             
            // Create volume and rigid body for nest.
-           var rigidbody = nest.GetOrCreateComponentRaw("EC_RigidBody");
+           var rigidbody = nest.GetOrCreateComponent("EC_RigidBody");
            
            var currentSize = rigidbody.size;
            currentSize.x = 10.0;
-           currentSize.y = 10.0;
-           currentSize.z = 40.0;
+           currentSize.y = 40.0;
+           currentSize.z = 10.0;
            rigidbody.size = currentSize;
            
-           var volume = nest.GetOrCreateComponentRaw("EC_VolumeTrigger");
+           var volume = nest.GetOrCreateComponent("EC_VolumeTrigger");
          
          }*/
    
@@ -255,9 +255,9 @@ var OspreyController = Class.extend({
             // Dive
             //animation = "Plane to Dive_1-34";
             animation = "Dive_1-54";
-            this.planToDiveAnimationStopTime_ = frame.GetWallClockTime() + this.planToDiveAnimationRunTime_;
+            this.planToDiveAnimationStopTime_ = frame.WallClockTime() + this.planToDiveAnimationRunTime_;
         }
-        else if (this.motionStateY_ == 1 || this.motionStateY_ == -1) {
+        else if (this.motionStateZ_ == 1 || this.motionStateZ_ == -1) {
             // Turn right or left
             animation = "Plane_1-204";
 
@@ -312,10 +312,10 @@ var OspreyController = Class.extend({
 
         }
         else if (action == "right") {
-            this.motionStateY_ = 1;
+            this.motionStateZ_ = 1;
         }
         else if (action == "left") {
-            this.motionStateY_ = -1;
+            this.motionStateZ_ = -1;
         }
 
         this.SetAnimation();
@@ -331,11 +331,11 @@ var OspreyController = Class.extend({
         else if ((action == "dive") && (this.motionStateX_ == -1)) {
             this.motionStateX_ = 0;
         }
-        else if ((action == "right") && (this.motionStateY_ == 1)) {
-            this.motionStateY_ = 0;
+        else if ((action == "right") && (this.motionStateZ_ == 1)) {
+            this.motionStateZ_ = 0;
         }
-        else if ((action == "left") && (this.motionStateY_ == -1)) {
-            this.motionStateY_ = 0;
+        else if ((action == "left") && (this.motionStateZ_ == -1)) {
+            this.motionStateZ_ = 0;
         }
 
         this.SetAnimation();
@@ -344,9 +344,10 @@ var OspreyController = Class.extend({
 
     CreateHUD: function() {
 
+		print("CreateHUD");
         // Creates a game hud.
 
-        var file ="local://osprey_game_hud.ui";
+        var file ="osprey_game_hud.ui";
         
         this.hudWidget_ = ui.LoadFromFile(file, false);
         if (this.hudWidget_ == null) {
@@ -385,7 +386,7 @@ var OspreyController = Class.extend({
         this.hudWidget_.resize(gscene.width(), 115);
         this.hudWidget_.move(0, 10);
 
-        proxy.ToggleVisibility();
+        proxy.visible = !proxy.visible;
         // Set up time limit, tweak end game little bit before then display time.
         frame.DelayedExecute(this.gameTime_ - 1).Triggered.connect(this, this.ExitGame);
 
@@ -393,6 +394,7 @@ var OspreyController = Class.extend({
 
     ExitGame: function() {
 
+		print("ExitGame");
         this.hudWidget_.hide();
         this.hudWidget_ = null;
         this.lcdTimeDisplay_ = null;
@@ -402,9 +404,9 @@ var OspreyController = Class.extend({
         
         //Find own avatar in scene, and activate its camera, for just in case we do this in this order. 
 
-        var avatarCamera = scene.GetEntityByNameRaw("AvatarCamera");
-        if (avatarCamera.HasComponent("EC_OgreCamera")) {
-            var camera = avatarCamera.GetComponentRaw("EC_OgreCamera");
+        var avatarCamera = scene.GetEntityByName("AvatarCamera");
+        var camera = avatarCamera.GetComponent("EC_Camera");
+        if (camera) {
             camera.SetActive();
         }
         else {
@@ -413,12 +415,12 @@ var OspreyController = Class.extend({
         }
 
         // Remove Osprey Camera
-        scene.RemoveEntityRaw(scene.GetEntityByNameRaw("OspreyAvatarCamera").id); //XXX \todo: assumes single player!
+        scene.RemoveEntityRaw(scene.GetEntityByName("OspreyAvatarCamera").id); //XXX \todo: assumes single player!
 
         //Send message to server to stop game. 
 
         var gameName = "OspreyGame";
-        var gameEntity = scene.GetEntityByNameRaw(gameName);
+        var gameEntity = scene.GetEntityByName(gameName);
         if (gameEntity != null) {
             gameEntity.Exec(2, "StopGame", client.GetConnectionID());
         }
@@ -429,7 +431,7 @@ var OspreyController = Class.extend({
         for (var i = 0; i < ids.length; ++i) {
 
             var e = scene.GetEntityRaw(ids[i]);
-            if (e.GetComponentRaw("EC_Name").name == "MainHud") {
+            if (e.GetComponent("EC_Name").name == "MainHud") {
                 e.Exec(1, "ShowMainUI");
             }
         }
@@ -451,7 +453,7 @@ var OspreyController = Class.extend({
 
         // Create a nonsynced inputmapper
 
-        var inputmapper = me.GetOrCreateComponentRaw("EC_InputMapper", 2, false);
+        var inputmapper = me.GetOrCreateComponent("EC_InputMapper", 2, false);
 
         inputmapper.contextPriority = 103;
         //inputmapper.takeMouseEventsOverQt = true;
@@ -475,17 +477,17 @@ var OspreyController = Class.extend({
     CreateAvatarCamera: function() {
 
 
-        if (scene.GetEntityByNameRaw("OspreyAvatarCamera") != null)
+        if (scene.GetEntityByName("OspreyAvatarCamera") != null)
             return;
 
-        var cameraentity = scene.CreateEntityRaw(scene.NextFreeIdLocal());
+        var cameraentity = scene.CreateEntity(scene.NextFreeIdLocal());
         cameraentity.SetName("OspreyAvatarCamera");
         cameraentity.SetTemporary(true);
 
-        var camera = cameraentity.GetOrCreateComponentRaw("EC_OgreCamera");
-        var placeable = cameraentity.GetOrCreateComponentRaw("EC_Placeable");
+        var camera = cameraentity.GetOrCreateComponent("EC_Camera");
+        var placeable = cameraentity.GetOrCreateComponent("EC_Placeable");
 
-        camera.AutoSetPlaceable();
+//        camera.AutoSetPlaceable();
         camera.SetActive();
 
         // Set initial position
@@ -519,7 +521,7 @@ var OspreyController = Class.extend({
             var animation = this.animationController_.animationState;
 
             // If we are running special animation catch-fish we end it if it has run too long.
-            if (animation != null && animation == "Catch_1-85" && this.catchAnimationStopTime_ <= frame.GetWallClockTime()) {
+            if (animation != null && animation == "Catch_1-85" && this.catchAnimationStopTime_ <= frame.WallClockTime()) {
                 // If we are still doing catch animation --> change it to new.
                 if (this.motionStateX_ == 2)
                     this.motionStateX_ = 1;
@@ -530,7 +532,7 @@ var OspreyController = Class.extend({
             }
 
             /*
-            if ( animation != null && animation == "Plane to Dive_1-34" && this.planToDiveAnimationStopTime_ <= frame.GetWallClockTime() )
+            if ( animation != null && animation == "Plane to Dive_1-34" && this.planToDiveAnimationStopTime_ <= frame.WallClockTime() )
             {
             // Change animation from plan to dive to dive.
                
@@ -567,7 +569,7 @@ var OspreyController = Class.extend({
     UpdateOspreyAvatarCamera: function(frameTime) {
 
 
-        var cameraentity = scene.GetEntityByNameRaw("OspreyAvatarCamera");
+        var cameraentity = scene.GetEntityByName("OspreyAvatarCamera");
 
         if (cameraentity == null)
             return;
@@ -577,15 +579,16 @@ var OspreyController = Class.extend({
 
         var cameratransform = cameraplaceable.transform;
         var avatartransform = avatarplaceable.transform;
-        var offsetVec = new Vector3df();
+        var offsetVec = new float3(0,0,0);
         offsetVec.x = -this.ospreyCameraDistance_;
-        offsetVec.z = this.ospreyCameraHeight_;
-        offsetVec = avatarplaceable.GetRelativeVector(offsetVec);
+        offsetVec.y = this.ospreyCameraHeight_;
+        offsetVec = avatarplaceable.LocalToWorld().MulDir(offsetVec);
 
         // Note: this is not nice how we have to fudge the camera rotation to get it to show the right things
 
         var animcontroller = me.animationcontroller;
 
+		///\todo flipyz
         if (animcontroller.IsAnimationActive("Plane to Dive_1-34")) {
 
             /// Here we try to make smooth camera drive so that dive animation looks nice in client side.
@@ -836,7 +839,7 @@ var OspreyController = Class.extend({
 
                         // Run special catch-fish animation.
                         this.motionStateX_ = 2;
-                        this.catchAnimationStopTime_ = frame.GetWallClockTime() + this.catchAnimationRunTime_;
+                        this.catchAnimationStopTime_ = frame.WallClockTime() + this.catchAnimationRunTime_;
                         this.SetAnimation();
                     }
                     else {
@@ -911,7 +914,7 @@ var OspreyController = Class.extend({
 
                     // Run special catch-fish animation.
                     this.motionStateX_ = 2;
-                    this.catchAnimationStopTime_ = frame.GetWallClockTime() + this.catchAnimationRunTime_;
+                    this.catchAnimationStopTime_ = frame.WallClockTime() + this.catchAnimationRunTime_;
 
                     this.SetAnimation();
                 }
@@ -942,7 +945,7 @@ var OspreyController = Class.extend({
         {
             if( this.currentNest_ != null && this.currentNest_.HasComponent("EC_VolumeTrigger") )
             {
-                var volume = this.currentNest_.GetComponentRaw("EC_VolumeTrigger");
+                var volume = this.currentNest_.GetComponent("EC_VolumeTrigger");
                 if ( volume.IsInsideVolume(tm.pos) )
                 {
                     me.Exec(7,"FishScore", this.playerID_);
@@ -1034,7 +1037,7 @@ var OspreyController = Class.extend({
          
            // Search through all fish entities that are we enough close to "catch" fish.
            
-           var fishPos = new Vector3df;
+           var fishPos = new float3(0,0,0);
            var d = null;
            var ospreyPos = tm.pos;
            var fish = null;
@@ -1072,7 +1075,7 @@ var OspreyController = Class.extend({
             this.RemoveNestNote();
             if ( this.scoreLayout_ != null )
             {
-                var fishAsset = asset.GetAsset("local://fishON.png").get();
+                var fishAsset = asset.GetAsset("fishON.png").get();
                 
                 var fishFileName = fishAsset.DiskSource();
                 var image = new QPixmap(fishFileName);
@@ -1112,7 +1115,7 @@ var OspreyController = Class.extend({
        var name = "NestNote_" + this.playerID_;
        
        // If there all ready exist a note --> Remove it!
-       var tmpObj = scene.GetEntityByNameRaw(name);
+       var tmpObj = scene.GetEntityByName(name);
        if ( tmpObj !=null )
        {    
             //Remove old.
@@ -1131,7 +1134,7 @@ var OspreyController = Class.extend({
        var name = "NestNote_" + this.playerID_;
        
        // If there all ready exist a note --> Remove it!
-       var tmpObj = scene.GetEntityByNameRaw(name);
+       var tmpObj = scene.GetEntityByName(name);
        if ( tmpObj !=null )
        {    
             //Remove old.
@@ -1151,7 +1154,7 @@ var OspreyController = Class.extend({
        if (!this.IsServer_ )
        {
             // Create new one.
-            var entity = scene.CreateEntityRaw(scene.NextFreeIdLocal(),["EC_Name", "EC_Placeable", "EC_Script"],2,false);
+            var entity = scene.CreateEntity(scene.NextFreeIdLocal(),["EC_Name", "EC_Placeable", "EC_Script"],2,false);
             entity.SetTemporary(true);
             entity.SetName(name);
 
@@ -1162,17 +1165,17 @@ var OspreyController = Class.extend({
                 
                 // Create note on nest.
                 
-                var meshComp = entity.GetOrCreateComponentRaw("EC_Mesh", 2, false);
+                var meshComp = entity.GetOrCreateComponent("EC_Mesh", 2, false);
                 var meshRef = meshComp.meshRef;
-                meshRef.ref = "local://gold_osprey_statue.mesh";
+                meshRef.ref = "gold_osprey_statue.mesh";
                 meshComp.meshRef = meshRef;
                 
                 var skeletorRef = meshComp.skeletonRef;
-                skeletorRef.ref = "local://gold_osprey_statue.skeleton";
+                skeletorRef.ref = "gold_osprey_statue.skeleton";
                 meshComp.skeletonRef = skeletorRef;
 
                 var materials = meshComp.meshMaterial;  
-                materials = ["local://m_gold_osprey.material"];
+                materials = ["m_gold_osprey.material"];
                 meshComp.meshMaterial = materials;
                 
                 // Add rotate script to mesh..
@@ -1182,7 +1185,7 @@ var OspreyController = Class.extend({
                 script.runOnLoad = true;
                 var r = script.scriptRef;
 
-                r.ref = "local://osprey_nest_controller.js";
+                r.ref = "osprey_nest_controller.js";
                 script.scriptRef = r;
                 entity.script = script;
                 
@@ -1215,7 +1218,7 @@ var OspreyController = Class.extend({
        var index = Math.round(Math.random())+1;
        var nestName = "ospreynest.00" + index;
       
-       var nest = scene.GetEntityByNameRaw(nestName);
+       var nest = scene.GetEntityByName(nestName);
        
        if ( nest == null )
        {
@@ -1258,22 +1261,22 @@ var OspreyController = Class.extend({
 
     RunWaterParticleEffects: function(trans) {
 
-        var entity = scene.CreateEntityRaw(scene.NextFreeId(), ["EC_Placeable"]);
+        var entity = scene.CreateEntity(scene.NextFreeId(), ["EC_Placeable"]);
         var name = "WaterSplass_" + this.playerID_;
         entity.SetName(name);
         this.waterParticleEntity_.push(entity);
 
-        var parOne = entity.GetOrCreateComponentRaw("EC_ParticleSystem", "1");
+        var parOne = entity.GetOrCreateComponent("EC_ParticleSystem", "1");
         var parRef = parOne.particleRef;
-        parRef.ref = "local://watersplash.particle";
+        parRef.ref = "watersplash.particle";
         parOne.particleRef = parRef;
 
-        var parTwo = entity.GetOrCreateComponentRaw("EC_ParticleSystem", "2");
-        parRef.ref = "local://watersplash_drops.particle";
+        var parTwo = entity.GetOrCreateComponent("EC_ParticleSystem", "2");
+        parRef.ref = "watersplash_drops.particle";
         parTwo.particleRef = parRef;
 
-        var parThree = entity.GetOrCreateComponentRaw("EC_ParticleSystem", "2");
-        parRef.ref = "local://watersplash_hispeed.particle";
+        var parThree = entity.GetOrCreateComponent("EC_ParticleSystem", "2");
+        parRef.ref = "watersplash_hispeed.particle";
         parThree.particleRef = parRef;
 
         var tm = entity.placeable.transform;
@@ -1297,9 +1300,9 @@ var OspreyController = Class.extend({
         var entity = scene.GetEntityRaw(id);
         if ( entity.HasComponent("EC_Mesh") && this.fishMesh_ == null )
         {
-             var fishMesh = entity.GetComponentRaw("EC_Mesh");
+             var fishMesh = entity.GetComponent("EC_Mesh");
            
-             fishMesh.AttachMeshToBone(me.GetComponentRaw("EC_Mesh"), "hook1_R");
+             fishMesh.AttachMeshToBone(me.GetComponent("EC_Mesh"), "hook1_R");
              
              var tm = fishMesh.nodeTransformation;
          

@@ -4,9 +4,6 @@
 // const SCHOOL_DIAMETER_Y = 5.0;
 // const SCHOOL_DIAMETER_Z = 1.5;
 
-var schoolSize = new Vector3df();
-    schoolSize.x = 5.0;
-    schoolSize.y = 5.0;
-    schoolSize.z = 1.5;
+var schoolSize = new float3(5.0, 5.0, 1.5);
 
 // const SYSTEM_COUNT = 5;

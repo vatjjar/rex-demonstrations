@@ -1,9 +1,9 @@
 // JScript source code
-engine.IncludeFile("local://wandererAi.js");
+engine.IncludeFile("wandererAi.js");
 
 var Deer = AiWanderer.extend({
-    init: function() {
-         
+    init: function(entity) {
+         this.entity = entity;
          this.r_ = 0;
          this.currentDirection_ = 0;
          this.angularSpeed_ = 0.1;
@@ -14,7 +14,7 @@ var Deer = AiWanderer.extend({
          this.terrainDelta_= 0.5;
          this.actions_ = 3;
          
-         var meshComp = me.GetComponentRaw("EC_Mesh");
+         var meshComp = this.entity.GetComponent("EC_Mesh");
          var trans = meshComp.nodeTransformation;
          // Orginal 180 degree. 
          trans.rot.z = 0;
@@ -43,10 +43,10 @@ var Deer = AiWanderer.extend({
              for (var i = 0; i < ids.length; ++i) {
                
                 var ent = scene.GetEntityRaw(ids[i]);
-                var nameComp = ent.GetComponentRaw("EC_Name");
+                var nameComp = ent.GetComponent("EC_Name");
                 if ( nameComp != null && nameComp.name == "DeerVolume")
                 {
-                    var placeableComp = ent.GetComponentRaw("EC_Placeable");
+                    var placeableComp = ent.GetComponent("EC_Placeable");
                     if ( placeableComp != null )
                     {
                        var pos = placeableComp.transform.pos;
@@ -62,7 +62,7 @@ var Deer = AiWanderer.extend({
             
             if ( nearestVolume != null )
             {
-                var pl = nearestVolume.GetComponentRaw("EC_Placeable");
+                var pl = nearestVolume.GetComponent("EC_Placeable");
                 // Now set that "orginal" pos is our volume trigger center..our object triest to always get there.
                 this.orginalPos_ = pl.transform.pos;
             }
@@ -70,13 +70,8 @@ var Deer = AiWanderer.extend({
               
          }
          
-         this.rigidBody_ = null;
-         
-         if ( me.HasComponent("EC_RigidBody") )
-         {
-            this.rigidBody_ = me.GetComponentRaw("EC_RigidBody");
-         } 
-         
+            this.rigidBody_ = this.entity.GetComponent("EC_RigidBody");
+
          //print("Orginal pos after: " + this.orginalPos_.x + " y:" + this.orginalPos_.y + "z: " + this.orginalPos_.z);
          
          /*
@@ -87,10 +82,10 @@ var Deer = AiWanderer.extend({
             for (var i = 0; i < ids.length; ++i) {
                
                 var ent = scene.GetEntityRaw(ids[i]);
-                var nameComp = ent.GetComponentRaw("EC_Name");
+                var nameComp = ent.GetComponent("EC_Name");
                 if ( nameComp != null && nameComp.name == "DeerVolume")
                 {
-                    var placeableComp = ent.GetComponentRaw("EC_Placeable");
+                    var placeableComp = ent.GetComponent("EC_Placeable");
                     if ( placeableComp != null )
                     {
                        this.orginalPos_ = placeableComp.transform.pos;
@@ -162,11 +157,7 @@ var Deer = AiWanderer.extend({
         tm.pos.z -= distanceToTerrain;
         tm.pos.z += this.terrainDelta_; 
 
-        var direction = new Vector3df;
-
-        direction.x = Math.cos(angle * 3.14);
-        direction.y = Math.sin(angle * 3.14);
-        direction.z = 0;
+        var direction = new float3(Math.cos(angle * 3.14), 0, Math.sin(angle * 3.14));
 
         if (this.terrain_ != null) {
 
@@ -230,9 +221,7 @@ var Deer = AiWanderer.extend({
         // Create direction vector to trigger volume pivot point. Or if there exist many trigger volumes, to orginal position of opossum.  
         var tm = this.placeable_.transform;
       
-        var target = new Vector3df;
-        target.x = this.orginalPos_.x - tm.pos.x; 
-        target.y = this.orginalPos_.y - tm.pos.y;
+        var target = new float3(this.orginalPos_.x - tm.pos.x, this.orginalPos_.y - tm.pos.y, 0);
         //var r = Math.sqrt(target.x * target.x + target.y * target.y);
         
         this.r_ = Math.atan2(target.y, target.x)/3.14;
@@ -251,19 +240,19 @@ var Deer = AiWanderer.extend({
         
         return false;
     },
-    
+
 });
 
-
-var p_ = new Deer;
-
-function Update(frametime) {
-     p_.Update(frametime);
-}
-
-if ( server != null && server.IsRunning() )
+function DeerObject(entity, component)
 {
-    frame.Updated.connect(Update);
+         print("deerobject");
+  this.entity = entity;
+  this.p_ = new Deer(entity);
+  if (!client.IsConnected())
+  {
+    frame.Updated.connect(this.p_, "Update");
+  }
 }
+
 
  

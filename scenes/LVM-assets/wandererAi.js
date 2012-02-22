@@ -1,8 +1,8 @@
-engine.IncludeFile("local://class.js");
+engine.IncludeFile("class.js");
 
 var AiWanderer = Class.extend({
 
-    // Default constructor 
+    // Default constructor
 
     init: function() {
 
@@ -14,7 +14,7 @@ var AiWanderer = Class.extend({
         else
             this.terrain_ = null;
 
-        this.placeable_ = me.placeable;
+        this.placeable_ = this.entity.placeable;
 
         // Get pointers to all waterplanes in scene.
 
@@ -28,7 +28,7 @@ var AiWanderer = Class.extend({
         this.waterPlane_ = null;
 
         // Animation controller 
-        this.anim_ = me.animationcontroller;
+        this.anim_ = this.entity.animationcontroller;
 
         // Object itself.
         this.walking_ = false;
@@ -166,11 +166,11 @@ var AiWanderer = Class.extend({
 
         if (!this.gesture_) {
             //print("WandererAI : Gesture() Change gesture animation");
-            me.Exec(7, "StopAllAnims", "0.5");
+            this.entity.Exec(7, "StopAllAnims", "0.5");
             if (action.loop) {
-                me.Exec(7, "PlayLoopedAnim", action.type, "0.5");
+                this.entity.Exec(7, "PlayLoopedAnim", action.type, "0.5");
             } else {
-                me.Exec(7, "PlayAnim", action.type, "0.5");
+                this.entity.Exec(7, "PlayAnim", action.type, "0.5");
             }
 
             this.walking_ = false;
@@ -184,11 +184,11 @@ var AiWanderer = Class.extend({
 
         if (!this.walking_) {
 
-            me.Exec(7, "StopAllAnims", "0.5");
+            this.entity.Exec(7, "StopAllAnims", "0.5");
             if (action.loop) {
-                me.Exec(7, "PlayLoopedAnim", action.type, "0.5");
+                this.entity.Exec(7, "PlayLoopedAnim", action.type, "0.5");
             } else {
-                me.Exec(7, "PlayAnim", action.type, "0.5");
+                this.entity.Exec(7, "PlayAnim", action.type, "0.5");
             }
 
             this.walking_ = true;
@@ -224,15 +224,14 @@ var AiWanderer = Class.extend({
     // Update loop, this loop should be called in function which is connected to frame update signal.
 
     Update: function(frametime) {
-        return;
-        var currentTime = frame.GetWallClockTime();
+        var currentTime = frame.WallClockTime();
         this.frameTime_ = frametime;
 
         if (this.actionStopTime_ == -1) {
 
             // First time when update loop is called, intialise action.
             this.currentAction_ = this.GetAction();
-            this.actionStopTime_ = frame.GetWallClockTime() + this.currentAction_.time;
+            this.actionStopTime_ = frame.WallClockTime() + this.currentAction_.time;
         }
 
         //print("Update() Time left for new action : " + (this.actionStopTime_ - currentTime) + " ");
@@ -248,7 +247,7 @@ var AiWanderer = Class.extend({
 
             // Get new action.
             this.currentAction_ = this.GetAction();
-            this.actionStopTime_ = frame.GetWallClockTime() + this.currentAction_.time;
+            this.actionStopTime_ = frame.WallClockTime() + this.currentAction_.time;
 
             // Run new action.
             this.RunAction(this.currentAction_);

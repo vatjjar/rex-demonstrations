@@ -19,13 +19,7 @@ material platform_floor
                 scroll 0.310000002384 1.21000003815
           //      colour_op_ex blend_manual src_current src_texture 0.0
             }
-           // texture_unit
-            {
-                texture platform_AO.png
-                tex_address_mode wrap
-                scale 1.0 1.0
-                colour_op_ex blend_manual src_current src_texture 0.5
-            }
+
         }
     }
 }

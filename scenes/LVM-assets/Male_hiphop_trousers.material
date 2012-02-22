@@ -10,7 +10,7 @@ material Hiphop_trousers
             emissive 0.0 0.0 0.0
             texture_unit
             {
-                texture local://male_trousers_texture_camo.jpg 
+                texture male_trousers_texture_camo.jpg 
             }
         }
     }

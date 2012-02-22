@@ -1,21 +1,27 @@
-engine.IncludeFile("local://wandererAi.js");
+engine.IncludeFile("wandererAi.js");
+
+function frac(x)
+{
+	return x - Math.floor(x);
+}
 
 var Fish = AiWanderer.extend({
-    init: function() {
-        return;
+    init: function(entity) {
+         print("fishctor");
+         this.entity = entity;
          this.r_ = 0;
          this.currentDirection_ = 0;
          this.angularSpeed_ = 0.025;
          this.speed_ = 0.1;
          this.terrainDelta_= 0.5;
          this.waterDelta_ = 0.10;
-         
-         var meshComp = me.mesh;
+
+         var meshComp = this.entity.mesh;
          var trans = meshComp.nodeTransformation;
-         // Orginal 180 degree. 
+         // Orginal 180 degree.
          trans.rot.z = 0;
          meshComp.nodeTransformation = trans;
-         
+
          // Get volume triggers that i am intrested.
          this.volumes_ = [];
          
@@ -25,7 +31,12 @@ var Fish = AiWanderer.extend({
          this.tooFar = 1600;
          // Get trigger volumes.
          this.volumes_ = this.GetTriggerVolumes("FishVolume");
-         
+
+//		 this.fishScale_ = 0.1 + 0.5*Math.random(); // Who the hell designed these "0.1 scale miniature fishes?" No way we are keeping those. Replace with random fish sizes.. -jj
+
+// Todo: Convert to using script classes, to be able to use the above, and not this hack.
+		 this.fishScale_ = 0.1 + 0.5*frac(Math.random() * 0.8 * this.placeable_.transform.pos.x * this.placeable_.transform.pos.y * this.placeable_.transform.pos.z * 123414.0);
+
          if ( this.volumes_.length > 1 )
          {
              // Take the closest, and save its location.
@@ -38,15 +49,15 @@ var Fish = AiWanderer.extend({
              {
                
                 var ent = scene.GetEntityRaw(ids[i]);
-                var nameComp = ent.GetComponentRaw("EC_Name");
-                if ( nameComp != null && nameComp.name == "FishVolume")
+                var nameComp = ent.GetComponent("EC_Name");
+                if (nameComp != null && nameComp.name == "FishVolume")
                 {
-                    var placeableComp = ent.GetComponentRaw("EC_Placeable");
-                    if ( placeableComp != null )
+                    var placeableComp = ent.GetComponent("EC_Placeable");
+                    if (placeableComp != null)
                     {
                        var pos = placeableComp.transform.pos;
-                       var d = (this.orginalPos_.x - pos.x)*(this.orginalPos_.x - pos.x)+(this.orginalPos_.y - pos.y)*(this.orginalPos_.y - pos.y)+(this.orginalPos_.z - pos.z)*(this.orginalPos_.z - pos.z);
-                       if ( d < smallestDistance )
+                       var d = this.orginalPos_.DistanceSq(pos);
+                       if (d < smallestDistance)
                        {
                             smallestDistance = d;
                             nearestVolume = ent;
@@ -57,21 +68,13 @@ var Fish = AiWanderer.extend({
             
             if ( nearestVolume != null )
             {
-                      var pl = nearestVolume.GetComponentRaw("EC_Placeable");
+                      var pl = nearestVolume.GetComponent("EC_Placeable");
                       // Now set that "orginal" pos is our volume trigger center..our object triest to always get there.
                       this.orginalPos_ = pl.transform.pos;
             }
         }
          
-         this.rigidBody_ = null;
-         
-         if ( me.HasComponent("EC_RigidBody") )
-         {
-            this.rigidBody_ = me.GetComponentRaw("EC_RigidBody");
-         } 
-         
-        
-    
+        this.rigidBody_ = this.entity.GetComponent("EC_RigidBody");
     },
     
     GetAction: function() {
@@ -93,18 +96,17 @@ var Fish = AiWanderer.extend({
         var angle = this.SlerpDirectionAngle(this.currentDirection_, this.r_, this.angularSpeed_,time);
         
         tm.pos.x += this.speed_ * time * Math.cos(angle * 3.14)*4; 
-        tm.pos.y += this.speed_ * time * Math.sin(angle * 3.14)*4;
+        tm.pos.z += this.speed_ * time * Math.sin(angle * 3.14)*4;
         
         var distanceToTerrain = this.GetDistanceToTerrain(tm);
         
-        var waterPlane = null;
-        waterPlane = this.GetWaterPlane(tm);
+        var waterPlane = this.GetWaterPlane(tm);
         
         if ( waterPlane != null )
         {
             var tm_new = tm;
-            tm_new.pos.z -= distanceToTerrain;
-            tm_new.pos.z += this.terrainDelta_; 
+            tm_new.pos.y -= distanceToTerrain;
+            tm_new.pos.y += this.terrainDelta_; 
             
             var distanceToWater = waterPlane.GetDistanceToWaterPlane(tm_new.pos);   
             if ( distanceToWater < 0 && Math.abs(distanceToWater) > this.waterDelta_ )
@@ -115,100 +117,92 @@ var Fish = AiWanderer.extend({
             else if ( distanceToWater > 0 )
             {
                // We are above water plane force as below water plane
-               tm_new.pos.z -= distanceToWater;
-               tm_new.pos.z -= this.waterDelta_;
+               tm_new.pos.y -= distanceToWater;
+               tm_new.pos.y -= this.waterDelta_;
                tm = tm_new;   
             }
             else if ( Math.abs(distanceToWater) < this.waterDelta_ )
             {
                 // We are below water plane, but too near surface.
-                tm_new.pos.z -= this.waterDelta_;
+                tm_new.pos.y -= this.waterDelta_;
                 tm = tm_new;
             }
         }
         else
         {
-            tm.pos.z -= distanceToTerrain;
-            tm.pos.z += this.terrainDelta_; 
+            tm.pos.y -= distanceToTerrain;
+            tm.pos.y += this.terrainDelta_; 
         }
         
 
-        var direction = new Vector3df;
-
-        direction.x = Math.cos(angle * 3.14);
-        direction.y = Math.sin(angle * 3.14);
-        direction.z = 0;
+        var direction = new float3(Math.cos(angle * 3.14), 0, Math.sin(angle * 3.14));
 
         if (this.terrain_ != null) {
 
-            var rotation = this.terrain_.GetTerrainRotationAngles(tm.pos.x, tm.pos.y, tm.pos.z, direction);
-            tm.rot.x = rotation.x;
-            tm.rot.y = rotation.y;
-            tm.rot.z = rotation.z;
+//			var s = tm.scale; // To save and restore the original scale.
+			var s = float3.FromScalar(this.fishScale_); // To use our modified scale.
+			tm.FromFloat3x4(float3x4(Quat.LookAt(float3.unitZ, this.terrain_.Tangent(tm.pos, direction), float3.unitY, float3.unitY), tm.pos));
+			tm.scale = s;
         }
         
         // Teleporting.
-        var d = (this.orginalPos_.x - tm.pos.x)*(this.orginalPos_.x - tm.pos.x)+(this.orginalPos_.y - tm.pos.y)*(this.orginalPos_.y - tm.pos.y)+(this.orginalPos_.z - tm.pos.z)*(this.orginalPos_.z - tm.pos.z);
-        if ( d > this.tooFar )
+        var d = this.orginalPos_.DistanceSq(tm.pos);
+        if (d > this.tooFar)
         {
-            tm.pos.x = this.orginalPos_.x;
-            tm.pos.x = this.orginalPos_.y;
-            tm.pos.z = this.orginalPos_.z;
+            tm.pos = this.orginalPos_;
             
             distanceToTerrain = this.GetDistanceToTerrain(tm);
-            tm.pos.z -= distanceToTerrain;
-            tm.pos.z += this.terrainDelta_; 
+            tm.pos.y -= distanceToTerrain;
+            tm.pos.y += this.terrainDelta_; 
             
-            waterPlane = null;
             waterPlane = this.GetWaterPlane(tm);
             
-            if ( waterPlane != null )
+            if (waterPlane != null)
             {
                 var tm_new = tm;
-                tm_new.pos.z -= distanceToTerrain;
-                tm_new.pos.z += this.terrainDelta_; 
+                tm_new.pos.y -= distanceToTerrain;
+                tm_new.pos.y += this.terrainDelta_; 
             
                 var distanceToWater = waterPlane.GetDistanceToWaterPlane(tm_new.pos);   
-                if ( distanceToWater < 0 && Math.abs(distanceToWater) > this.waterDelta_ )
+                if (distanceToWater < 0 && Math.abs(distanceToWater) > this.waterDelta_)
                 {
                     // New position is below water plane so it is ok.
                     tm = tm_new;
                 }
-                else if ( distanceToWater > 0 )
+                else if (distanceToWater > 0)
                 {
                     // We are above water plane force as below water plane
-                    tm_new.pos.z -= distanceToWater;
-                    tm_new.pos.z -= this.waterDelta_;
+                    tm_new.pos.y -= distanceToWater;
+                    tm_new.pos.y -= this.waterDelta_;
                     tm = tm_new;   
                 }
-                else if ( Math.abs(distanceToWater) < this.waterDelta_ )
+                else if (Math.abs(distanceToWater) < this.waterDelta_)
                 {
                     // We are below water plane, but too near surface.
-                    tm_new.pos.z -= this.waterDelta_;
+                    tm_new.pos.y -= this.waterDelta_;
                     tm = tm_new;
                 }
             }
             
             direction.x = Math.cos(angle * 3.14);
-            direction.y = Math.sin(angle * 3.14);
-            direction.z = 0;
+            direction.y = 0;
+            direction.z = Math.sin(angle * 3.14);
         
             // Calculate rotation.
             if (this.terrain_ != null) {
 
-                var rotation = this.terrain_.GetTerrainRotationAngles(tm.pos.x, tm.pos.y, tm.pos.z, direction);
-                tm.rot.x = rotation.x;
-                tm.rot.y = rotation.y;
-                tm.rot.z = rotation.z;
+//			var s = tm.scale; // To save and restore the original scale.
+			var s = float3.FromScalar(this.fishScale_); // To use our modified scale.
+			tm.FromFloat3x4(float3x4(Quat.LookAt(float3.unitZ, this.terrain_.Tangent(tm.pos, direction), float3.unitY, float3.unitY), tm.pos));
+			tm.scale = s;
             }
         }   
            
-        if (  this.rigidBody_ != null && !this.rigidBody_.IsActive())
+        if (this.rigidBody_ != null && !this.rigidBody_.IsActive())
              this.rigidBody_.Activate();
         
         this.placeable_.transform = tm;
-        this.currentDirection_ = angle;        
-    
+        this.currentDirection_ = angle;            
     },
     
     // Checks that is direction good. Meaning that if last point which is calculated in given direction is inside trigger volume.
@@ -218,18 +212,14 @@ var Fish = AiWanderer.extend({
     {
         var tm = this.placeable_.transform;
         tm.pos.x += this.speed_ * this.currentAction_.time * Math.cos(this.r_ * 3.14) * 4;
-        tm.pos.y += this.speed_ * this.currentAction_.time * Math.sin(this.r_ * 3.14) * 4;   
-        tm.pos.z -= this.GetDistanceToTerrain(tm);
+        tm.pos.y -= this.GetDistanceToTerrain(tm);
+        tm.pos.z += this.speed_ * this.currentAction_.time * Math.sin(this.r_ * 3.14) * 4;   
         
         if (this.CheckPosition(tm.pos))
         {
-            var waterPlane = null;
-            waterPlane = this.GetWaterPlane(tm);
-            if ( waterPlane != null )
-            {
+            var waterPlane = this.GetWaterPlane(tm);
+            if (waterPlane != null)
                 return true;
-            }
-           
         }
         return false;
         
@@ -241,7 +231,7 @@ var Fish = AiWanderer.extend({
         for ( var i = 0; i < 100; ++i)
         {
             this.r_ = Math.random() * 2;
-            if ( this.CheckDirection() )
+            if (this.CheckDirection())
             {
                 return;
             }
@@ -253,15 +243,10 @@ var Fish = AiWanderer.extend({
         // Create direction vector to trigger volume pivot point. Or if there exist many trigger volumes, to orginal position of opossum.  
         var tm = this.placeable_.transform;
       
-        var target = new Vector3df;
-        target.x = this.orginalPos_.x - tm.pos.x; 
-        target.y = this.orginalPos_.y - tm.pos.y;
+        var target = new float3(this.orginalPos_.x - tm.pos.x, 0, this.orginalPos_.z - tm.pos.z);
         //var r = Math.sqrt(target.x * target.x + target.y * target.y);
         
-        this.r_ = Math.atan2(target.y, target.x)/3.14;
-      
-      
-       
+        this.r_ = Math.atan2(target.z, target.x)/3.14;                 
     },
     
     // Returns true that if position is valid, false if not. 
@@ -277,16 +262,26 @@ var Fish = AiWanderer.extend({
     
 });
 
-
+function FishObject(entity, component)
+{
+         print("fishobject");
+  this.entity = entity;
+  this.p_ = new Fish(entity);
+  if (!client.IsConnected())
+  {
+    frame.Updated.connect(this.p_, "Update");
+  }
+}
+/*
 var p_ = new Fish;
 
 function Update(frametime) {
      p_.Update(frametime);
 }
 
-if ( server != null && server.IsRunning() )
+if (!client.IsConnected())
 {
     frame.Updated.connect(Update);
 }
-
+*/
  // JScript source code

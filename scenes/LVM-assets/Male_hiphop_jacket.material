@@ -10,7 +10,7 @@ material Hiphop_shirt
             emissive 0.0 0.0 0.0
             texture_unit
             {
-                texture local://male_shirt_texture_black.jpg 
+                texture male_shirt_texture_black.jpg 
             }
         }
     }

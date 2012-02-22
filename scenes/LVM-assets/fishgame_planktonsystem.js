@@ -1,12 +1,9 @@
 //client only code for an individual particle system which swarms together with a few others in a cluster (school, i.e. swarm)
 //only the movement of the schools is executed on the server, to save bandwidth
 
-engine.IncludeFile("local://vector.js");
+engine.IncludeFile("vector.js");
 
-var systemSize = new Vector3df();
-    systemSize.x = 1.5;
-    systemSize.y = 1.5;
-    systemSize.z = 0.3;
+var systemSize = new float3(1.5, 1.5, 0.3);
     
 // const SYSTEM_DIAMETER_X = 1.5;
 // const SYSTEM_DIAMETER_Y = 1.5;
@@ -20,9 +17,9 @@ function System(name, pos) {
     
     this.capacity_ = 10; //how much food this has. to be changed to be the actual number of particles in the system, but that's not implemented yet
     this.pos_        = pos;
-    this.velocity_   = new Vector3df();
+    this.velocity_   = new float3(0,0,0);
     
-    this.entity_ = scene.CreateEntityRaw(scene.NextFreeIdLocal(), ['EC_Placeable', 'EC_ParticleSystem', 'EC_RigidBody', 'EC_Mesh']);
+    this.entity_ = scene.CreateEntity(scene.NextFreeIdLocal(), ['EC_Placeable', 'EC_ParticleSystem', 'EC_RigidBody', 'EC_Mesh']);
     this.entity_.SetName(name);
     this.entity_.SetTemporary(true);
        
@@ -32,15 +29,15 @@ function System(name, pos) {
     placeable.transform = transform;
     
     var particleSystem = this.entity_.particlesystem;
-    // particleSystem.paritcleId = 'local://plankton.particle';
+    // particleSystem.paritcleId = 'plankton.particle';
     var r = particleSystem.particleRef;
-    r.ref = 'local://plankton.particle';
+    r.ref = 'plankton.particle';
     particleSystem.particleRef = r;
     
     var systemBody = this.entity_.rigidbody;
     // systemBody.mass = 1;                  // To make body non-static, but
-    systemBody.linearFactor = new Vector3df();  // not affected by any forces
-    systemBody.angularFactor = new Vector3df(); //
+    systemBody.linearFactor = new float3(0,0,0);  // not affected by any forces
+    systemBody.angularFactor = new float3(0,0,0); //
     systemBody.shapeType = 0;
     systemBody.size = systemSize;
     
@@ -52,7 +49,7 @@ function System(name, pos) {
         throw 'No water found';
     
     //this.entity_.Action('Die').Triggered.connect(this, this.die);
-    scene.EmitEntityCreatedRaw(this.entity_);
+    scene.EmitEntityCreated(this.entity_);
     
     //time interval for calculating new velocity / direction in swarming, to save cpu
     this.prev_velcalc = LOGICINTERVAL; //is done at start so initing with the max val
@@ -62,7 +59,7 @@ function System(name, pos) {
 //     if(!this.water_) {
 //         var waterEntity = scene.GetEntityRaw(scene.GetEntityIdsWithComponent('EC_WaterPlane')[0]);
 //         if(waterEntity)
-//             this.water_ = waterEntity.GetComponentRaw('EC_WaterPlane');
+//             this.water_ = waterEntity.GetComponent('EC_WaterPlane');
 //         else {
 //             this.water_ = null;
 //             throw 'Water not found';
@@ -75,7 +72,7 @@ System.prototype.getPointOnTerrain = function(point) {
     if(!this.terrain_) {
         var terrainEntity = scene.GetEntityRaw(scene.GetEntityIdsWithComponent('EC_Terrain')[0]);
         if(terrainEntity)
-            this.terrain_ = terrainEntity.GetComponentRaw('EC_Terrain');
+            this.terrain_ = terrainEntity.GetComponent('EC_Terrain');
         else {
             this.terrain_ = null;
             throw 'Terrain not found';
@@ -90,32 +87,35 @@ System.prototype.update = function(dt, pos, systems) {
         this.updateVelocity(pos, systems);
         this.prev_velcalc = 0;
     }
-    
-    var delta = VectorMult(this.velocity_, dt); //XXX check if could use this for placeable.Translate
-    this.pos_ = VectorSum(this.pos_, delta);     
+
+    var delta = this.velocity_.Mul(dt); //XXX check if could use this for placeable.Translate
+    this.pos_ = this.pos_.Add(delta);     
+
 
     var placeable = this.entity_.placeable;
     var tm = placeable.transform;
     tm.pos = this.pos_;
+/*
 
     placeable.transform = tm;
+*/
 }
 
 System.prototype.updateVelocity = function(schoolPos, systems) { //schoolVelocity
-    var steer = new Vector3df();
-    steer = VectorSum(steer, VectorMult(this.getSeparateSteer(systems), 1.8));
-    steer = VectorSum(steer, VectorMult(this.getCohesionSteer(schoolPos), 1.5));
-    // steer = VectorSum(steer, this.getAlignSteer(schoolVelocity));
-    steer = VectorSum(steer, VectorMult(this.getAvoidSurfaceSteer(), 3.0));
-    steer = VectorSum(steer, VectorMult(this.getAvoidTerrainSteer(), 2.0));
+    var steer = new float3(0,0,0);
+    steer = steer.Add(this.getSeparateSteer(systems).Mul(1.8));
+    steer = steer.Add(this.getCohesionSteer(schoolPos).Mul(1.5));
+    // steer = steer.Add(this.getAlignSteer(schoolVelocity));
+    steer = steer.Add(this.getAvoidSurfaceSteer().Mul(3.0));
+    steer = steer.Add(this.getAvoidTerrainSteer().Mul(2.0));
 
     steer = GetLimitedVector(steer, this.maxSteer_);
 
-    this.velocity_ = GetLimitedVector(VectorSum(this.velocity_, steer), this.maxSpeed_);
+    this.velocity_ = GetLimitedVector(this.velocity_.Add(steer), this.maxSpeed_);
 }
 
 System.prototype.getAvoidSurfaceSteer = function() {
-    var steer = new Vector3df();
+    var steer = new float3(0,0,0);
     var pos = this.pos_;
     
     var waterDelta = 0.4;
@@ -129,13 +129,13 @@ System.prototype.getAvoidSurfaceSteer = function() {
 }
 
 System.prototype.getAvoidTerrainSteer = function() {
-    var steer = new Vector3df();
+    var steer = new float3(0,0,0);
     var pos = this.pos_;
     var terrainPos = this.getPointOnTerrain(pos);
     
     var distance = Math.abs(terrainPos.z - pos.z);
     if(distance > 0.2 && pos.z > terrainPos.z) // No effect
-        return new Vector3df();
+        return new float3(0,0,0);
     
     steer.z = 0.4/distance;
     //steer.z -= this.velocity_.z;
@@ -150,17 +150,17 @@ System.prototype.getCohesionSteer = function(schoolPos) {
    var velocity = this.velocity_;
 
    var steer = null;
-   var desired = VectorSub(schoolPos, pos);
-   var distance = GetMagnitude(desired);
+   var desired = schoolPos.Sub(pos);
+   var distance = desired.Length();
    if(distance > 0) {
-       desired = GetUnitVector(desired);
-       desired = VectorMult(desired, this.maxSpeed_);
+       desired = desired.Normalized();
+       desired = desired.Mul(this.maxSpeed_);
 
-       steer = VectorSub(desired, velocity);
+       steer = desired.Sub(velocity);
        steer = GetLimitedVector(steer, this.maxSteer_);
    }
    else {
-       steer = new Vector3df();
+       steer = new float3(0,0,0);
    }
    return steer;
 }
@@ -170,10 +170,10 @@ System.prototype.getAlignSteer = function(schoolVel) {
    var velocity = schoolVel;
    
    var steer = velocity;
-   if( GetMagnitude(steer) > 0 ) {
-       steer = GetUnitVector(steer);
-       steer = VectorMult(steer, this.maxSpeed_);
-       steer = VectorSub(steer, velocity);
+   if( steer.Length() > 0 ) {
+       steer = steer.Normalized();
+       steer = steer.Mul(this.maxSpeed_);
+       steer = steer.Sub(velocity);
        steer = GetLimitedVector(steer, this.maxSteer_);
    }
    return steer;
@@ -183,27 +183,27 @@ System.prototype.getSeparateSteer = function(systems) {
    var pos = this.pos_;
    var velocity = this.velocity_;
    
-   var steer = new Vector3df();
+   var steer = new float3(0,0,0);
    var count = 0;
    for(var i = 0; i < systems.length; ++i) {
        var other = systems[i];
        var otherPos = other.pos_;
-       var dist = GetDistance(pos, otherPos);
+       var dist = pos.Distance(otherPos);
        if( dist > 0 && dist < this.separation_ ) {
-           var diff = VectorSub(pos, otherPos);
-           diff = GetUnitVector(diff);
-           diff = VectorDiv(diff, dist);
-           steer = VectorSum(steer, diff);
+           var diff = pos.Sub(otherPos);
+           diff = diff.Normalized();
+           diff = diff.Div(dist);
+           steer = steer.Add(diff);
            count += 1;
        }
    }
    if( count > 0 ) {
        steer = VectorDiv(steer, count);
    }
-   if( GetMagnitude(steer) > 0 ) {
-       steer = GetUnitVector(steer);
-       steer = VectorMult(steer, this.maxSpeed_);
-       steer = VectorSub(steer, velocity);
+   if( steer.Length() > 0 ) {
+       steer = steer.Normalized();
+       steer = steer.Mul(this.maxSpeed_);
+       steer = steer.Sub(velocity);
        steer = GetLimitedVector(steer, this.maxSteer_);
    }
    return steer;

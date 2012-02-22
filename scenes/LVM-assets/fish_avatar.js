@@ -1,8 +1,8 @@
 engine.ImportExtension('qt.core');
 engine.ImportExtension('qt.gui');
 
-engine.IncludeFile("local://vector.js");
-engine.IncludeFile("local://class.js");
+engine.IncludeFile("vector.js");
+engine.IncludeFile("class.js");
 
 
 var FishAvatar = Class.extend({
@@ -11,17 +11,17 @@ var FishAvatar = Class.extend({
         this.userID_ = user.GetConnectionID();
                 
         var avatarEntityName = 'FishAvatar_' + user.GetConnectionID();
-        this.entity_ = scene.CreateEntityRaw(scene.NextFreeId(), ['EC_Script', 'EC_Placeable', 'EC_RigidBody', 'EC_Mesh', 'EC_AnimationController', 'EC_VolumeTrigger']);     
+        this.entity_ = scene.CreateEntity(scene.NextFreeId(), ['EC_Script', 'EC_Placeable', 'EC_RigidBody', 'EC_Mesh', 'EC_AnimationController', 'EC_VolumeTrigger']);     
         
         this.entity_.SetName(avatarEntityName);
         this.entity_.SetDescription(user.GetProperty('username'));
         
         // Controller Script
-        var script = this.entity_.GetComponentRaw('EC_Script');
+        var script = this.entity_.GetComponent('EC_Script');
         script.type = 'js';
         script.runOnLoad = true;
         var r = script.scriptRef;
-        r.ref = 'local://fish_avatar_controller.js'; 
+        r.ref = 'fish_avatar_controller.js'; 
         script.scriptRef = r;
          
         var placeable = this.entity_.placeable;
@@ -29,43 +29,37 @@ var FishAvatar = Class.extend({
         var rigidbody = this.entity_.rigidbody;
         
         var transform = placeable.transform;
-        var pos = new Vector3df();
-        pos.x = 2.0;
-        pos.y = 0.5;
-        pos.z = 10.0;    
+        var pos = new float3(2.0, 0.5, 10.0);
         
         transform.pos = pos;
         placeable.transform = transform;
     
         var m = mesh.meshRef;
-        m.ref = 'local://anchovy.mesh';
+        m.ref = 'anchovy.mesh';
         mesh.meshRef = m;
         m = mesh.skeletonRef;
-        m.ref = 'local://anchovy.skeleton';
+        m.ref = 'anchovy.skeleton';
         mesh.skeletonRef = m;
         
         var materials = mesh.meshMaterial;  
-        materials = ['local://anchovy.material'];
+        materials = ['anchovy.material'];
         mesh.meshMaterial = materials;
         
         var meshTm = mesh.nodeTransformation;
         meshTm.rot.z = 90;
         mesh.nodeTransformation = meshTm;
         
-        var sizeVec = new Vector3df();
-        sizeVec.z = 1.0;
-        sizeVec.x = 1.0;
-        sizeVec.y = 1.0;
+        var sizeVec = new float3(1,1,1);
         rigidbody.mass = 3;
-        rigidbody.linearFactor = new Vector3df();
-        rigidbody.angularFactor = new Vector3df();
+        rigidbody.linearFactor = new float3(0,0,0);
+        rigidbody.angularFactor = new float3(0,0,0);
         rigidbody.shapeType = 0; 
         rigidbody.size = sizeVec;
-        var zeroVec = new Vector3df();
+        var zeroVec = new float3(0,0,0);
         rigidbody.angularFactor = zeroVec;
         rigidbody.Activate();
         
-        scene.EmitEntityCreatedRaw(this.entity_);
+        scene.EmitEntityCreated(this.entity_);
     },
     
     getPos: function() {
@@ -76,9 +70,7 @@ var FishAvatar = Class.extend({
     },
     
     distanceTo: function(pos) {
-        var d = GetDistance(pos, this.getPos());
-        // print('avatar distanceTo: '+d);
-        return d;
+		return this.getPos().Distance(pos);
     },
     
     getID: function() {

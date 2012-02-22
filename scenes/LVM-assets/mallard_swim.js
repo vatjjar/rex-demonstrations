@@ -1,8 +1,14 @@
 // Animation controller
 
-function StartAnimation() {
-    me.Exec(7, "StopAllAnims", "0.5");
-    me.Exec(7, "PlayLoopedAnim", "Swim", "0.5");
+function MallardSwim(entity, comp)
+{
+         print("mallardswim");
+    this.entity = entity;
+    frame.DelayedExecute(10.0).Triggered.connect(this, "StartAnimation");
 }
 
-frame.DelayedExecute(1.0).Triggered.connect(StartAnimation);
+MallardSwim.prototype.StartAnimation = function() {
+         print("mallardswim");
+    this.entity.Exec(7, "StopAllAnims", "0.5");
+    this.entity.Exec(7, "PlayLoopedAnim", "Swim", "0.5");
+}

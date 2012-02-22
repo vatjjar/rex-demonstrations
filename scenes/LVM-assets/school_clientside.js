@@ -1,18 +1,18 @@
 print("LOAD School Clientside");
 
 
-engine.IncludeFile("local://class.js");
-engine.IncludeFile("local://vector.js");
-engine.IncludeFile("local://fishgame_planktonsystem.js");
-engine.IncludeFile("local://fishgame_schoolconst.js");
-var isserver = server.IsRunning();
+engine.IncludeFile("class.js");
+engine.IncludeFile("vector.js");
+engine.IncludeFile("fishgame_planktonsystem.js");
+engine.IncludeFile("fishgame_schoolconst.js");
+var isserver = !client.IsConnected();
 
-var school = scene.GetEntityByNameRaw(me.name.split('-')[0]); //not there immediately, must wait that entity creation is finished
+var school = scene.GetEntityByName(me.name.split('-')[0]); //not there immediately, must wait that entity creation is finished
 var systems = [];
       
 function createSystems(count) {
     var schoolPos = school.placeable.transform.pos;
-    var systemPos = new Vector3df();
+    var systemPos = new float3(0,0,0);
     for(var i = 0; i < count; i++) {
         systemPos.x = schoolPos.x + (Math.random()-0.5)*schoolSize.x;
         systemPos.y = schoolPos.y + (Math.random()-0.5)*schoolSize.y;

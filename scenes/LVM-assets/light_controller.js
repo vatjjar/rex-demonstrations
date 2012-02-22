@@ -6,7 +6,7 @@ var environment_ = null;
 
 function FindEnvironmentLight() {
   if (environment_ == null) {  
-    environment_ = scene.GetEntityByNameRaw("Environment");
+    environment_ = scene.GetEntityByName("Environment");
     envlight_ = environment_.environmentlight;
   }
 }

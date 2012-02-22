@@ -14,7 +14,7 @@ material Customface
 
 			texture_unit baseMap
 			{
-				texture local://asian_boy.jpg
+				texture asian_boy.jpg
 			}
 
 			texture_unit shadowMap0
@@ -42,7 +42,7 @@ material Customface
 	    {
 	        texture_unit baseMap
 	        {
-	            texture local://asian_boy.jpg
+	            texture asian_boy.jpg
 	        }
         }
 	}

@@ -18,19 +18,19 @@ material stripedbass_body
             }
             texture_unit baseMap
             {
-                texture local://stripedbass_diffuse.png
+                texture stripedbass_diffuse.png
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit specularMap
             {
-                texture local://stripedbass__SPEC.png
+                texture stripedbass__SPEC.png
                 tex_address_mode wrap
                 filtering trilinear
             }
             texture_unit normalMap
             {
-                texture local://stripedbass__NRM.png
+                texture stripedbass__NRM.png
                 tex_address_mode wrap
                 filtering trilinear
             }

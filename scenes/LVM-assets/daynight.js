@@ -8,7 +8,7 @@ function FindEnvironmentLight()
 {
   if (environment_ == null)
   {
-    environment_ = me.GetComponentRaw("EC_EnvironmentLight");
+    environment_ = me.GetComponent("EC_EnvironmentLight");
     if (environment_ != null)
     {
       environment_.currentTimeAttr = 0.67;
@@ -28,7 +28,7 @@ function Update(frametime)
     time += speed_ * frametime;
     time = time - Math.floor(time);
    
-    environment_.currentTimeAttr = time;
+    environment_.currentTimeAttr = 0.5 //time;
   }
 }
 

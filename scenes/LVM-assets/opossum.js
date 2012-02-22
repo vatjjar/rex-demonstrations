@@ -1,4 +1,4 @@
-engine.IncludeFile("local://wandererAi.js");
+engine.IncludeFile("wandererAi.js");
 
 var Opossum = AiWanderer.extend({
     init: function() {
@@ -9,7 +9,7 @@ var Opossum = AiWanderer.extend({
          this.speed_ = 0.1;
          this.terrainDelta_= 0.5;
          
-         var meshComp = me.GetComponentRaw("EC_Mesh");
+         var meshComp = me.GetComponent("EC_Mesh");
          var trans = meshComp.nodeTransformation;
          // Orginal 180 degree. 
          trans.rot.z = 90;
@@ -37,10 +37,10 @@ var Opossum = AiWanderer.extend({
              {
                
                 var ent = scene.GetEntityRaw(ids[i]);
-                var nameComp = ent.GetComponentRaw("EC_Name");
+                var nameComp = ent.GetComponent("EC_Name");
                 if ( nameComp != null && nameComp.name == "OpossumVolume")
                 {
-                    var placeableComp = ent.GetComponentRaw("EC_Placeable");
+                    var placeableComp = ent.GetComponent("EC_Placeable");
                     if ( placeableComp != null )
                     {
                        var pos = placeableComp.transform.pos;
@@ -56,7 +56,7 @@ var Opossum = AiWanderer.extend({
             
             if ( nearestVolume != null )
             {
-                      var pl = nearestVolume.GetComponentRaw("EC_Placeable");
+                      var pl = nearestVolume.GetComponent("EC_Placeable");
                       // Now set that "orginal" pos is our volume trigger center..our object triest to always get there.
                       this.orginalPos_ = pl.transform.pos;
             }
@@ -66,7 +66,7 @@ var Opossum = AiWanderer.extend({
          
          if ( me.HasComponent("EC_RigidBody") )
          {
-            this.rigidBody_ = me.GetComponentRaw("EC_RigidBody");
+            this.rigidBody_ = me.GetComponent("EC_RigidBody");
          } 
          
          /*
@@ -77,10 +77,10 @@ var Opossum = AiWanderer.extend({
             for (var i = 0; i < ids.length; ++i) {
                
                 var ent = scene.GetEntityRaw(ids[i]);
-                var nameComp = ent.GetComponentRaw("EC_Name");
+                var nameComp = ent.GetComponent("EC_Name");
                 if ( nameComp != null && nameComp.name == "OpossumVolume")
                 {
-                    var placeableComp = ent.GetComponentRaw("EC_Placeable");
+                    var placeableComp = ent.GetComponent("EC_Placeable");
                     if ( placeableComp != null )
                     {
                        this.orginalPos_ = placeableComp.transform.pos;
@@ -119,11 +119,7 @@ var Opossum = AiWanderer.extend({
         tm.pos.z -= distanceToTerrain;
         tm.pos.z += this.terrainDelta_; 
 
-        var direction = new Vector3df;
-
-        direction.x = Math.cos(angle * 3.14);
-        direction.y = Math.sin(angle * 3.14);
-        direction.z = 0;
+        var direction = new float3(Math.cos(angle * 3.14), 0, Math.sin(angle * 3.14));
 
         if (this.terrain_ != null) {
 
@@ -177,7 +173,7 @@ var Opossum = AiWanderer.extend({
         // Create direction vector to trigger volume pivot point. Or if there exist many trigger volumes, to orginal position of opossum.  
         var tm = this.placeable_.transform;
       
-        var target = new Vector3df;
+        var target = new float3(0,0,0);
         target.x = this.orginalPos_.x - tm.pos.x; 
         target.y = this.orginalPos_.y - tm.pos.y;
         //var r = Math.sqrt(target.x * target.x + target.y * target.y);

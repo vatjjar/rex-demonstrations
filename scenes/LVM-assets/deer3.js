@@ -1,7 +1,7 @@
 // Deer2 - copy-pasted from guard.js which is perhaps more suitable than WandererAi .. for accurate travel between points
-engine.IncludeFile("local://vector.js");
-engine.IncludeFile("local://thejit_pathruntime.js");
-engine.IncludeFile("local://pathdata.js");
+engine.IncludeFile("vector.js");
+engine.IncludeFile("thejit_pathruntime.js");
+engine.IncludeFile("pathdata.js");
 
 const ANIM_FADE_TIME = 0.25;
 const TERRAIN_DELTA = 0.02;
@@ -13,7 +13,7 @@ var trans = me.mesh.nodeTransformation;
 trans.rot.z = 0;
 me.mesh.nodeTransformation = trans;
     
-var velocity = new Vector3df();
+var velocity = new float3(0,0,0);
 velocity.x = 1.0;
 
 var maxSpeed = 0.917;
@@ -81,7 +81,7 @@ function vecFromGraphnode(node) {
     var sceney = (node.pos.y + 54.95458387873319) / -8.95580731022745;
     print(node.pos.x + ", " + node.pos.y + " ==> " + scenex + ", " + sceney);
 
-    var vec = new Vector3df(); //constructor no worky XXX scenex, sceney, 0);
+    var vec = new float3(0,0,0); //constructor no worky XXX scenex, sceney, 0);
     vec.x = scenex;
     vec.y = sceney;
     vec.z = 0; //XXX get terrain height here
@@ -105,15 +105,15 @@ function updateVelocity(dt) {
     if(!targetvec)
         return;
     
-    var direction = GetUnitVector(velocity);
+    var direction = velocity.Normalized();
     var slowDown = 0;
     
     // // Angle between current direction and target
-    // var w = new Vector3df();
+    // var w = new float3(0,0,0);
     // w.x = target.x - tm.pos.x;
     // w.y = target.y - tm.pos.y;
     // var dotProduct = direction.x*w.x + direction.y*w.y;
-    // var cos = dotProduct/GetMagnitude(w);
+    // var cos = dotProduct/w.Length();
     // var dirDiff = Math.acos(cos)
     // 
     // var maxDiff = Math.PI/6; // 30 degree
@@ -127,10 +127,10 @@ function updateVelocity(dt) {
     //     else
     //         var dir = -maxDiff;
     //     
-    //     var tmpTarget = new Vector3df();
+    //     var tmpTarget = new float3(0,0,0);
     //     tmpTarget.x = direction.x*Math.cos(dir) - direction.y*Math.sin(dir);
     //     tmpTarget.y = direction.x*Math.sin(dir) + direction.y*Math.cos(dir);
-    //     // tmpTarget = VectorMult(tmpTarget, 5);
+    //     // tmpTarget = tmpTarget.Mul(5);
     //     tmpTarget.x += tm.pos.x;
     //     tmpTarget.y += tm.pos.y;
     //     
@@ -148,7 +148,7 @@ function updateVelocity(dt) {
     velocity.y += steer.y;
     
     // Limit XY-speed
-    var v = new Vector3df();
+    var v = new float3(0,0,0);
     v.x = velocity.x; 
     v.y = velocity.y
     v.z = 0;
@@ -164,10 +164,10 @@ function updateVelocity(dt) {
 function updateOrientation(dt) {
     var tm = me.placeable.transform;
     
-    /*var d = new Vector3df();
+    /*var d = new float3(0,0,0);
     d.x = 1; d.y = 0; d.z = 0;
     
-    var r = new Vector3df();
+    var r = new float3(0,0,0);
     r.x = velocity.x;
     r.y = velocity.y;
     r.z = velocity.z;
@@ -182,13 +182,17 @@ function updateOrientation(dt) {
     else 
         turning = 0;*/
     
-    tm.rot = terrain.GetTerrainRotationAngles(tm.pos.x, tm.pos.y, tm.pos.z, velocity);
+	var t = terrain.TangentFrame(tm.pos);
+
+	scene.ogre.DebugDrawFloat3x4(t, 10, 2, 1,1,1);
+	tm.FromFloat3x4(terrain.TangentFrame(tm.pos));
+//    tm.rot = terrain.GetTerrainRotationAngles(tm.pos.x, tm.pos.y, tm.pos.z, velocity);
     me.placeable.transform = tm;
 }
 
 function updatePosition(dt) {
     var tm = me.placeable.transform;
-    tm.pos = VectorSum(tm.pos, VectorMult(velocity, dt));
+    tm.pos = tm.pos.Add(velocity.Mul(dt));
     
     var distanceToTerrain = terrain.GetDistanceToTerrain(tm.pos);
     tm.pos.z -= distanceToTerrain;
@@ -198,7 +202,7 @@ function updatePosition(dt) {
 }
 
 function updateAnimationState(dt) {
-    var speed = GetMagnitude(velocity);
+    var speed = velocity.Length();
     var state = null;
     
     me.Exec(7, 'PlayLoopedAnim', 'Walk_1-38', ANIM_FADE_TIME);
@@ -297,31 +301,31 @@ function get2DSteer(pos, target, maxSteer, maxSpeed, slowDownDistance) {
     // Ignore Z
     var steer = null;
     
-    var desired = VectorSub(target, pos);
+    var desired = target.Sub(pos);
     desired.z = 0;
     
-    var distance = GetMagnitude(desired);
+    var distance = desired.Length();
     if(distance > 0) {        
         if(slowDownDistance) {
             // Slowdown before reaching the target
             if(distance < slowDownDistance ) { 
-                desired = VectorMult(desired, maxSpeed*(distance/slowDownDistance));
+                desired = desired.Mul(maxSpeed*(distance/slowDownDistance));
             }
             else {
-                desired = VectorMult(desired, maxSpeed);
+                desired = desired.Mul(maxSpeed);
             }
         }
         else {
-            desired = VectorMult(desired, maxSpeed);
+            desired = desired.Mul(maxSpeed);
         }
-        var v = new Vector3df();
+        var v = new float3(0,0,0);
         v.x = velocity.x;
         v.y = velocity.y;
-        steer = VectorSub(desired, v);
+        steer = desired.Sub(v);
         steer = GetLimitedVector(steer, maxSteer);
     }
     else {
-        steer = new Vector3df();
+        steer = new float3(0,0,0);
     }
     return steer;
 }

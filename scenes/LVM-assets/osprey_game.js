@@ -1,7 +1,7 @@
 // When this script is runned
 // 1. Create new osprey (avatar), set person who touched stone to control it.
 
-engine.IncludeFile("local://osprey_avatar.js");
+engine.IncludeFile("osprey_avatar.js");
 
 if (server.IsRunning()) {
     // In case that player disconnect..
@@ -15,7 +15,8 @@ function StartGame() {
     print("Starting Osprey Game..");
     if (server.IsRunning()) {
         // Currently because of UI - bug we define that only one player can play Osprey-game.
-        if (current_osprey_avatars_.length > 0) {            
+        if (false) { //current_osprey_avatars_.length > 0) {
+			print("Cannot play now! Someone else is already playing!");
             var client = server.GetActionSender();
             
             // Assure that client has ui in valid state:            
@@ -23,7 +24,7 @@ function StartGame() {
             for (var i = 0; i < ids.length; ++i) {
 
                 var e = scene.GetEntityRaw(ids[i]);
-                if (e.GetComponentRaw("EC_Name").name == "MainHud") {
+                if (e.GetComponent("EC_Name").name == "MainHud") {
                     e.Exec(4, "ShowMainUIOnClient", client.GetConnectionID());
                 }
             }
@@ -36,10 +37,8 @@ function StartGame() {
         // Position where avatar will be spawned.
         
         //TODO Define position randomly?
-        var position = new float3();
-        position.x = -2.0;
-        position.y = 9.0;
-        position.z = -4.72;
+		//todo flipyz
+        var position = new float3(-2.0, 9.0, -4.72);
             
         // Populate game area with fishes
         //TODO
@@ -49,7 +48,7 @@ function StartGame() {
 
         // When game starts, hide our avatar from scene.
         var avatarName = "Avatar" + user.GetConnectionID();
-        scene.GetEntityByNameRaw(avatarName).Exec(7,"HideEntity");
+        scene.GetEntityByName(avatarName).Exec(7,"HideEntity");
         
 		// Remove focus. This fixes a bug that Qt scene eats keyboard release events. 
         me.Exec(4, "RemoveFocus");
@@ -73,7 +72,7 @@ function StopGame(id) {
                 current_osprey_avatars_.splice(i, 1);
               
                 var avatarName = "Avatar" + id;
-                scene.GetEntityByNameRaw(avatarName).Exec(7, "ShowEntity");
+                scene.GetEntityByName(avatarName).Exec(7, "ShowEntity");
                 
                 // If there exist watersplass effects created by this user remove them..
                 var name = "WaterSplass_" + id;
@@ -82,7 +81,7 @@ function StopGame(id) {
                 for (var i = 0; i < ids.length; ++i) {
 
                     var e = scene.GetEntityRaw(ids[i]);
-                    if (e.GetComponentRaw("EC_Name").name == name) {
+                    if (e.GetComponent("EC_Name").name == name) {
                         scene.RemoveEntityRaw(ids[i]);
                     }
                 }
@@ -111,7 +110,7 @@ function Disconnect(id, us) {
             for (var i = 0; i < ids.length; ++i) {
 
                 var e = scene.GetEntityRaw(ids[i]);
-                if (e.GetComponentRaw("EC_Name").name == name) {
+                if (e.GetComponent("EC_Name").name == name) {
                     scene.RemoveEntityRaw(ids[i]);
                 }
             }

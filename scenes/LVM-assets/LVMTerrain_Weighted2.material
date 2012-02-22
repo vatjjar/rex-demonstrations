@@ -71,30 +71,30 @@ material Rex/TerrainPCF_weighted
 			//Weights
 			texture_unit weights
 			{
-				texture local://lvm_terraintexweight.png
+				texture lvm_terraintexweight.png
 			}
 			//Detail0
 			texture_unit detail0
 			{
-				texture local://SoilMud_s.jpg
+				texture SoilMud_s.jpg
 			}
 
 			//Detail1
 			texture_unit detail1
 			{
-				texture local://Grass_d.jpg
+				texture Grass_d.jpg
 			}
 
 			//Detail2
 			texture_unit detail2
 			{
-				texture  local://sand_d.jpg
+				texture  sand_d.jpg
 			}
 
 			//Detail3
 			texture_unit detail3
 			{
-				texture local://SoilMud_s.jpg
+				texture SoilMud_s.jpg
 			}
 
 			texture_unit shadowMap0
@@ -122,7 +122,7 @@ material Rex/TerrainPCF_weighted
 	//	{
 	//		texture_unit baseMap
 	//		{
-	//			texture local://TextureMissing.png
+	//			texture TextureMissing.png
 	//		}
 	//	}
     //  }	

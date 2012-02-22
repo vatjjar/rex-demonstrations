@@ -1,4 +1,4 @@
-// !ref: local://fishradaricon.png
+// !ref: fishradaricon.png
 
 //this is included by fish_avatar_controller, 
 //so using this scoping trick (which coffeescript also uses) to not make global vars leak to outside this file
@@ -9,8 +9,8 @@
     var qtscene = new QGraphicsScene();
     var qtview = new QGraphicsView(qtscene);
 
-    var radarimgAsset = asset.GetAsset("local://fishradaricon.png").get();
-    debug.Log(radarimgAsset.DiskSource());
+    var radarimgAsset = asset.GetAsset("fishradaricon.png").get();
+    print(radarimgAsset.DiskSource());
     var radarimgFileName = radarimgAsset.DiskSource();
     var radarimg = new QPixmap(radarimgFileName);
 
@@ -24,7 +24,7 @@
     qtview.resize(180, 180);
 
     proxy.windowFlags = 0; // No borders
-    proxy.ToggleVisibility();
+    proxy.visible = !proxy.visible;
             
     // this.scene_.setSceneRect(0,0,200,200);
     // this.view_.setScene(this.scene_);
@@ -83,7 +83,7 @@
             var ids = scene.GetEntityIdsWithComponent('EC_Name');
             for (var i=0; i < ids.length; ++i) {
                 var e = scene.GetEntityRaw(ids[i]);
-                if (gameobjectname(e.GetName())) {
+                if (gameobjectname(e.name)) {
                     enemyPlaceables.push(e.placeable);
                     
                     var item = qtscene.addPixmap(enemyIcon);

@@ -5,6 +5,7 @@ engine.ImportExtension('qt.gui');
 
 engine.IncludeFile("local://vector.js");
 engine.IncludeFile("local://class.js");
+engine.IncludeFile("local://fish_game_radar.js"); //creates the radar which updates itself
 
 const MOUSE_SENSITIVITY_X = 0.1;
 const MOUSE_SENSITIVITY_Y = 0.05;
@@ -361,9 +362,6 @@ var FishAvatarController = Class.extend({
         //game logic
         this.score_ = 0;
         this.clientCreateHUD();
-
-        //radar hud
-        engine.IncludeFile("local://fish_game_radar.js"); //creates the radar which updates itself
     },
     
     otherClientInit: function() {

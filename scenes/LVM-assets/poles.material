@@ -18,13 +18,6 @@ material poles
                 scale 0.1 0.1
               //  colour_op_ex blend_manual src_current src_texture 0.0
             }
-           // texture_unit
-            {
-                texture dock_AO.png
-                tex_address_mode wrap
-                scale 1.0 1.0
-                colour_op_ex blend_manual src_current src_texture 0.294642865658
-            }
         }
     }
 }
